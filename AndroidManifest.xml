@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="eden.notebook.ink" >
+
+    <application
+        android:hardwareAccelerated="true"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+
+        <activity
+            android:name=".Library"
+            android:launchMode="singleTask"
+            android:label="@string/library" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".Settings"
+            android:label="@string/action_settings" >
+            <!--This means the parent activity is the Library activity-->
+        </activity>
+
+        <activity
+            android:name=".AddNote"
+            android:launchMode="singleTop"
+            android:label="@string/action_add" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Library" />
+            <!--This means the parent activity is the Library activity-->
+        </activity>
+
+        <activity
+            android:name=".ViewNote"
+            android:launchMode="singleTask">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Library" />
+            <!--This means the parent activity is the Library activity-->
+        </activity>
+
+        <activity
+            android:name=".EditNote"
+            android:launchMode="singleTop">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ViewNote" />
+        </activity>
+
+    </application>
+</manifest>
