@@ -2,48 +2,54 @@ package eden.notebook.ink;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
 import android.widget.Toast;
-
-import java.io.FileInputStream;
 
 public class ViewNote extends ActionBarActivity {
 
-    private TextView title;
     private int mFileIndex;
+    private ViewPager pager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_viewnote);
 
-        title = (TextView) findViewById(R.id.view_title);
-        TextView content = (TextView) findViewById(R.id.view_content);
-
+        //The index of the item clicked.
         mFileIndex = getIntent().getIntExtra("index",0);
-        String filename = ScrollAdapter.mCatalog.get(mFileIndex);
-        title.setText(filename);
 
-        try {
-            //Obtaining byte string info from filename.
-            FileInputStream fis = openFileInput(filename);
-            byte[] data = new byte[fis.available()];
-            String collected = null;
+        pager = (ViewPager) findViewById(R.id.note_pager);
+        pager.setAdapter(new NoteAdapter(getSupportFragmentManager()));
+        pager.setCurrentItem(mFileIndex, false);
+    }
 
-            //Converting byte text into string.
-            while (fis.read(data) != -1){
-                collected = new String(data);
-            }
-            content.setText(collected);
+    private static class NoteAdapter extends FragmentStatePagerAdapter {
 
-            fis.close();
-        } catch (Exception e){
-            Toast.makeText(this, "Error: File does not exist.", Toast.LENGTH_SHORT).show();
+        public NoteAdapter(FragmentManager fm) { super(fm); }
+
+        @Override
+        public Fragment getItem(int position) {
+            NoteFragment page = new NoteFragment();
+            page.mFileIndex = position;
+            return page;
         }
 
+        @Override
+        public int getCount() { return BookAdapter.mCatalog.size(); }
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent){
+        if (intent.hasExtra("index")) {
+            mFileIndex = intent.getIntExtra("index", mFileIndex);
+            pager.setCurrentItem(mFileIndex, false);
+        }
     }
 
     @Override
@@ -63,20 +69,23 @@ public class ViewNote extends ActionBarActivity {
         // noinspection SimplifiableIfStatement
         if (id == R.id.action_edit) {
             Intent intent = new Intent(this, EditNote.class);
-            intent.putExtra( "filename",  title.getText().toString() );
+            intent.putExtra( "index",  pager.getCurrentItem() );
             startActivity(intent);
             return true;
-        } else if (id == R.id.action_settings){
+        }
+        else if (id == R.id.action_settings){
             startActivity(new Intent(this, Settings.class));
             return true;
-        } else if (id == R.id.action_delete){
-
+        }
+        else if (id == R.id.action_delete){
+            if (1 == 1)
+                return true;
             try {
                 //Deleting file.
-                deleteFile(title.getText().toString());
-                ScrollAdapter.mCatalog.remove(mFileIndex);
-                //ScrollAdapter.notify
-                Toast.makeText(this, "File Deleted.", Toast.LENGTH_SHORT).show();
+                int currentItem = pager.getCurrentItem();
+                deleteFile(BookAdapter.mCatalog.get(currentItem));
+                BookAdapter.mCatalog.remove(currentItem);
+                Toast.makeText(this, "Deleted.", Toast.LENGTH_SHORT).show();
 
                 //Get out of here.
                 startActivity(new Intent(this, Library.class));

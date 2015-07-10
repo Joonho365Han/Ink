@@ -15,9 +15,9 @@ import java.util.List;
 
 public class BookAdapter extends RecyclerView.Adapter<BookAdapter.NoteHolder> {
 
+    private Context context;
     private LayoutInflater inflater;
     public static List<String> mCatalog;
-    public Context context;
 
     public BookAdapter (Context context) {
         this.context = context;
@@ -26,6 +26,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.NoteHolder> {
         mCatalog = new ArrayList<>();
         String[] catalog = context.getFilesDir().list();
         Collections.addAll(mCatalog, catalog);
+        Collections.reverse(mCatalog);
     }
 
     @Override
@@ -42,9 +43,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.NoteHolder> {
     }
 
     @Override
-    public int getItemCount() {
-        return mCatalog.size();
-    }
+    public int getItemCount() { return mCatalog.size(); }
 
     protected class NoteHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
@@ -69,4 +68,5 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.NoteHolder> {
             context.startActivity(intent);
         }
     }
+
 }

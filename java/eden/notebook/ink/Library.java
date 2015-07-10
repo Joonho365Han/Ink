@@ -1,43 +1,33 @@
 package eden.notebook.ink;
 
 import android.content.Intent;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
-
-import java.io.File;
 
 public class Library extends ActionBarActivity {
 
-    public static int mDefaultPage = 0;
+    private RecyclerView mRecyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_library);
 
-        ViewPager mNotePager = (ViewPager) findViewById(R.id.note_view);
-        mNotePager.setAdapter(new NotesAdapter(getSupportFragmentManager()));
-        mNotePager.setCurrentItem(mDefaultPage);
+        mRecyclerView = (RecyclerView) findViewById(R.id.view_recycler_book);
+        mRecyclerView.setAdapter(new BookAdapter(this));
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 
-    private static class NotesAdapter extends FragmentStatePagerAdapter {
-        public NotesAdapter(FragmentManager fm){ super(fm); }
-
-        @Override
-        public Fragment getItem(int page) {
-            if (page == 0)  return new BookListFragment();
-            else            return new ScrollListFragment();
-        }
-
-        @Override
-        public int getCount() { return 2; }
+    @Override
+    protected void onStart(){
+        super.onStart();
+        mRecyclerView.getAdapter().notifyDataSetChanged();
+        //This is a very expensive operation, so exchange it with something else if possible.
+        //However, this definitely is the quickest in updating the views.
     }
 
     @Override

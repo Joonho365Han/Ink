@@ -3,20 +3,24 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="6dp" >
 
     <EditText
         android:id="@+id/edit_title"
-        android:inputType="text"
-        android:textSize="@dimen/abc_text_size_large_material"
+        android:textSize="46sp"
+        android:inputType="textCapSentences|textMultiLine"
+        android:maxLines="3"
+        android:scrollHorizontally="false"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <EditText
         android:id="@+id/edit_content"
         android:gravity="top"
-        android:inputType="textImeMultiLine"
-        android:textSize="@dimen/abc_text_size_medium_material"
+        android:inputType="textMultiLine|textCapSentences"
+        android:scrollHorizontally="false"
+        android:textSize="25sp"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

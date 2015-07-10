@@ -55,24 +55,24 @@ public class AddNote extends ActionBarActivity {
         if (title.equals("")) {
             Toast.makeText(this, "Please enter a title.", Toast.LENGTH_SHORT).show();
             return;
+        } else if (BookAdapter.mCatalog.contains(title)){ //Test if file with same title already exists.
+            Toast.makeText(this, "Oops! Already existing title.", Toast.LENGTH_SHORT).show();
+            return;
         }
 
-        //Test if file with same title already exists.
+        //Writing text into file as a byte format.
+        try { FileOutputStream fos = openFileOutput(title, MODE_PRIVATE);
+              fos.write(content.getText().toString().getBytes());
+              fos.close();                                                  }
+        catch (FileNotFoundException e) { /*Do nothing.*/ }
+        catch (IOException e)           { Toast.makeText(this, "Sorry. Storage is full.", Toast.LENGTH_SHORT).show(); }
 
-        try {
-            //Writing text into file as a byte format.
-            FileOutputStream fos = openFileOutput(title, MODE_PRIVATE);
-            fos.write(content.getText().toString().getBytes());
-            fos.close();
-            Toast.makeText(this, "Note Saved.", Toast.LENGTH_SHORT).show();
+        //Notifying the user and the list adapter.
+        Toast.makeText(this, "Note Saved.", Toast.LENGTH_SHORT).show();
+        BookAdapter.mCatalog.add(0, title);
 
-            //Moving on.
-            startActivity(new Intent(this, Library.class));
-        } catch (FileNotFoundException e) {
-            //Do nothing.
-        } catch (IOException e) {
-            Toast.makeText(this, "Sorry. Storage is full.", Toast.LENGTH_SHORT).show();
-        }
+        //Moving on.
+        startActivity(new Intent(this, Library.class));
 
     }
 

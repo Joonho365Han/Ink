@@ -18,35 +18,37 @@ public class EditNote extends ActionBarActivity {
     private EditText title;
     private EditText content;
     private int mFileIndex;
+    private String filename;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editnote);
+        title = (EditText) findViewById(R.id.edit_title);
+        content = (EditText) findViewById(R.id.edit_content);
 
-        title = (EditText) findViewById(R.id.add_title);
-        content = (EditText) findViewById(R.id.add_content);
+        //Obtaining file id info.
+        mFileIndex = getIntent().getIntExtra("index", 0);
+        filename = BookAdapter.mCatalog.get(mFileIndex); //The original file name.
 
-        mFileIndex = getIntent().getFlags();
-        String filename = ScrollAdapter.mCatalog.get(mFileIndex);
+        //Setting title text.
         title.setText(filename);
 
+        //Setting content text.
         try {
             //Obtaining byte string info from filename.
-            FileInputStream fis = openFileInput(filename);
+            FileInputStream fis = this.openFileInput(filename);
             byte[] data = new byte[fis.available()];
-            String collected = null;
+            if (fis.read(data) != 0) // Sometimes if the saved string is nothing (""), then the read()
+                                     // will constantly return 0 and fall into the constant while loop.
+                                     // Must make sure there is something to read() before proceeding.
+                while (fis.read(data) != -1) { /*This loop constantly extracts byte that will
+                                                 eventually be converted to a string byte by byte.*/ }
 
-            //Converting byte text into string.
-            while (fis.read(data) != -1){
-                collected = new String(data);
-            }
-            content.setText(collected);
-
-            fis.close();
-        } catch (Exception e){
-            Toast.makeText(this, "Error: File does not exist.", Toast.LENGTH_SHORT).show();
-        }
+            content.setText(new String(data));
+            fis.close();                                                }
+        catch (FileNotFoundException e){ Toast.makeText(this, "Error: File does not exist.", Toast.LENGTH_SHORT).show(); }
+        catch (IOException e)          { Toast.makeText(this, "Error: Failed to extract note from storage.", Toast.LENGTH_SHORT).show(); }
     }
 
     @Override
@@ -79,26 +81,33 @@ public class EditNote extends ActionBarActivity {
             Toast.makeText(this, "Please enter a title.", Toast.LENGTH_SHORT).show();
             return;
         }
-
-        //Test if file with new title already exists. Ignore if same title.
-
-        try {
-            //Writing text into file as a byte format.
-            FileOutputStream fos = openFileOutput(title, MODE_PRIVATE);
-            fos.write(content.getText().toString().getBytes());
-            fos.close();
-            Toast.makeText(this, "Note Saved.", Toast.LENGTH_SHORT).show();
-
-            //Moving on.
-            Intent intent = new Intent(this, ViewNote.class);
-            intent.addFlags(mFileIndex);
-            startActivity(intent);
-        } catch (FileNotFoundException e) {
-            //Do nothing.
-        } catch (IOException e) {
-            Toast.makeText(this, "Sorry. Storage is full.", Toast.LENGTH_SHORT).show();
+        else if (BookAdapter.mCatalog.contains(title) && !title.equals(filename)){ //Test if file with same NEW title already exists.
+            Toast.makeText(this, "Title is already in use.", Toast.LENGTH_SHORT).show();
+            return;
         }
 
+        String content = this.content.getText().toString();
+
+        try {//Delete original note from storage first if the edited title is different, and then,
+             if (!title.equals(filename))
+                deleteFile(filename);
+
+             //Saving text into file as a byte format.
+             FileOutputStream fos = openFileOutput(title, MODE_PRIVATE);
+             fos.write(content.getBytes());
+             fos.close();                                              }
+        catch (FileNotFoundException e) { /*Do nothing.*/ }
+        catch (IOException e)           { Toast.makeText(this, "Sorry. Storage is full.", Toast.LENGTH_SHORT).show(); }
+
+        //Notifying the user and the list adapter.
+        Toast.makeText(this, "Note Saved.", Toast.LENGTH_SHORT).show();
+        BookAdapter.mCatalog.remove(mFileIndex);
+        BookAdapter.mCatalog.add(0, title);
+
+        //Moving on.
+        Intent intent = new Intent(this, ViewNote.class);
+        intent.putExtra("index", 0); //When the user saves edit, this item will be the first item.
+        startActivity(intent);
     }
 
 }

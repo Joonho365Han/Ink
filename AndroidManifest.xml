@@ -38,7 +38,9 @@
 
         <activity
             android:name=".ViewNote"
-            android:launchMode="singleTask">
+            android:launchMode="singleTask"
+            android:label=""
+            android:configChanges="keyboardHidden|orientation|screenSize">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Library" />
@@ -47,7 +49,8 @@
 
         <activity
             android:name=".EditNote"
-            android:launchMode="singleTop">
+            android:launchMode="singleTop"
+            android:label="@string/action_edit">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ViewNote" />
