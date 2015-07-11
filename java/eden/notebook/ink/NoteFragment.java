@@ -1,8 +1,12 @@
 package eden.notebook.ink;
 
 import android.content.Context;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.transition.Slide;
+import android.util.TypedValue;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,17 +28,24 @@ public class NoteFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         LinearLayout layout = (LinearLayout) inflater.inflate(R.layout.fragment_viewnote, container, false);
+        context = container.getContext();
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) { getActivity().getWindow().setEnterTransition(new Slide(Gravity.RIGHT)); }
+
         title = (TextView) layout.findViewById(R.id.view_title);
         content = (TextView) layout.findViewById(R.id.view_content);
-        context = container.getContext();
+
         TextView count = (TextView) layout.findViewById(R.id.fragment_page);
         count.setText(String.valueOf(mFileIndex+1) + "/" + String.valueOf(BookAdapter.mCatalog.size()));
+
         return layout;
     }
 
     @Override
     public void onStart(){
         super.onStart();
+        title.setTextSize(TypedValue.COMPLEX_UNIT_SP, context.getSharedPreferences("Settings",Context.MODE_PRIVATE).getInt("Title",46));
+        content.setTextSize(TypedValue.COMPLEX_UNIT_SP, context.getSharedPreferences("Settings", Context.MODE_PRIVATE).getInt("Content", 25));
 
         //Setting title text.
         String filename = BookAdapter.mCatalog.get(mFileIndex);
@@ -53,7 +64,7 @@ public class NoteFragment extends Fragment {
 
             content.setText(new String(data));
             fis.close();                                                }
-        catch (FileNotFoundException e){ Toast.makeText(context, "Error: File does not exist.", Toast.LENGTH_SHORT).show(); }
-        catch (IOException e)          { Toast.makeText(context, "Error: Failed to extract note from storage.", Toast.LENGTH_SHORT).show(); }
+        catch (FileNotFoundException e){ Toast.makeText(context, "Error: File does not exist", Toast.LENGTH_SHORT).show(); }
+        catch (IOException e)          { Toast.makeText(context, "Error: Failed to extract note from storage", Toast.LENGTH_SHORT).show(); }
     }
 }

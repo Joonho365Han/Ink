@@ -1,7 +1,9 @@
 package eden.notebook.ink;
 
-import android.content.Context;
+import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.Intent;
+import android.os.Build;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,11 +17,11 @@ import java.util.List;
 
 public class BookAdapter extends RecyclerView.Adapter<BookAdapter.NoteHolder> {
 
-    private Context context;
+    private Activity context;
     private LayoutInflater inflater;
     public static List<String> mCatalog;
 
-    public BookAdapter (Context context) {
+    public BookAdapter (Activity context) {
         this.context = context;
         inflater = LayoutInflater.from(context);
 
@@ -65,8 +67,10 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.NoteHolder> {
         public void onClick(View v) {
             Intent intent = new Intent(context, ViewNote.class);
             intent.putExtra("index",getAdapterPosition());
-            context.startActivity(intent);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
+                context.startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(context).toBundle());
+            else
+                context.startActivity(intent);
         }
     }
-
 }

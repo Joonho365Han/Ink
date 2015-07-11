@@ -1,8 +1,10 @@
 package eden.notebook.ink;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
@@ -23,7 +25,9 @@ public class AddNote extends ActionBarActivity {
         setContentView(R.layout.activity_addnote);
 
         title = (EditText) findViewById(R.id.add_title);
+        title.setTextSize(TypedValue.COMPLEX_UNIT_SP, getSharedPreferences("Settings", Context.MODE_PRIVATE).getInt("Title",46));
         content = (EditText) findViewById(R.id.add_content);
+        content.setTextSize(TypedValue.COMPLEX_UNIT_SP, getSharedPreferences("Settings", Context.MODE_PRIVATE).getInt("Content",25));
     }
 
     @Override
@@ -47,16 +51,16 @@ public class AddNote extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void saveFile(){
+    protected void saveFile(){
 
         String title = this.title.getText().toString();
 
         //Make sure a file name exists.
         if (title.equals("")) {
-            Toast.makeText(this, "Please enter a title.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please enter a title", Toast.LENGTH_SHORT).show();
             return;
         } else if (BookAdapter.mCatalog.contains(title)){ //Test if file with same title already exists.
-            Toast.makeText(this, "Oops! Already existing title.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Oops! Already existing title", Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -65,15 +69,13 @@ public class AddNote extends ActionBarActivity {
               fos.write(content.getText().toString().getBytes());
               fos.close();                                                  }
         catch (FileNotFoundException e) { /*Do nothing.*/ }
-        catch (IOException e)           { Toast.makeText(this, "Sorry. Storage is full.", Toast.LENGTH_SHORT).show(); }
+        catch (IOException e)           { Toast.makeText(this, "Sorry. Storage is full", Toast.LENGTH_SHORT).show(); }
 
         //Notifying the user and the list adapter.
-        Toast.makeText(this, "Note Saved.", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show();
         BookAdapter.mCatalog.add(0, title);
 
         //Moving on.
-        startActivity(new Intent(this, Library.class));
-
+        super.onBackPressed();
     }
-
 }

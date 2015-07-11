@@ -3,6 +3,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     package="eden.notebook.ink" >
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:hardwareAccelerated="true"
         android:allowBackup="true"
@@ -12,7 +15,6 @@
 
         <activity
             android:name=".Library"
-            android:launchMode="singleTask"
             android:label="@string/library" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,7 +24,8 @@
 
         <activity
             android:name=".Settings"
-            android:label="@string/action_settings" >
+            android:label="@string/action_settings"
+            android:configChanges="keyboardHidden|orientation|screenSize">
             <!--This means the parent activity is the Library activity-->
         </activity>
 

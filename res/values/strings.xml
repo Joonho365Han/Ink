@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Ink</string>
+    <string name="app_name">Brainmark</string>
 
     <string name="library">Library</string>
 
@@ -12,4 +12,30 @@
 
     <string name="title_hint">Title</string>
     <string name="content_hint">Content</string>
+
+    <string name="caution">Caution</string>
+    <string name="confirm">Confirm</string>
+    <string name="close">Close</string>
+    <string name="exit">Exit</string>
+    <string name="error">Error</string>
+    <string name="note">Note</string>
+    <string name="wrong_password">Wrong password</string>
+    <string name="ask_delete">Would you like to delete this note?</string>
+
+    <string name="settings_security">Security</string>
+    <string name="settings_password">Password Protection</string>
+    <string name="settings_parse">Parse Backup</string>
+    <string name="settings_restore">Restore Backup</string>
+    <string name="settings_combine">Combine Alert</string>
+    <string name="settings_delete">Delete Alert</string>
+    <string name="settings_font">Font Size</string>
+
+    <string name="settings_password_detail">Encrypt your app and prevent access from other people while your phone is unlocked</string>
+    <string name="settings_password_ask">Would you like to password protect this app?\n\nDigital data are subject to damage. Saving important information on your phone is not recommended.</string>
+    <string name="settings_password_set">Enter new password</string>
+    <string name="settings_password_decrypt">Enter password</string>
+    <string name="settings_parse_detail">Brainmark will occasionally save and back up notes to cloud using Parse</string>
+    <string name="settings_parse_restore">Delete and replace all current notes with backup?\n(You may also lose all notes if no data was stored in the cloud.)</string>
+    <string name="settings_combine_detail">Ask the user before combining notes</string>
+    <string name="settings_delete_detail">Ask the user before deleting notes</string>
 </resources>
