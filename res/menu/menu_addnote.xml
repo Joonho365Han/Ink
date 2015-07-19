@@ -8,7 +8,7 @@
     <item
         android:id="@+id/action_done"
         android:title="@string/action_done"
-        android:icon="@drawable/ic_done_black_24dp"
+        android:icon="@drawable/ic_done_white_48dp"
         android:orderInCategory="100"
         app:showAsAction="always"/>
 

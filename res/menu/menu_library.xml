@@ -9,12 +9,13 @@
         android:title="@string/action_search"
         android:icon="@drawable/ic_search_white_48dp"
         android:orderInCategory="100"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="collapseActionView|ifRoom"
+        app:actionViewClass="android.support.v7.widget.SearchView"/>
 
     <item
         android:id="@+id/action_add"
         android:title="@string/action_add"
-        android:icon="@drawable/ic_note_add_black_48dp"
+        android:icon="@drawable/ic_note_add_white_48dp"
         android:orderInCategory="100"
         app:showAsAction="ifRoom"/>
 

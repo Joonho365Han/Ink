@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.TypedValue;
@@ -12,6 +13,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
@@ -28,8 +31,6 @@ import com.parse.ParseQuery;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class Settings extends ActionBarActivity {
@@ -39,9 +40,9 @@ public class Settings extends ActionBarActivity {
     private String password;
     private boolean isBackedUp;
     private boolean isAskDelete;
-    private boolean isAskCombine;
     private int titleFont;
     private int contentFont;
+    private boolean serif;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,14 +50,14 @@ public class Settings extends ActionBarActivity {
         setContentView(R.layout.activity_settings);
 
         //Initialize all variables.
-        prefs = getSharedPreferences("Settings", Context.MODE_PRIVATE);
+        prefs = getSharedPreferences("EdenNotebookSettings", Context.MODE_PRIVATE);
         isEncrypted = prefs.getBoolean("Encryption",false);
         password = prefs.getString("Password",null);
         isBackedUp = prefs.getBoolean("Backup",false);
         isAskDelete = prefs.getBoolean("Delete",true);
-        isAskCombine = prefs.getBoolean("Combine",true);
-        titleFont = prefs.getInt("Title",46);
-        contentFont = prefs.getInt("Content",25);
+        titleFont = prefs.getInt("Title",44);
+        contentFont = prefs.getInt("Content",24);
+        serif = prefs.getBoolean("Serif", false);
 
         //Initializing encryption switch
         Switch toggle = (Switch) findViewById(R.id.switch1);
@@ -73,23 +74,7 @@ public class Settings extends ActionBarActivity {
                                 //User decided to encrypt
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
-                                    LinearLayout layout = (LinearLayout) Settings.this.getLayoutInflater().inflate(R.layout.dialog_password, null);
-                                    final EditText edittext = (EditText) layout.findViewById(R.id.editext);
-                                    new AlertDialog.Builder(Settings.this).setTitle(R.string.settings_password_set)
-                                            .setView(layout)
-                                            .setPositiveButton(R.string.confirm, new DialogInterface.OnClickListener() {
-                                                //User inputed password.
-                                                @Override
-                                                public void onClick(DialogInterface dialog, int which) {
-                                                    password = edittext.getText().toString();
-                                                    isEncrypted = true;
-                                                    s.setChecked(true);
-                                                }
-                                            }).setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
-                                                //User did not enter password.
-                                                @Override
-                                                public void onClick(DialogInterface dialog, int which) {/*Don't do anything if user decided to cancel.*/}
-                                            }).create().show();
+                                    setPassword(s);
                                 }
                             }).setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
                         //User decided to not encrypt.
@@ -177,20 +162,11 @@ public class Settings extends ActionBarActivity {
             }
         });
 
-        //Initializing combine switch.
-        toggle = (Switch) findViewById(R.id.switch4);
-        toggle.setChecked(isAskCombine);
-        toggle.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Switch s = (Switch) v;
-                isAskCombine = s.isChecked();
-            }
-        });
-
         //Initializing title seekbar.
         SeekBar seek = (SeekBar) findViewById(R.id.progressBar);
         final TextView title = (TextView) findViewById(R.id.textView11);
+        if (serif) title.setTypeface(Typeface.SERIF);
+        else       title.setTypeface(Typeface.SANS_SERIF);
         title.setTextSize(TypedValue.COMPLEX_UNIT_SP, titleFont);
         seek.setProgress( (titleFont-16)*2 );
         seek.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -210,6 +186,8 @@ public class Settings extends ActionBarActivity {
         //Initializing content seekbar.
         seek = (SeekBar) findViewById(R.id.progressBar2);
         final TextView content = (TextView) findViewById(R.id.textView12);
+        if (serif) content.setTypeface(Typeface.SERIF);
+        else       content.setTypeface(Typeface.SANS_SERIF);
         content.setTextSize(TypedValue.COMPLEX_UNIT_SP, contentFont);
         seek.setProgress( (contentFont-12)*4 );
         seek.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -225,6 +203,17 @@ public class Settings extends ActionBarActivity {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
+            }
+        });
+
+        CheckBox check = (CheckBox) findViewById(R.id.checkBox);
+        check.setChecked(serif);
+        check.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                serif = isChecked;
+                if (isChecked) { title.setTypeface(Typeface.SERIF);       content.setTypeface(Typeface.SERIF);      }
+                else           { title.setTypeface(Typeface.SANS_SERIF);  content.setTypeface(Typeface.SANS_SERIF); }
             }
         });
     }
@@ -257,9 +246,9 @@ public class Settings extends ActionBarActivity {
         editor.putString("Password",password);
         editor.putBoolean("Backup",isBackedUp);
         editor.putBoolean("Delete",isAskDelete);
-        editor.putBoolean("Combine",isAskCombine);
         editor.putInt("Title",titleFont);
         editor.putInt("Content",contentFont);
+        editor.putBoolean("Serif",serif);
 
         editor.apply();
 
@@ -269,13 +258,15 @@ public class Settings extends ActionBarActivity {
 
     protected void restoreBackup(){
         //Connect to cloud.
-        Parse.enableLocalDatastore(this);
         Parse.initialize(this, "8rRg8GndjElDiy1UrviRT650VNE0yKN8BcF1AaFH", "6Zy8VRFP2A017iol0AkJyCJRkOM7TGDWatl7ptIE");
         Toast.makeText(this, "Restoring data: Do not close the application", Toast.LENGTH_SHORT).show();
 
-        //Wiping data.
-        String[] list = getFilesDir().list();
-        for (String aList : list) deleteFile(aList);
+        //Wipe all existing files.
+        String[] filenames = getFilesDir().list();
+        for (String filename : filenames) deleteFile(filename);
+
+        //Wipe all existing database data.
+        Library.adapter.dataAdapter.deleteRow(null);
 
         //Restoring data.
         String deviceID = android.provider.Settings.Secure.getString(getContentResolver(),android.provider.Settings.Secure.ANDROID_ID);
@@ -284,19 +275,79 @@ public class Settings extends ActionBarActivity {
             @Override
             public void done(List<ParseObject> parseObjects, ParseException e) {
                 if (e == null)
-                    for (ParseObject note : parseObjects){
-                        try { FileOutputStream fos = openFileOutput(note.getString("title"), MODE_PRIVATE);
+                    for (int i = parseObjects.size() ; i>0 ; i--){
+                        //Saving note content.
+                        ParseObject note = parseObjects.get(i-1);
+                        String title = note.getString("title");
+                        try { FileOutputStream fos = openFileOutput(title, MODE_PRIVATE);
                             fos.write(note.getString("content").getBytes());
-                            fos.close();                                                  }
-                        catch (FileNotFoundException ex) { /*Do nothing.*/ }
-                        catch (IOException ex)           { Toast.makeText(Settings.this, "Storage is full: Could not restore all", Toast.LENGTH_SHORT).show(); }
+                            fos.close();                                                }
+                        catch (FileNotFoundException ex) { Toast.makeText(Settings.this, "Error: FileNotFoundException. Abort restore.", Toast.LENGTH_SHORT).show(); return; }
+                        catch (IOException ex)           { Toast.makeText(Settings.this, "Storage is full: Could not restore all", Toast.LENGTH_SHORT).show(); return; }
+
+                        //Saving note details.
+                        String createdAt = note.getString("DATE_CREATED");
+                        String editedAt = note.getString("DATE_EDITED");
+                        int stared = note.getInt("Stared");
+                        int color = note.getInt("Color");
+                        if (Library.adapter.dataAdapter.insertNewRow(title,createdAt,editedAt,stared,color) < 0) {
+                            //Failed to save data on SQL.
+                            Toast.makeText(Settings.this, "Error: Failed to save SQL data. Abort restore.", Toast.LENGTH_SHORT).show();
+                            return;
+                        }
                     }
-                BookAdapter.mCatalog = new ArrayList<>();
-                String[] catalog = Settings.this.getFilesDir().list();
-                Collections.addAll(BookAdapter.mCatalog, catalog);
-                Collections.reverse(BookAdapter.mCatalog);
+                Library.adapter.initializeDataArray();
+                BookAdapter.updated = false;
                 Toast.makeText(Settings.this, "Restore finished", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    protected void setPassword(final Switch s){
+        LinearLayout layout = (LinearLayout) Settings.this.getLayoutInflater().inflate(R.layout.dialog_password, null);
+        final EditText edittext = (EditText) layout.findViewById(R.id.editext);
+        new AlertDialog.Builder(Settings.this)
+                .setTitle(R.string.settings_password_set)
+                .setView(layout)
+                .setPositiveButton(R.string.confirm, new DialogInterface.OnClickListener() {
+                    //User inputed password.
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        password = edittext.getText().toString();
+                        LinearLayout layout = (LinearLayout) Settings.this.getLayoutInflater().inflate(R.layout.dialog_password, null);
+                        final EditText edittext = (EditText) layout.findViewById(R.id.editext);
+                        new AlertDialog.Builder(Settings.this)
+                                .setTitle(R.string.settings_password_reset)
+                                .setView(layout)
+                                .setPositiveButton(R.string.confirm, new DialogInterface.OnClickListener() {
+                                    //User re-inputed password.
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        if (password.equals(edittext.getText().toString())) {
+                                            //User input same password twice.
+                                            isEncrypted = true;
+                                            s.setChecked(true);
+                                        }
+                                        else {//wrong password
+                                            new AlertDialog.Builder(Settings.this)
+                                                    .setMessage(R.string.do_not_match)
+                                                    .setPositiveButton(R.string.close, new DialogInterface.OnClickListener() {
+                                                        @Override
+                                                        public void onClick(DialogInterface dialog, int which) { setPassword(s); /*Retry.*/ }
+                                                    }).create().show();
+                                        }
+                                    }
+                                })
+                                .setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+                                    //User decided to not encrypt.
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {/*Don't do anything if user decided to cancel.*/}
+                                }).create().show();
+                    }
+                }).setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+                    //User decided to not encrypt.
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {/*Don't do anything if user decided to cancel.*/}
+                }).create().show();
     }
 }

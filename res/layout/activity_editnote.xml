@@ -4,24 +4,47 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="6dp" >
+    android:background="#ffffff">
 
     <EditText
         android:id="@+id/edit_title"
-        android:textSize="46sp"
         android:inputType="textCapSentences|textMultiLine"
+        android:hint="@string/title_hint"
         android:maxLines="3"
+        android:minLines="2"
+        android:background="@drawable/blank"
+        android:textColor="#555555"
+        android:gravity="bottom"
         android:scrollHorizontally="false"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="72dp"
+        android:paddingBottom="8dp"/>
+
+    <Spinner
+        android:id="@+id/color_code_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"/>
 
     <EditText
         android:id="@+id/edit_content"
         android:gravity="top"
+        android:hint="@string/content_hint"
         android:inputType="textMultiLine|textCapSentences"
         android:scrollHorizontally="false"
-        android:textSize="25sp"
+        android:textColor="#555555"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:background="@drawable/blank"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="16dp"
+        android:paddingTop="8dp"/>
 
 </LinearLayout>

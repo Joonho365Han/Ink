@@ -1,16 +1,17 @@
 package eden.notebook.ink;
 
 import android.content.Context;
-import android.os.Build;
+import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.transition.Slide;
 import android.util.TypedValue;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,22 +22,28 @@ import java.io.IOException;
 public class NoteFragment extends Fragment {
 
     int mFileIndex;
+    int adapterType;
+    private LinearLayout colorButton;
     private TextView title;
     private TextView content;
+    private TextView edited;
     private Context context;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
-        LinearLayout layout = (LinearLayout) inflater.inflate(R.layout.fragment_viewnote, container, false);
+        ScrollView layout = (ScrollView) inflater.inflate(R.layout.fragment_viewnote, container, false);
         context = container.getContext();
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) { getActivity().getWindow().setEnterTransition(new Slide(Gravity.RIGHT)); }
-
+        colorButton = (LinearLayout) layout.findViewById(R.id.color_button);
         title = (TextView) layout.findViewById(R.id.view_title);
         content = (TextView) layout.findViewById(R.id.view_content);
+        edited = (TextView) layout.findViewById(R.id.view_edited);
 
-        TextView count = (TextView) layout.findViewById(R.id.fragment_page);
-        count.setText(String.valueOf(mFileIndex+1) + "/" + String.valueOf(BookAdapter.mCatalog.size()));
+        TextView created = (TextView) layout.findViewById(R.id.view_created);
+        if (adapterType == 1)
+            created.setText("Created at    "+Library.adapter.allCreatedAt.get(mFileIndex));
+        else
+            created.setText("Created at    "+ColorLibrary.adapter.allCreatedAt.get(mFileIndex));
 
         return layout;
     }
@@ -44,11 +51,53 @@ public class NoteFragment extends Fragment {
     @Override
     public void onStart(){
         super.onStart();
-        title.setTextSize(TypedValue.COMPLEX_UNIT_SP, context.getSharedPreferences("Settings",Context.MODE_PRIVATE).getInt("Title",46));
-        content.setTextSize(TypedValue.COMPLEX_UNIT_SP, context.getSharedPreferences("Settings", Context.MODE_PRIVATE).getInt("Content", 25));
+        SharedPreferences preferences = context.getSharedPreferences("EdenNotebookSettings",Context.MODE_PRIVATE);
+
+        int colorIndex;
+        String filename;
+
+        if (adapterType == 1){
+            //Setting edit date text.
+            edited.setText("Last edited    "+Library.adapter.allEditedAt.get(mFileIndex));
+            colorIndex = Library.adapter.allColors.get(mFileIndex);
+            filename = Library.adapter.mCatalog.get(mFileIndex);
+        } else {
+            //Setting edit date text.
+            edited.setText("Last edited    "+ColorLibrary.adapter.allEditedAt.get(mFileIndex));
+            colorIndex = ColorLibrary.adapter.allColors.get(mFileIndex);
+            filename = ColorLibrary.adapter.mCatalog.get(mFileIndex);
+        }
+
+        if (colorIndex == 0) {
+            colorButton.setBackgroundResource(R.drawable.cloud_header);
+            ////////////////////////////////////////////////////////////////////////////////////Change picture later.
+            title.setTextColor(BookAdapter.COLOR_ARRAY[9]);
+            title.setBackground(null);
+        }
+        else if (colorIndex == 8) { //Image as background
+            colorButton.setBackgroundColor(Color.parseColor("#333333"));
+            //////////////////////////////////////////////////////////////////////////////////// Change this later.
+            colorButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    //Focus on the image.
+                }
+            });
+            title.setTextColor(Color.WHITE);
+            title.setBackgroundResource(R.drawable.shadow_gradation);
+        }
+        else { //Color background
+            colorButton.setBackgroundColor(BookAdapter.COLOR_ARRAY[colorIndex]);
+            title.setTextColor(Color.WHITE);
+            title.setBackgroundResource(R.drawable.shadow_gradation);
+        }
+
+        title.setTextSize(TypedValue.COMPLEX_UNIT_SP, preferences.getInt("Title", 44));
+        content.setTextSize(TypedValue.COMPLEX_UNIT_SP, preferences.getInt("Content", 24));
+        if (preferences.getBoolean("Serif",false)) { title.setTypeface(Typeface.SERIF);       content.setTypeface(Typeface.SERIF);      }
+        else                                       { title.setTypeface(Typeface.SANS_SERIF);  content.setTypeface(Typeface.SANS_SERIF); }
 
         //Setting title text.
-        String filename = BookAdapter.mCatalog.get(mFileIndex);
         title.setText(filename);
 
         //Setting content text.
