@@ -4,19 +4,23 @@ import android.app.AlertDialog;
 import android.app.SearchManager;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.provider.SearchRecentSuggestions;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.support.v7.widget.SearchView;
 import android.widget.Toast;
 
+import com.melnykov.fab.FloatingActionButton;
 import com.parse.FindCallback;
 import com.parse.Parse;
 import com.parse.ParseException;
@@ -24,31 +28,110 @@ import com.parse.ParseObject;
 import com.parse.ParseQuery;
 
 import java.io.FileInputStream;
+import java.util.ArrayList;
 import java.util.List;
+
+//THIS IS THE COPYRIGHT LICENSE FOR THE FloatingActionButton VIEW BEING USED IN THIS ACTIVITY.
+
+/*The MIT License (MIT)
+
+        Copyright (c) 2014 Oleksandr Melnykov
+
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.*/
 
 public class Library extends ActionBarActivity {
 
-    static BookAdapter adapter;
-    static boolean locked = true;
+    static boolean updated; //Must be static.
+    static boolean locked = true; //Must be static.
+    static BookAdapter adapter;  //Must be static.
+    static FloatingActionButton deleteButton; //Must be static so adapter can access it.
+
+    private boolean onSearch = false;
+    private String query;
     private SearchRecentSuggestions suggestions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_library);
+        updated = true;
 
+        //Setting up variables and elements.
         RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.view_recycler_book);
         adapter = new BookAdapter(this);
+        adapter.initializeDataArray();
         adapter.adapterType = 1;
         mRecyclerView.setAdapter(adapter);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        if ((getResources().getConfiguration().screenLayout &
+                Configuration.SCREENLAYOUT_SIZE_MASK) >=
+                Configuration.SCREENLAYOUT_SIZE_LARGE && (getResources().getConfiguration().screenLayout &
+                Configuration.SCREENLAYOUT_SIZE_MASK) !=
+                Configuration.SCREENLAYOUT_SIZE_UNDEFINED)  //Big screen shows two notes per line.
+            mRecyclerView.setLayoutManager(new GridLayoutManager(this,2));
+        else                                                //Phone screen shows one note per line.
+            mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        deleteButton = (FloatingActionButton) findViewById(R.id.delete_button);
+        deleteButton.hide(false);
+        deleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (adapter.allDeleteList.isEmpty()){
+                    //If there is nothing to delete, notify the user.
+                    new AlertDialog.Builder(Library.this)
+                            .setMessage(R.string.nothing_to_delete)
+                            .setPositiveButton(R.string.close, new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {}
+                            }).create().show();
+                } else {
+                    //If there is something to delete, execute delete code.
+                    if (getSharedPreferences("EdenNotebookSettings", MODE_PRIVATE).getBoolean("Delete",true)) {
+                        //Show asking dialogue.
+                        AlertDialog.Builder builder = new AlertDialog.Builder(Library.this)
+                                .setTitle(R.string.caution)
+                                .setPositiveButton(R.string.action_delete, new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) { groupDelete();}
+                                }).setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {}
+                        });
+                        if (adapter.allDeleteList.size() == 1) builder.setMessage(R.string.ask_delete);
+                        else                                   builder.setMessage(R.string.ask_delete_multiple);
+                        builder.create().show();
+                    }
+                    else { groupDelete(); }
+                }
+            }
+        });
 
         suggestions = new SearchRecentSuggestions(this,NoteSearchSuggestionProvider.AUTHORITY, NoteSearchSuggestionProvider.MODE);
 
         //If password protected, query for password.
         if (getSharedPreferences("EdenNotebookSettings", MODE_PRIVATE).getBoolean("Encryption",false) && locked) { unlock(); }
         else {
-            if (locked) backupData(); //This means app will back up data only when it is opened once initially despite activity being recreated.
+            if (locked) {
+                suggestions.clearHistory();
+                backupData(); //This means app will back up data only when it is opened once initially despite activity being recreated.
+            }
             locked = false;
         }
     }
@@ -60,16 +143,19 @@ public class Library extends ActionBarActivity {
         //Date is reset regularly because date could change while the app is open.
         adapter.getDate();
 
-        if (!BookAdapter.updated) {
+        if (!updated) {
+            if (onSearch) adapter.initializeSearchResult(query);
             adapter.notifyDataSetChanged();
-            BookAdapter.updated = true;
+            deleteButton.hide(false);
+            updated = true;
         }
     }
 
     @Override
     protected void onNewIntent(Intent intent){
         if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
-            String query = intent.getStringExtra(SearchManager.QUERY);
+            if (adapter.groupDelete) deleteButton.hide();
+            query = intent.getStringExtra(SearchManager.QUERY);
             adapter.initializeSearchResult(query);
             adapter.notifyDataSetChanged();
             suggestions.saveRecentQuery(query, null);
@@ -87,16 +173,20 @@ public class Library extends ActionBarActivity {
         MenuItemCompat.setOnActionExpandListener(menu.findItem(R.id.action_search),new MenuItemCompat.OnActionExpandListener() {
             @Override
             public boolean onMenuItemActionExpand(MenuItem item) {
+                query = null; //Making sure it's initially null.
+                if (adapter.groupDelete) deleteButton.hide();
                 adapter.wipeDataArray();
                 adapter.notifyDataSetChanged();
+                onSearch = true;
                 return true;
             }
 
             @Override
             public boolean onMenuItemActionCollapse(MenuItem item) {
+                if (adapter.groupDelete) deleteButton.hide();
                 adapter.initializeDataArray();
                 adapter.notifyDataSetChanged();
-                suggestions.clearHistory();
+                onSearch = false;
                 return true;
             }
         });
@@ -115,17 +205,43 @@ public class Library extends ActionBarActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            startActivity(new Intent(this, Settings.class));
+            if (adapter.groupDelete){ //Cancels the group delete mode.
+                adapter.groupDelete = false;
+                adapter.allDeleteList = new ArrayList<>();
+                updated = false;
+            }
+            Intent intent = new Intent(this, Settings.class);
+            intent.putExtra( "AdapterType", 1 );
+            startActivity(intent);
             return true;
         } else if (id == R.id.action_add){
-            startActivity(new Intent(this, AddNote.class));
+            if (adapter.groupDelete){ //Cancels the group delete mode.
+                adapter.groupDelete = false;
+                adapter.allDeleteList = new ArrayList<>();
+                updated = false;
+            }
+            Intent intent = new Intent(this, AddNote.class);
+            intent.putExtra( "AdapterType", 1 );
+            startActivity(intent);
             return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
 
-    protected void unlock(){
+    @Override
+    public void onBackPressed(){
+        if (adapter.groupDelete){ //Cancels the group delete mode.
+            adapter.groupDelete = false;
+            for (String title : adapter.allDeleteList) adapter.notifyItemChanged(adapter.mCatalog.indexOf(title) + 1);
+            adapter.allDeleteList = new ArrayList<>();
+            deleteButton.hide();
+        } else {
+            super.onBackPressed();
+        }
+    }
+
+    private void unlock(){
         LinearLayout layout = (LinearLayout) getLayoutInflater().inflate(R.layout.dialog_password, null);
         final EditText edittext = (EditText) layout.findViewById(R.id.editext);
             new AlertDialog.Builder(Library.this)
@@ -138,6 +254,7 @@ public class Library extends ActionBarActivity {
                                     .equals(getSharedPreferences("EdenNotebookSettings", MODE_PRIVATE).getString("Password", null))) {
                                 //Password Correct.
                                 locked = false;
+                                suggestions.clearHistory();
                                 backupData();
                             } else {
                                 //Password was wrong.
@@ -152,7 +269,7 @@ public class Library extends ActionBarActivity {
             }).setCancelable(false).create().show();
     }
 
-    protected void backupData(){
+    private void backupData(){
 
         if (getSharedPreferences("EdenNotebookSettings", MODE_PRIVATE).getBoolean("Backup",false)) {
             //Connect to cloud.
@@ -203,5 +320,34 @@ public class Library extends ActionBarActivity {
                 }
             });
         }
+    }
+
+    private void groupDelete(){
+
+        for (String title : adapter.allDeleteList) {
+
+            //Delete detail info from database.
+            if (new NoteDatabaseAdapter(this).deleteRow(title) < 0) {
+                //Failed to delete data from SQL.
+                Toast.makeText(this, "Unclean Delete: database error", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            //Finally delete the actual saved content of the note.
+            deleteFile(title);
+
+            //Remove note from recyclerview. Then remove note info from adapter.
+            adapter.notifyItemRemoved(adapter.mCatalog.indexOf(title) + 1);
+            adapter.deleteNote(title);
+        }
+        //Empty delete candidates.
+        adapter.groupDelete = false;
+        adapter.allDeleteList = new ArrayList<>();
+
+        //Hide the button after all is well.
+        deleteButton.hide();
+
+        //Notify the user.
+        Toast.makeText(this, "Deleted", Toast.LENGTH_SHORT).show();
     }
 }

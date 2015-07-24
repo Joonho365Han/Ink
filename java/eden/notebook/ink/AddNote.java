@@ -57,9 +57,7 @@ public class AddNote extends ActionBarActivity {
             }
 
             @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-                colorIndex = 0;
-            }
+            public void onNothingSelected(AdapterView<?> parent) { colorIndex = 0; }
         });
     }
 
@@ -89,18 +87,18 @@ public class AddNote extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    protected void saveFile(){
+    private void saveFile(){
 
         List<String> existing = new ArrayList<>();
         Collections.addAll(existing, getFilesDir().list());
 
-        String title = this.title.getText().toString();
+        String title = this.title.getText().toString().trim();
 
         //Make sure a file name  does not exist.
         if (title.length() >= 255){
             Toast.makeText(this, "Title is too long: maximum 255 characters", Toast.LENGTH_SHORT).show();
             return;
-        } else if (title.equals("")) {
+        } else if (title.length() == 0) {
             Toast.makeText(this, "Please enter a title", Toast.LENGTH_SHORT).show();
             return;
         } else if (existing.contains(title)){ //Test if file with same title already exists.
@@ -110,61 +108,49 @@ public class AddNote extends ActionBarActivity {
 
         //Writing text into file as a byte format.
         try { FileOutputStream fos = openFileOutput(title, MODE_PRIVATE);
-              fos.write(content.getText().toString().getBytes());
+              fos.write(content.getText().toString().trim().getBytes());
               fos.close();                                                  }
         catch (FileNotFoundException e) { return; }
         catch (IOException e)           { Toast.makeText(this, "Sorry. Storage is full", Toast.LENGTH_SHORT).show(); return; }
 
-        //Saving detailed info on the SQL database.
+        //Saving details in database.
         Calendar c = Calendar.getInstance();
-
-        String ampm;
-        if (c.get(Calendar.AM_PM) == Calendar.AM)  ampm = "a.m. ";
-        else                                       ampm = "p.m. ";
-
-        String month = String.valueOf(c.get(Calendar.MONTH)+1);
-        String day = String.valueOf(c.get(Calendar.DATE));
-        String hour = String.valueOf(c.get(Calendar.HOUR));
-        String minute = String.valueOf(c.get(Calendar.MINUTE));
-        String second = String.valueOf(c.get(Calendar.SECOND));
-
-        if (month.length() == 1)
-            month = "0"+month;
-        if (day.length() == 1)
-            day = "0"+day;
-        if (hour.equals("0"))
-            hour = "12";
-        if (minute.length() == 1)
-            minute = "0"+minute;
-        if (second.length() == 1)
-            second = "0"+second;
-
-        String createdAt =
+        String month = String.valueOf(c.get(Calendar.MONTH)+1); if (month.length() == 1)
+                                                                    month = "0"+month;
+        String day = String.valueOf(c.get(Calendar.DATE));      if (day.length() == 1)
+                                                                    day = "0"+day;
+        String hour = String.valueOf(c.get(Calendar.HOUR));     if (hour.equals("0"))
+                                                                    hour = "12";
+        String minute = String.valueOf(c.get(Calendar.MINUTE)); if (minute.length() == 1)
+                                                                    minute = "0"+minute;
+        String second = String.valueOf(c.get(Calendar.SECOND)); if (second.length() == 1)
+                                                                    second = "0"+second;
+        String ampm; if (c.get(Calendar.AM_PM) == Calendar.AM)  ampm = "a.m. ";
+                     else                                       ampm = "p.m. ";
+        String createdAt = //Put date info together.
                 String.valueOf(c.get(Calendar.YEAR))+"/"+
                         month+"/"+
-                        day+" "+
-                        hour+":"+
-                        minute+":"+
-                        second+
-                        ampm+
-                        c.getTimeZone().getDisplayName(false, TimeZone.SHORT);
+                            day+" "+
+                                hour+":"+
+                                    minute+":"+
+                                        second+
+                                            ampm+
+                                                c.getTimeZone().getDisplayName(false, TimeZone.SHORT);
 
-        if (Library.adapter.dataAdapter.insertNewRow(title,createdAt,createdAt,0,colorIndex) < 0) {
+        if (new NoteDatabaseAdapter(this).insertNewRow(title,createdAt,createdAt,0,colorIndex) < 0) {
             //Failed to save data on SQL.
-            Toast.makeText(this, "Error: Failed to save data", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Error: Failed to save on SQL", Toast.LENGTH_SHORT).show();
+            deleteFile(title); //Undo the saving.
             return;
         }
 
-        //Notifying the user and the list adapter.
-        Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show();
-        Library.adapter.mCatalog.add(0, title);
-        Library.adapter.allCreatedAt.add(0, createdAt);
-        Library.adapter.allEditedAt.add(0, createdAt);
-        Library.adapter.allStars.add(0, 0);
-        Library.adapter.allColors.add(0,colorIndex);
+        Library.adapter.addNote(title,createdAt,createdAt,0,colorIndex);
+        Library.updated = false;
+        if (getIntent().getIntExtra("AdapterType",1) == 2)
+            ColorLibrary.updated = false;
 
         //Moving on.
-        BookAdapter.updated = false;
+        Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show();
         super.onBackPressed();
     }
 }

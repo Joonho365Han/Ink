@@ -27,12 +27,21 @@ import java.util.TimeZone;
 
 public class EditNote extends ActionBarActivity {
 
+    //Layout info.
     private EditText title;
     private EditText content;
-    private int mFileIndex;
-    private String filename;
-    private int colorIndex;
+
+    //Adapter info.
     private int adapterType;
+
+    //File info.
+    private String filename;
+    private String createdAt;
+    private int starred;
+    private int colorIndex;
+
+    //Saving process info.
+    private boolean deleteSuccessful;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,12 +58,16 @@ public class EditNote extends ActionBarActivity {
         else                                 { title.setTypeface(Typeface.SANS_SERIF);  content.setTypeface(Typeface.SANS_SERIF); }
 
         //Obtaining file id info.
-        mFileIndex = getIntent().getIntExtra("index", 0);
+        int mFileIndex = getIntent().getIntExtra("index", 0);
         if (adapterType == 1){
             filename = Library.adapter.mCatalog.get(mFileIndex); //The original file name.
+            createdAt = Library.adapter.allCreatedAt.get(mFileIndex);
+            starred = Library.adapter.allStars.get(mFileIndex);
             colorIndex = Library.adapter.allColors.get(mFileIndex);
         } else {
             filename = ColorLibrary.adapter.mCatalog.get(mFileIndex); //The original file name.
+            createdAt = ColorLibrary.adapter.allCreatedAt.get(mFileIndex);
+            starred = ColorLibrary.adapter.allStars.get(mFileIndex);
             colorIndex = ColorLibrary.adapter.allColors.get(mFileIndex);
         }
 
@@ -94,10 +107,10 @@ public class EditNote extends ActionBarActivity {
             }
 
             @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-                colorIndex = 0;
-            }
+            public void onNothingSelected(AdapterView<?> parent) { colorIndex = 0; }
         });
+
+        deleteSuccessful = false;
     }
 
     @Override
@@ -121,18 +134,19 @@ public class EditNote extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    protected void saveFile() {
+    private void saveFile() {
 
         List<String> existing = new ArrayList<>();
         Collections.addAll(existing, getFilesDir().list());
 
-        String title = this.title.getText().toString();
+        //The MAYBE new file name.
+        String title = this.title.getText().toString().trim();
 
         //Make sure a file name does not exist.
         if (title.length() >= 255){
             Toast.makeText(this, "Title is too long: maximum 255 characters", Toast.LENGTH_SHORT).show();
             return;
-        } else if (title.equals("")) {
+        } else if (title.length() == 0) {
             Toast.makeText(this, "Please enter a title", Toast.LENGTH_SHORT).show();
             return;
         } else if (existing.contains(title) && !title.equals(filename)){ //Test if file with same NEW title already exists.
@@ -140,113 +154,70 @@ public class EditNote extends ActionBarActivity {
             return;
         }
 
-        try {
-             //remove file with old title
-             deleteFile(filename);
-
-             //Overwriting or newly writing text into file as a byte format.
+        try {//Overwriting or newly writing text into file as a byte format.
              FileOutputStream fos = openFileOutput(title, MODE_PRIVATE);
-             fos.write(content.getText().toString().getBytes());
-             fos.close();                                              }
+             fos.write(content.getText().toString().trim().getBytes());
+             fos.close();                                                       }
         catch (FileNotFoundException e) { return; }
-        catch (IOException e)           { Toast.makeText(this, "Sorry. Storage is full", Toast.LENGTH_SHORT).show(); return; }
-
-        //Saving detailed info on the SQL database.
-        Calendar c = Calendar.getInstance();
-
-        String ampm;
-        if (c.get(Calendar.AM_PM) == Calendar.AM)  ampm = "a.m. ";
-        else                                       ampm = "p.m. ";
-
-        String month = String.valueOf(c.get(Calendar.MONTH)+1);
-        String day = String.valueOf(c.get(Calendar.DATE));
-        String hour = String.valueOf(c.get(Calendar.HOUR));
-        String minute = String.valueOf(c.get(Calendar.MINUTE));
-        String second = String.valueOf(c.get(Calendar.SECOND));
-
-        if (month.length() == 1)
-            month = "0"+month;
-        if (day.length() == 1)
-            day = "0"+day;
-        if (hour.equals("0"))
-            hour = "12";
-        if (minute.length() == 1)
-            minute = "0"+minute;
-        if (second.length() == 1)
-            second = "0"+second;
-
-        String editedAt =
-                String.valueOf(c.get(Calendar.YEAR))+"/"+
-                        month+"/"+
-                        day+" "+
-                        hour+":"+
-                        minute+":"+
-                        second+
-                        ampm+
-                        c.getTimeZone().getDisplayName(false, TimeZone.SHORT);
-
-
-        if (adapterType == 1){
-            String createdAt = Library.adapter.allCreatedAt.get(mFileIndex);
-            int stared = Library.adapter.allStars.get(mFileIndex);
-
-            //Removing the row with original note info
-            if (Library.adapter.dataAdapter.deleteRow(filename) < 0){
-                //Failed to delete original row.
-                Toast.makeText(this, "Error: Failed to remove original data", Toast.LENGTH_SHORT).show();
-                return;
-            }
-            if (Library.adapter.dataAdapter.insertNewRow(title, createdAt, editedAt, stared, colorIndex) < 0) {
-                //Failed to save data on SQL.
-                Toast.makeText(this, "Error: Failed to save data - Database corrupted", Toast.LENGTH_SHORT).show();
-                return;
-            }
-
-            //Notifying the user and the list adapter.
-            Library.adapter.mCatalog.remove(mFileIndex);
-            Library.adapter.allCreatedAt.remove(mFileIndex);
-            Library.adapter.allEditedAt.remove(mFileIndex);
-            Library.adapter.allStars.remove(mFileIndex);
-            Library.adapter.allColors.remove(mFileIndex);
-
-            Library.adapter.mCatalog.add(0, title);
-            Library.adapter.allCreatedAt.add(0, createdAt);
-            Library.adapter.allEditedAt.add(0, editedAt);
-            Library.adapter.allStars.add(0, stared);
-            Library.adapter.allColors.add(0,colorIndex);
-
-        } else {
-            String createdAt = ColorLibrary.adapter.allCreatedAt.get(mFileIndex);
-            int stared = ColorLibrary.adapter.allStars.get(mFileIndex);
-
-            //Removing the row with original note info
-            if (ColorLibrary.adapter.dataAdapter.deleteRow(filename) < 0){
-                //Failed to delete original row.
-                Toast.makeText(this, "Error: Failed to remove original data", Toast.LENGTH_SHORT).show();
-                return;
-            }
-            if (ColorLibrary.adapter.dataAdapter.insertNewRow(title, createdAt, editedAt, stared, colorIndex) < 0) {
-                //Failed to save data on SQL.
-                Toast.makeText(this, "Error: Failed to save data - Database corrupted", Toast.LENGTH_SHORT).show();
-                return;
-            }
-
-            //Notifying the user and the list adapter.
-            ColorLibrary.adapter.mCatalog.remove(mFileIndex);
-            ColorLibrary.adapter.allCreatedAt.remove(mFileIndex);
-            ColorLibrary.adapter.allEditedAt.remove(mFileIndex);
-            ColorLibrary.adapter.allStars.remove(mFileIndex);
-            ColorLibrary.adapter.allColors.remove(mFileIndex);
-
-            ColorLibrary.adapter.mCatalog.add(0, title);
-            ColorLibrary.adapter.allCreatedAt.add(0, createdAt);
-            ColorLibrary.adapter.allEditedAt.add(0, editedAt);
-            ColorLibrary.adapter.allStars.add(0, stared);
-            ColorLibrary.adapter.allColors.add(0,colorIndex);
+        catch (IOException e) {
+            Toast.makeText(this, "Sorry. Storage is full", Toast.LENGTH_SHORT).show();
+            //Deleting file with NEW title after failing to save prevents the new title from being taken and unable to use.
+            if (!filename.equals(title)) deleteFile(title);
+            return;
         }
 
+        //Setting the date strings.
+        Calendar c = Calendar.getInstance();
+        String month = String.valueOf(c.get(Calendar.MONTH)+1); if (month.length() == 1)
+                                                                    month = "0"+month;
+        String day = String.valueOf(c.get(Calendar.DATE));      if (day.length() == 1)
+                                                                    day = "0"+day;
+        String hour = String.valueOf(c.get(Calendar.HOUR));     if (hour.equals("0"))
+                                                                    hour = "12";
+        String minute = String.valueOf(c.get(Calendar.MINUTE)); if (minute.length() == 1)
+                                                                    minute = "0"+minute;
+        String second = String.valueOf(c.get(Calendar.SECOND)); if (second.length() == 1)
+                                                                    second = "0"+second;
+        String ampm; if (c.get(Calendar.AM_PM) == Calendar.AM)  ampm = "a.m. ";
+                     else                                       ampm = "p.m. ";
+        String editedAt = //Put date info together.
+                String.valueOf(c.get(Calendar.YEAR))+"/"+
+                        month+"/"+
+                            day+" "+
+                                hour+":"+
+                                    minute+":"+
+                                        second+
+                                            ampm+
+                                                c.getTimeZone().getDisplayName(false, TimeZone.SHORT);
+
+        //Removing the row with original note info
+        if (!deleteSuccessful && new NoteDatabaseAdapter(this).deleteRow(filename) < 0){
+            //Failed to delete original row.
+            Toast.makeText(this, "Error: Failed to remove original data", Toast.LENGTH_SHORT).show();
+            if (!filename.equals(title)) deleteFile(title); //Undo save.
+            return;
+        }
+        deleteSuccessful = true;
+        if (new NoteDatabaseAdapter(this).insertNewRow(title, createdAt, editedAt, starred, colorIndex) < 0) {
+            //Failed to save data on SQL.
+            Toast.makeText(this, "Error: Failed to save on SQL - DO NOT LEAVE AND TRY AGAIN", Toast.LENGTH_LONG).show();
+            if (!filename.equals(title)) deleteFile(title); //Undo save
+            return;
+        }
+
+        Library.adapter.deleteNote(filename);
+        Library.adapter.addNote(title,createdAt,editedAt,starred,colorIndex);
+        Library.updated = false;
+        if (adapterType == 2){
+            ColorLibrary.adapter.deleteNote(filename);
+            ColorLibrary.adapter.addNote(title,createdAt,editedAt,starred,colorIndex);
+            ColorLibrary.updated = false;
+        }
+
+        //Remove file with old title only if it's different AT THE END. This prevents loosing content when failing to save new content data.
+        if (!filename.equals(title)) deleteFile(filename);
+
         Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show();
-        BookAdapter.updated = false;
 
         //Moving on.
         Intent intent = new Intent(this, ViewNote.class);

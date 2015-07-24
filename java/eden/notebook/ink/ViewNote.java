@@ -4,14 +4,12 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
-import android.transition.Explode;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -26,7 +24,6 @@ public class ViewNote extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_viewnote);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) getWindow().setEnterTransition(new Explode());
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //The index of the item clicked.
@@ -93,7 +90,9 @@ public class ViewNote extends ActionBarActivity {
             return true;
         }
         else if (id == R.id.action_settings){
-            startActivity(new Intent(this, Settings.class));
+            Intent intent = new Intent(this, Settings.class);
+            intent.putExtra( "AdapterType", AdapterType );
+            startActivity(intent);
             return true;
         }
         else if (id == R.id.action_delete){
@@ -121,41 +120,31 @@ public class ViewNote extends ActionBarActivity {
     }
 
     protected void deleteNote(){
-        try {
-            //Deleting file.
-            int currentItem = pager.getCurrentItem();
-            if (AdapterType == 1) {
-                String title = Library.adapter.mCatalog.get(currentItem);
-                deleteFile(title);
-                if (Library.adapter.dataAdapter.deleteRow(title) < 0){
-                    Toast.makeText(this, "Failed: database error", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                Library.adapter.mCatalog.remove(currentItem);
-                Library.adapter.allCreatedAt.remove(currentItem);
-                Library.adapter.allEditedAt.remove(currentItem);
-                Library.adapter.allStars.remove(currentItem);
-                Library.adapter.allColors.remove(currentItem);
-            } else {
-                String title = ColorLibrary.adapter.mCatalog.get(currentItem);
-                deleteFile(title);
-                if (ColorLibrary.adapter.dataAdapter.deleteRow(title) < 0){
-                    Toast.makeText(this, "Failed: database error", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                ColorLibrary.adapter.mCatalog.remove(currentItem);
-                ColorLibrary.adapter.allCreatedAt.remove(currentItem);
-                ColorLibrary.adapter.allEditedAt.remove(currentItem);
-                ColorLibrary.adapter.allStars.remove(currentItem);
-                ColorLibrary.adapter.allColors.remove(currentItem);
-            }
-            Toast.makeText(this, "Deleted", Toast.LENGTH_SHORT).show();
+        //Retrieve note title.
+        int currentItem = pager.getCurrentItem();
+        String title;
+        if (AdapterType == 1) title = Library.adapter.mCatalog.get(currentItem);
+        else                  title = ColorLibrary.adapter.mCatalog.get(currentItem);
 
-            //Get out of here.
-            BookAdapter.updated = false;
-            super.onBackPressed();
-        } catch (Exception e){
-            Toast.makeText(this, "Cannot delete: File does not exist", Toast.LENGTH_SHORT).show();
+        //Delete detail info from database.
+        if (new NoteDatabaseAdapter(this).deleteRow(title) < 0) {
+            //Failed to delete data from SQL.
+            Toast.makeText(this, "Unclean Delete: database error", Toast.LENGTH_SHORT).show();
+            return;
         }
+
+        Library.adapter.deleteNote(title);
+        if (AdapterType == 2) ColorLibrary.adapter.deleteNote(title); //Delete data from ColorLibrary adapter too
+        //if this ViewNote is accessed through ColorLibrary.
+
+        //Finally delete the actual saved content of the note.
+        deleteFile(title);
+        Toast.makeText(this, "Deleted", Toast.LENGTH_SHORT).show();
+
+        //Get out of here.
+        Library.updated = false;
+        if (AdapterType == 2)
+            ColorLibrary.updated = false;
+        super.onBackPressed();
     }
 }

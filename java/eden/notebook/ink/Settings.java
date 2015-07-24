@@ -35,6 +35,7 @@ import java.util.List;
 
 public class Settings extends ActionBarActivity {
 
+    //User option info.
     private SharedPreferences prefs;
     private boolean isEncrypted;
     private String password;
@@ -266,7 +267,7 @@ public class Settings extends ActionBarActivity {
         for (String filename : filenames) deleteFile(filename);
 
         //Wipe all existing database data.
-        Library.adapter.dataAdapter.deleteRow(null);
+        new NoteDatabaseAdapter(this).deleteRow(null);
 
         //Restoring data.
         String deviceID = android.provider.Settings.Secure.getString(getContentResolver(),android.provider.Settings.Secure.ANDROID_ID);
@@ -274,7 +275,7 @@ public class Settings extends ActionBarActivity {
         query.findInBackground(new FindCallback<ParseObject>() {
             @Override
             public void done(List<ParseObject> parseObjects, ParseException e) {
-                if (e == null)
+                if (e == null){
                     for (int i = parseObjects.size() ; i>0 ; i--){
                         //Saving note content.
                         ParseObject note = parseObjects.get(i-1);
@@ -283,22 +284,30 @@ public class Settings extends ActionBarActivity {
                             fos.write(note.getString("content").getBytes());
                             fos.close();                                                }
                         catch (FileNotFoundException ex) { Toast.makeText(Settings.this, "Error: FileNotFoundException. Abort restore.", Toast.LENGTH_SHORT).show(); return; }
-                        catch (IOException ex)           { Toast.makeText(Settings.this, "Storage is full: Could not restore all", Toast.LENGTH_SHORT).show(); return; }
+                        catch (IOException ex)           { Toast.makeText(Settings.this, "Storage is full: Could not restore all", Toast.LENGTH_SHORT).show(); break; }
 
                         //Saving note details.
                         String createdAt = note.getString("DATE_CREATED");
                         String editedAt = note.getString("DATE_EDITED");
                         int stared = note.getInt("Stared");
                         int color = note.getInt("Color");
-                        if (Library.adapter.dataAdapter.insertNewRow(title,createdAt,editedAt,stared,color) < 0) {
+                        if (new NoteDatabaseAdapter(Settings.this).insertNewRow(title,createdAt,editedAt,stared,color) < 0) {
                             //Failed to save data on SQL.
-                            Toast.makeText(Settings.this, "Error: Failed to save SQL data. Abort restore.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Settings.this, "Error: Failed to save SQL data. Abort restore.\nDO NOT CLOSE APP AND TRY AGAIN", Toast.LENGTH_LONG).show();
+                            deleteFile(title); //Undo saving note content.
                             return;
                         }
                     }
-                Library.adapter.initializeDataArray();
-                BookAdapter.updated = false;
-                Toast.makeText(Settings.this, "Restore finished", Toast.LENGTH_SHORT).show();
+
+                    //Set adapter data.
+                    Library.adapter.initializeDataArray();
+                    Library.updated = false;
+                    if (getIntent().getIntExtra("AdapterType",1) == 2)
+                        ColorLibrary.updated = false;
+                    Toast.makeText(Settings.this, "Restore finished", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(Settings.this, "Error: Failed to retrieve data from cloud\nDO NOT CLOSE APP AND TRY AGAIN", Toast.LENGTH_LONG).show();
+                }
             }
         });
     }

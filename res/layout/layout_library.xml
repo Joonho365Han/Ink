@@ -1,8 +1,24 @@
-<android.support.v7.widget.RecyclerView
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/view_recycler_book"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginTop="-16dp"
-    android:background="#ffffff">
-</android.support.v7.widget.RecyclerView>
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/view_recycler_book"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="-16dp"
+        android:background="#ffffff"/>
+
+    <com.melnykov.fab.FloatingActionButton
+        android:id="@+id/delete_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_delete_white_24dp"
+        fab:fab_colorNormal="#00E676"
+        fab:fab_colorPressed="#69F0AE"/>
+</FrameLayout>

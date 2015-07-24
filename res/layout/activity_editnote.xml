@@ -3,16 +3,15 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#ffffff">
+    android:layout_height="match_parent">
 
     <EditText
         android:id="@+id/edit_title"
-        android:inputType="textCapSentences|textMultiLine"
+        android:inputType="textCapWords|textMultiLine"
         android:hint="@string/title_hint"
         android:maxLines="3"
         android:minLines="2"
-        android:background="@drawable/blank"
+        android:background="#ffffff"
         android:textColor="#555555"
         android:gravity="bottom"
         android:scrollHorizontally="false"
@@ -41,7 +40,7 @@
         android:textColor="#555555"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/blank"
+        android:background="#ffffff"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
         android:paddingBottom="16dp"

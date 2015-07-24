@@ -91,11 +91,11 @@ public class NoteDatabaseAdapter {
         return list;
     }
 
-    public void updateFavorites(int index){
+    public void updateFavorites(String title, int starred){
         ContentValues contentValues = new ContentValues();
-        contentValues.put(NoteSQLHelper.STAR, 1 - Library.adapter.allStars.get(index));
+        contentValues.put(NoteSQLHelper.STAR, starred);
         SQLiteDatabase db = helper.getWritableDatabase();
-        db.update(NoteSQLHelper.TABLE_NAME, contentValues, NoteSQLHelper.TITLE+"=?", new String[]{Library.adapter.mCatalog.get(index)});
+        db.update(NoteSQLHelper.TABLE_NAME, contentValues, NoteSQLHelper.TITLE+"=?", new String[]{title});
     }
 
     static class NoteSQLHelper extends SQLiteOpenHelper {
