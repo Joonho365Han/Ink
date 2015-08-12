@@ -95,7 +95,29 @@ public class NoteDatabaseAdapter {
         ContentValues contentValues = new ContentValues();
         contentValues.put(NoteSQLHelper.STAR, starred);
         SQLiteDatabase db = helper.getWritableDatabase();
-        db.update(NoteSQLHelper.TABLE_NAME, contentValues, NoteSQLHelper.TITLE+"=?", new String[]{title});
+        db.update(NoteSQLHelper.TABLE_NAME, contentValues, NoteSQLHelper.TITLE + "=?", new String[]{title});
+    }
+
+    public boolean hasColor(int colorIndex){
+        SQLiteDatabase db = helper.getWritableDatabase();
+        Cursor cursor = db.query(NoteSQLHelper.TABLE_NAME, new String[]{NoteSQLHelper.COLOR}, NoteSQLHelper.COLOR+" = '"+colorIndex+"'", null, null, null, null);
+        if (cursor.moveToNext()){
+            cursor.close();
+            return true;
+        }
+        cursor.close();
+        return false;
+    }
+
+    public boolean hasFavorites(){
+        SQLiteDatabase db = helper.getWritableDatabase();
+        Cursor cursor = db.query(NoteSQLHelper.TABLE_NAME, new String[]{NoteSQLHelper.STAR}, NoteSQLHelper.STAR+" = '"+1+"'", null, null, null, null);
+        if (cursor.moveToNext()){
+            cursor.close();
+            return true;
+        }
+        cursor.close();
+        return false;
     }
 
     static class NoteSQLHelper extends SQLiteOpenHelper {
@@ -129,7 +151,7 @@ public class NoteDatabaseAdapter {
                 db.execSQL(CREATE_TABLE);
             } catch (Exception e){
                 //MOST LIKELY AN SQLEXCEPTION.
-                Toast.makeText(deez_nuts, "ERROR: Could not establish database", Toast.LENGTH_SHORT).show();
+                Toast.makeText(deez_nuts, e.toString() , Toast.LENGTH_SHORT).show();
             }
         }
 
@@ -140,7 +162,7 @@ public class NoteDatabaseAdapter {
                 onCreate(db);
             } catch (Exception e){
                 //MOST LIKELY AN SQLEXCEPTION.
-                Toast.makeText(deez_nuts, "ERROR: Could not update database", Toast.LENGTH_SHORT).show();
+                Toast.makeText(deez_nuts, e.toString() , Toast.LENGTH_SHORT).show();
             }
         }
     }

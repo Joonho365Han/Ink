@@ -12,12 +12,14 @@ import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
+import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,9 +30,7 @@ import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.util.List;
 
 public class Settings extends ActionBarActivity {
@@ -44,6 +44,9 @@ public class Settings extends ActionBarActivity {
     private int titleFont;
     private int contentFont;
     private boolean serif;
+    private Spinner spinner, spinner2;
+
+    private boolean restoring;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,13 +55,15 @@ public class Settings extends ActionBarActivity {
 
         //Initialize all variables.
         prefs = getSharedPreferences("EdenNotebookSettings", Context.MODE_PRIVATE);
-        isEncrypted = prefs.getBoolean("Encryption",false);
-        password = prefs.getString("Password",null);
-        isBackedUp = prefs.getBoolean("Backup",false);
-        isAskDelete = prefs.getBoolean("Delete",true);
-        titleFont = prefs.getInt("Title",44);
-        contentFont = prefs.getInt("Content",24);
+        isEncrypted = prefs.getBoolean("Encryption", false);
+        password = prefs.getString("Password", null);
+        isBackedUp = prefs.getBoolean("Backup", false);
+        isAskDelete = prefs.getBoolean("Delete", true);
+        titleFont = prefs.getInt("Title", 44);
+        contentFont = prefs.getInt("Content", 24);
         serif = prefs.getBoolean("Serif", false);
+
+        restoring = false;
 
         //Initializing encryption switch
         Switch toggle = (Switch) findViewById(R.id.switch1);
@@ -71,7 +76,7 @@ public class Settings extends ActionBarActivity {
                     //Warn about the password protectability.
                     new AlertDialog.Builder(Settings.this).setMessage(R.string.settings_password_ask)
                             .setTitle(R.string.note)
-                            .setPositiveButton(R.string.confirm, new DialogInterface.OnClickListener() {
+                            .setPositiveButton(R.string.got_it, new DialogInterface.OnClickListener() {
                                 //User decided to encrypt
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
@@ -125,17 +130,26 @@ public class Settings extends ActionBarActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (isBackedUp)
-                new AlertDialog.Builder(Settings.this)
-                        .setTitle(R.string.caution)
-                        .setMessage(R.string.settings_parse_restore)
-                        .setPositiveButton(R.string.confirm,new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) { restoreBackup(); }
-                        }).setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {}
-                }).create().show();
+                if (Library.backingUp)
+                    new AlertDialog.Builder(Settings.this)
+                            .setMessage(R.string.settings_parse_backing_up)
+                            .setPositiveButton(R.string.got_it,new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {}
+                            }).create().show();
+                else if (isBackedUp && !restoring)
+                    new AlertDialog.Builder(Settings.this)
+                            .setTitle(R.string.caution)
+                            .setMessage(R.string.settings_parse_restore)
+                            .setPositiveButton(R.string.confirm,new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) { restoreBackup(button); }
+                            })
+                            .setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                }
+                            }).create().show();
             }
         });
 
@@ -147,8 +161,8 @@ public class Settings extends ActionBarActivity {
             public void onClick(View v) {
                 Switch s = (Switch) v;
                 isBackedUp = s.isChecked();
-                if (isBackedUp) button.setTextColor(Color.WHITE);
-                else            button.setTextColor(Color.GRAY);
+                if (isBackedUp && !restoring) button.setTextColor(Color.WHITE);
+                else                          button.setTextColor(Color.GRAY);
             }
         });
 
@@ -190,7 +204,7 @@ public class Settings extends ActionBarActivity {
         if (serif) content.setTypeface(Typeface.SERIF);
         else       content.setTypeface(Typeface.SANS_SERIF);
         content.setTextSize(TypedValue.COMPLEX_UNIT_SP, contentFont);
-        seek.setProgress( (contentFont-12)*4 );
+        seek.setProgress((contentFont - 12) * 4);
         seek.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -213,10 +227,29 @@ public class Settings extends ActionBarActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 serif = isChecked;
-                if (isChecked) { title.setTypeface(Typeface.SERIF);       content.setTypeface(Typeface.SERIF);      }
-                else           { title.setTypeface(Typeface.SANS_SERIF);  content.setTypeface(Typeface.SANS_SERIF); }
+                if (isChecked) {
+                    title.setTypeface(Typeface.SERIF);
+                    content.setTypeface(Typeface.SERIF);
+                } else {
+                    title.setTypeface(Typeface.SANS_SERIF);
+                    content.setTypeface(Typeface.SANS_SERIF);
+                }
             }
         });
+
+        //Initializing color spinner.
+        spinner = (Spinner) findViewById(R.id.spinner);
+        ArrayAdapter<CharSequence> columnAdapter = ArrayAdapter.createFromResource(this,R.array.columns,android.R.layout.simple_spinner_item);
+        columnAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(columnAdapter);
+        spinner.setSelection(prefs.getInt("Columns", 1) - 1);
+
+        //Initializing color spinner.
+        spinner2 = (Spinner) findViewById(R.id.spinner2);
+        ArrayAdapter<CharSequence> holderAdapter = ArrayAdapter.createFromResource(this,R.array.note_type,android.R.layout.simple_spinner_item);
+        holderAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner2.setAdapter(holderAdapter);
+        spinner2.setSelection(prefs.getInt("Holder",0));
     }
 
     @Override
@@ -242,80 +275,37 @@ public class Settings extends ActionBarActivity {
 
     protected void saveSettings(){
         SharedPreferences.Editor editor = prefs.edit();
+        int holderType = prefs.getInt("Holder", 0);
+        int columns = prefs.getInt("Columns", 1);
 
-        editor.putBoolean("Encryption",isEncrypted);
-        editor.putString("Password",password);
-        editor.putBoolean("Backup",isBackedUp);
-        editor.putBoolean("Delete",isAskDelete);
-        editor.putInt("Title",titleFont);
-        editor.putInt("Content",contentFont);
-        editor.putBoolean("Serif",serif);
-
+        editor.putBoolean("Encryption", isEncrypted);
+        editor.putString("Password", password);
+        editor.putBoolean("Backup", isBackedUp);
+        editor.putBoolean("Delete", isAskDelete);
+        editor.putInt("Title", titleFont);
+        editor.putInt("Content", contentFont);
+        editor.putBoolean("Serif", serif);
+        editor.putInt("Columns", spinner.getSelectedItemPosition() + 1);
+        editor.putInt("Holder", spinner2.getSelectedItemPosition());
         editor.apply();
 
-        //Moving on.
-        super.onBackPressed();
-    }
-
-    protected void restoreBackup(){
-        //Connect to cloud.
-        Parse.initialize(this, "8rRg8GndjElDiy1UrviRT650VNE0yKN8BcF1AaFH", "6Zy8VRFP2A017iol0AkJyCJRkOM7TGDWatl7ptIE");
-        Toast.makeText(this, "Restoring data: Do not close the application", Toast.LENGTH_SHORT).show();
-
-        //Wipe all existing files.
-        String[] filenames = getFilesDir().list();
-        for (String filename : filenames) deleteFile(filename);
-
-        //Wipe all existing database data.
-        new NoteDatabaseAdapter(this).deleteRow(null);
-
-        //Restoring data.
-        String deviceID = android.provider.Settings.Secure.getString(getContentResolver(),android.provider.Settings.Secure.ANDROID_ID);
-        ParseQuery<ParseObject> query =ParseQuery.getQuery("ID" + deviceID);
-        query.findInBackground(new FindCallback<ParseObject>() {
-            @Override
-            public void done(List<ParseObject> parseObjects, ParseException e) {
-                if (e == null){
-                    for (int i = parseObjects.size() ; i>0 ; i--){
-                        //Saving note content.
-                        ParseObject note = parseObjects.get(i-1);
-                        String title = note.getString("title");
-                        try { FileOutputStream fos = openFileOutput(title, MODE_PRIVATE);
-                            fos.write(note.getString("content").getBytes());
-                            fos.close();                                                }
-                        catch (FileNotFoundException ex) { Toast.makeText(Settings.this, "Error: FileNotFoundException. Abort restore.", Toast.LENGTH_SHORT).show(); return; }
-                        catch (IOException ex)           { Toast.makeText(Settings.this, "Storage is full: Could not restore all", Toast.LENGTH_SHORT).show(); break; }
-
-                        //Saving note details.
-                        String createdAt = note.getString("DATE_CREATED");
-                        String editedAt = note.getString("DATE_EDITED");
-                        int stared = note.getInt("Stared");
-                        int color = note.getInt("Color");
-                        if (new NoteDatabaseAdapter(Settings.this).insertNewRow(title,createdAt,editedAt,stared,color) < 0) {
-                            //Failed to save data on SQL.
-                            Toast.makeText(Settings.this, "Error: Failed to save SQL data. Abort restore.\nDO NOT CLOSE APP AND TRY AGAIN", Toast.LENGTH_LONG).show();
-                            deleteFile(title); //Undo saving note content.
-                            return;
-                        }
-                    }
-
-                    //Set adapter data.
-                    Library.adapter.initializeDataArray();
-                    Library.updated = false;
-                    if (getIntent().getIntExtra("AdapterType",1) == 2)
-                        ColorLibrary.updated = false;
-                    Toast.makeText(Settings.this, "Restore finished", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(Settings.this, "Error: Failed to retrieve data from cloud\nDO NOT CLOSE APP AND TRY AGAIN", Toast.LENGTH_LONG).show();
-                }
-            }
-        });
+        if (holderType != spinner2.getSelectedItemPosition() || columns != spinner.getSelectedItemPosition() + 1)
+            //Show apply layout dialogue.
+            new AlertDialog.Builder(this)
+                    .setTitle(R.string.settings_apply_layout_change_title)
+                    .setMessage(R.string.settings_apply_layout_change)
+                    .setPositiveButton(R.string.got_it, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) { onBackPressed();}
+                    }).create().show();
+        else
+            super.onBackPressed();
     }
 
     protected void setPassword(final Switch s){
-        LinearLayout layout = (LinearLayout) Settings.this.getLayoutInflater().inflate(R.layout.dialog_password, null);
+        LinearLayout layout = (LinearLayout) this.getLayoutInflater().inflate(R.layout.dialog_password, null);
         final EditText edittext = (EditText) layout.findViewById(R.id.editext);
-        new AlertDialog.Builder(Settings.this)
+        new AlertDialog.Builder(this)
                 .setTitle(R.string.settings_password_set)
                 .setView(layout)
                 .setPositiveButton(R.string.confirm, new DialogInterface.OnClickListener() {
@@ -358,5 +348,81 @@ public class Settings extends ActionBarActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {/*Don't do anything if user decided to cancel.*/}
                 }).create().show();
+    }
+
+    protected void restoreBackup(final Button button){
+
+        // Suspending button to prevent duplicate background tasks.
+        restoring = true;
+        button.setTextColor(Color.GRAY);
+        Toast.makeText(Settings.this, R.string.settings_parse_restoring, Toast.LENGTH_SHORT).show();
+
+        // Connecting to cloud and Restoring Data. This restore by default runs on background.
+        Parse.initialize(this, "8rRg8GndjElDiy1UrviRT650VNE0yKN8BcF1AaFH", "6Zy8VRFP2A017iol0AkJyCJRkOM7TGDWatl7ptIE");
+
+        ParseQuery<ParseObject> query =ParseQuery.getQuery("ID" + android.provider.Settings.Secure.getString(getContentResolver(),android.provider.Settings.Secure.ANDROID_ID));
+        query.findInBackground(new FindCallback<ParseObject>() {
+
+            @Override
+            public void done(List<ParseObject> parseObjects, ParseException e) {
+                if (e == null){ //IS IT POSSIBLE TO RESTORE? (Which means "is the could connected?")
+
+                    Library.restored = true;
+
+                    //Wipe all existing database data. This loop can be dangerous but makes sure the task is done.
+                    NoteDatabaseAdapter database = new NoteDatabaseAdapter(Settings.this);
+                    while (database.deleteRow(null)<0){}
+
+                    //Wipe all existing files.
+                    String[] filenames = getFilesDir().list();
+                    for (String filename : filenames) deleteFile(filename);
+
+                    for (int i = parseObjects.size() ; i>0 ; i--){
+
+                        //Saving note content. Do this first because it is easy to undo than manipulating SQL database.
+                        ParseObject note = parseObjects.get(i - 1);
+                        String title = note.getString("title");
+                        try { FileOutputStream fos = openFileOutput(title, MODE_PRIVATE);
+                            fos.write(note.getString("content").getBytes());
+                            fos.close();                                                }
+                        catch (Exception ex) {
+                            new AlertDialog.Builder(Settings.this)
+                                    .setTitle(R.string.error)
+                                    .setMessage(getResources().getString(R.string.content_storage_fail)+ex.toString())
+                                    .setPositiveButton(R.string.close, new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {}
+                                    }).create().show();
+                            return;
+                        }
+
+                        //Saving note details.
+                        String createdAt = note.getString("DATE_CREATED");
+                        String editedAt = note.getString("DATE_EDITED");
+                        int starred = note.getInt("Starred");
+                        int color = note.getInt("Color");
+                        while (database.insertNewRow(title, createdAt, editedAt, starred, color) < 0) {}
+                    }
+
+                    //Restore was successful.
+                    Toast.makeText(Settings.this, R.string.settings_parse_successful, Toast.LENGTH_SHORT).show();
+
+                } else { // Restore failed. Could not connect to cloud.
+                    new AlertDialog.Builder(Settings.this)
+                            .setTitle(R.string.error)
+                            .setMessage(e.toString())
+                            .setPositiveButton(R.string.close, new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {}
+                            }).create().show();
+                }
+
+                //Regardless of result, button is now clickable again if backup mode is on.
+                restoring = false;
+                if (isBackedUp){
+                    button.setTextColor(Color.WHITE);
+                }
+            }
+        });
     }
 }

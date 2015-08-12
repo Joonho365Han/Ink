@@ -2,7 +2,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/note_background"
     android:layout_width="match_parent"
-    android:layout_height="72dp"
+    android:layout_height="80dp"
     android:layout_marginLeft="8dp"
     android:layout_marginRight="8dp"
     android:layout_marginBottom="8dp">
@@ -14,6 +14,11 @@
         android:layout_alignParentLeft="true"
         android:background="@drawable/cloud_holder"
         android:contentDescription="@string/image_description"/>
+
+    <FrameLayout
+        android:id="@+id/photo_tint"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
     <ImageView
         android:layout_width="48dp"

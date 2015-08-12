@@ -4,67 +4,74 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
+import android.transition.TransitionInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
+
+import java.io.FileInputStream;
 
 public class ViewNote extends ActionBarActivity {
 
     private int mAdapterIndex;
     private ViewPager pager;
-    private int AdapterType;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+            getWindow().setSharedElementExitTransition(TransitionInflater.from(this).inflateTransition(R.transition.enlarge_photo_transition));
+            getWindow().setSharedElementReenterTransition(TransitionInflater.from(this).inflateTransition(R.transition.shrink_photo_transition));
+        }
         setContentView(R.layout.activity_viewnote);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //The index of the item clicked.
         mAdapterIndex = getIntent().getIntExtra("index",0);
-        AdapterType = getIntent().getIntExtra("AdapterType",1);
 
         pager = (ViewPager) findViewById(R.id.note_pager);
-        pager.setAdapter(new NoteAdapter(getSupportFragmentManager(),AdapterType));
+        pager.setAdapter(new NoteAdapter(getSupportFragmentManager()));
         pager.setCurrentItem(mAdapterIndex, false);
     }
 
     private static class NoteAdapter extends FragmentStatePagerAdapter {
 
-        private int AdapterType;
-
-        public NoteAdapter(FragmentManager fm, int type) {
-            super(fm);
-            AdapterType = type;
-        }
+        public NoteAdapter(FragmentManager fm) { super(fm); }
 
         @Override
         public Fragment getItem(int position) {
             NoteFragment page = new NoteFragment();
             page.mFileIndex = position;
-            page.adapterType = AdapterType;
             return page;
         }
 
         @Override
-        public int getCount() {
-            if (AdapterType == 1)      return Library.adapter.mCatalog.size();
-            else                       return ColorLibrary.adapter.mCatalog.size();
-        }
+        public int getCount() { return Library.adapter.mCatalog.size(); }
     }
 
     @Override
     protected void onNewIntent(Intent intent){
         if (intent.hasExtra("index")) {
             mAdapterIndex = intent.getIntExtra("index", mAdapterIndex);
-            AdapterType = intent.getIntExtra("AdapterType",AdapterType);
             pager.setCurrentItem(mAdapterIndex, false);
+        }
+    }
+
+    @Override
+    protected void onStart(){
+        super.onStart();
+        if (Library.restored) {
+            // This condition is only met when we restore notes from settings.
+            // If Notes were restored, skip to the library immediately.
+            pager.setAdapter(null); //We do this just to prevent IllegalStateException.
+            super.onBackPressed();
         }
     }
 
@@ -85,14 +92,11 @@ public class ViewNote extends ActionBarActivity {
         if (id == R.id.action_edit) {
             Intent intent = new Intent(this, EditNote.class);
             intent.putExtra( "index",  pager.getCurrentItem() );
-            intent.putExtra( "AdapterType", AdapterType );
             startActivity(intent);
             return true;
         }
         else if (id == R.id.action_settings){
-            Intent intent = new Intent(this, Settings.class);
-            intent.putExtra( "AdapterType", AdapterType );
-            startActivity(intent);
+            startActivity(new Intent(this, Settings.class));
             return true;
         }
         else if (id == R.id.action_delete){
@@ -111,6 +115,27 @@ public class ViewNote extends ActionBarActivity {
             else { deleteNote(); }
             return true;
         }
+        else if (id == R.id.action_email){
+            int currentItem = pager.getCurrentItem();
+            final String title = Library.adapter.mCatalog.get(currentItem);
+            int colorIndex = Library.adapter.allColors.get(currentItem);
+
+            if (colorIndex == 8)
+                new AlertDialog.Builder(this)
+                        .setTitle(R.string.note)
+                        .setMessage(R.string.no_photo_attachable)
+                        .setPositiveButton(R.string.confirm, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) { sendNoteMail(title);}
+                        })
+                        .setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {}
+                        }).create().show();
+            else
+                sendNoteMail(title);
+            return true;
+        }
         else if (id == android.R.id.home){
             super.onBackPressed();
             return true;
@@ -119,32 +144,52 @@ public class ViewNote extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    protected void deleteNote(){
+    protected void deleteNote() {
         //Retrieve note title.
         int currentItem = pager.getCurrentItem();
-        String title;
-        if (AdapterType == 1) title = Library.adapter.mCatalog.get(currentItem);
-        else                  title = ColorLibrary.adapter.mCatalog.get(currentItem);
+        String title = Library.adapter.mCatalog.get(currentItem);
+        int colorIndex = Library.adapter.allColors.get(currentItem);
 
-        //Delete detail info from database.
-        if (new NoteDatabaseAdapter(this).deleteRow(title) < 0) {
-            //Failed to delete data from SQL.
-            Toast.makeText(this, "Unclean Delete: database error", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
+        //Delete info from database and adapter.
+        while (new NoteDatabaseAdapter(this).deleteRow(title) < 0) {}
         Library.adapter.deleteNote(title);
-        if (AdapterType == 2) ColorLibrary.adapter.deleteNote(title); //Delete data from ColorLibrary adapter too
-        //if this ViewNote is accessed through ColorLibrary.
 
         //Finally delete the actual saved content of the note.
         deleteFile(title);
-        Toast.makeText(this, "Deleted", Toast.LENGTH_SHORT).show();
+        if (colorIndex == 8){ //Delete photo headers too if they exist.
+            deleteFile(title+"@#$^23!^");
+            deleteFile(title+"AG5463#$1!#$&");
+        }
+        Toast.makeText(this, R.string.deleted, Toast.LENGTH_SHORT).show();
 
         //Get out of here.
         Library.updated = false;
-        if (AdapterType == 2)
-            ColorLibrary.updated = false;
+        Library.mAdapter.notifyItemChanged(colorIndex + 4);
+        Library.mAdapter.notifyItemChanged(2);
         super.onBackPressed();
+    }
+
+    protected void sendNoteMail(String title){
+        Intent i = new Intent(Intent.ACTION_SEND);
+        i.setType("message/rfc822");
+        i.putExtra(Intent.EXTRA_SUBJECT, title);
+        try {
+            //Obtaining byte string info from filename.
+            FileInputStream fis = openFileInput(title);
+            byte[] data = new byte[fis.available()];
+            if (fis.read(data) != 0) // Sometimes if the saved string is nothing (""), then the read()
+                // will constantly return 0 and fall into the constant while loop.
+                // Must make sure there is something to read() before proceeding.
+                while (fis.read(data) != -1) { /*This loop constantly extracts byte that will
+                                                 eventually be converted to a string byte by byte.*/ }
+
+            i.putExtra(Intent.EXTRA_TEXT, new String(data));
+            fis.close();                                                                       }
+        catch (Exception e){ Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show(); return; }
+        try {
+            startActivity(Intent.createChooser(i,getResources().getString(R.string.send_mail)));
+        } catch (android.content.ActivityNotFoundException ex) {
+            Toast.makeText(this, ex.toString(), Toast.LENGTH_SHORT).show();
+        }
     }
 }

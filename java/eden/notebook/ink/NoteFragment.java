@@ -1,30 +1,34 @@
 package eden.notebook.ink;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.graphics.drawable.BitmapDrawable;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.app.Fragment;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 
 public class NoteFragment extends Fragment {
 
     //Info of which adapter it should retrieve data from.
     int mFileIndex;
-    int adapterType;
 
     //Layout info.
     private RelativeLayout colorButton;
@@ -32,6 +36,7 @@ public class NoteFragment extends Fragment {
     private TextView title;
     private TextView content;
     private TextView edited;
+    private FrameLayout elevation;
     private Context context;
 
     @Override
@@ -44,12 +49,10 @@ public class NoteFragment extends Fragment {
         title = (TextView) layout.findViewById(R.id.view_title);
         content = (TextView) layout.findViewById(R.id.view_content);
         edited = (TextView) layout.findViewById(R.id.view_edited);
+        elevation = (FrameLayout) layout.findViewById(R.id.elevation);
 
         TextView created = (TextView) layout.findViewById(R.id.view_created);
-        if (adapterType == 1)
-            created.setText("Created at    "+Library.adapter.allCreatedAt.get(mFileIndex));
-        else
-            created.setText("Created at    "+ColorLibrary.adapter.allCreatedAt.get(mFileIndex));
+        created.setText(getResources().getString(R.string.created_at) + Library.adapter.allCreatedAt.get(mFileIndex));
 
         return layout;
     }
@@ -60,37 +63,63 @@ public class NoteFragment extends Fragment {
         SharedPreferences preferences = context.getSharedPreferences("EdenNotebookSettings",Context.MODE_PRIVATE);
 
         int colorIndex;
-        String filename;
+        final String filename;
 
         //Retrieving note info.
-        if (adapterType == 1){
-            filename = Library.adapter.mCatalog.get(mFileIndex);
-            edited.setText("Last edited    "+Library.adapter.allEditedAt.get(mFileIndex));
-            colorIndex = Library.adapter.allColors.get(mFileIndex);
-        } else {
-            filename = ColorLibrary.adapter.mCatalog.get(mFileIndex);
-            edited.setText("Last edited    "+ColorLibrary.adapter.allEditedAt.get(mFileIndex));
-            colorIndex = ColorLibrary.adapter.allColors.get(mFileIndex);
-        }
+        filename = Library.adapter.mCatalog.get(mFileIndex);
+        edited.setText( getResources().getString(R.string.last_edited) + Library.adapter.allEditedAt.get(mFileIndex));
+        colorIndex = Library.adapter.allColors.get(mFileIndex);
 
         //Setting header style.
         if (colorIndex == 0) { //Default background.
-            colorButton.setBackgroundColor(Color.WHITE);
+
+            //THE HEADER
+            colorButton.setBackground(null);
+            colorButton.setClickable(false);
+            elevation.setBackground(null);
+
             cloudHeader.setBackgroundResource(R.drawable.cloud_header);
             title.setTextColor(BookAdapter.COLOR_ARRAY[9]);
         } else {
+
+            //THE HEADER
             if (colorIndex == 8){ //Image as background
-                colorButton.setBackgroundColor(Color.parseColor("#333333"));
-                //////////////////////////////////////////////////////////////////////////////////// Change this to photo later.
-                colorButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        //Focus on the image.
-                    }
-                });
+
+                try {
+                    colorButton.setBackground(new BitmapDrawable(getResources(), BitmapFactory
+                            .decodeFile(new File(context.getFilesDir(), filename + "AG5463#$1!#$&")
+                                            .getAbsolutePath(),
+                                    new BitmapFactory.Options())/*<-Creating bitmap image*/) /*<-Creating drawable(int id) from bitmap*/);
+                    colorButton.setClickable(true);
+                    colorButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent = new Intent(context, PhotoViewer.class);
+                            intent.putExtra("filename", filename);
+                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                                v.setTransitionName("enlargePhoto");
+                                ActivityOptionsCompat compat = ActivityOptionsCompat.makeSceneTransitionAnimation(getActivity(), v, "enlargePhoto");
+                                context.startActivity(intent, compat.toBundle());
+                            } else {
+                                startActivity(intent);
+                            }
+                        }
+                    });
+                    elevation.setBackgroundResource(R.drawable.elevation);
+
+                } catch (Exception e) {
+                    colorButton.setBackgroundColor(BookAdapter.COLOR_ARRAY[9]);
+                    colorButton.setClickable(false);
+                    elevation.setBackgroundResource(R.drawable.elevation);
+                    Toast.makeText(context, getResources().getString(R.string.image_lookup_fail) + e.toString() , Toast.LENGTH_SHORT).show();
+                }
+
             } else { //Color background
                 colorButton.setBackgroundColor(BookAdapter.COLOR_ARRAY[colorIndex]);
+                colorButton.setClickable(false);
+                elevation.setBackground(null);
             }
+
             cloudHeader.setBackground(null);
             title.setTextColor(Color.WHITE);
         }
@@ -116,8 +145,7 @@ public class NoteFragment extends Fragment {
                                                  eventually be converted to a string byte by byte.*/ }
 
             content.setText(new String(data));
-            fis.close();                                                }
-        catch (FileNotFoundException e){ Toast.makeText(context, "Error: File does not exist", Toast.LENGTH_SHORT).show(); }
-        catch (IOException e)          { Toast.makeText(context, "Error: Failed to extract note from storage", Toast.LENGTH_SHORT).show(); }
+            fis.close();                                                                       }
+        catch (Exception e){ Toast.makeText(context, e.toString(), Toast.LENGTH_SHORT).show(); }
     }
 }

@@ -16,7 +16,7 @@
 
         <activity
             android:name=".Library"
-            android:label="@string/library"
+            android:label="@string/app_name"
             android:launchMode="singleTop"
             android:configChanges="keyboardHidden|orientation|screenSize">
             <intent-filter>
@@ -30,38 +30,34 @@
         </activity>
 
         <activity
-            android:name=".ColorLibrary"
-            android:label="@string/library"
-            android:launchMode="singleTop"
-            android:configChanges="keyboardHidden|orientation|screenSize">
-        </activity>
-
-        <activity
             android:name=".Settings"
             android:label="@string/action_settings"
             android:launchMode="singleTop"
-            android:configChanges="keyboardHidden|orientation|screenSize">
-        </activity>
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
 
         <activity
             android:name=".AddNote"
+            android:label="@string/action_add"
             android:launchMode="singleTop"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:label="@string/action_add" >
-        </activity>
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
 
         <activity
             android:name=".ViewNote"
-            android:launchMode="singleTask"
             android:label=""
-            android:configChanges="keyboardHidden|orientation|screenSize">
-        </activity>
+            android:launchMode="singleTask"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
+
+        <activity
+            android:name=".PhotoViewer"
+            android:label="@string/photo_viewer"
+            android:launchMode="singleTop"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
 
         <activity
             android:name=".EditNote"
+            android:label="@string/action_edit"
             android:launchMode="singleTop"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:label="@string/action_edit">
+            android:configChanges="keyboardHidden|orientation|screenSize">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ViewNote" />

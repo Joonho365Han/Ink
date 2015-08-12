@@ -26,4 +26,11 @@
         android:orderInCategory="100"
         app:showAsAction="ifRoom"/>
 
+    <item
+        android:id="@+id/action_email"
+        android:title="@string/action_email"
+        android:icon="@drawable/ic_mail_white_36dp"
+        android:orderInCategory="100"
+        app:showAsAction="ifRoom"/>
+
 </menu>
