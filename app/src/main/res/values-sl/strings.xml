@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Title Strings-->
+    <string name="app_name">Brainmark</string>
+    <string name="library">Knjižnica</string>
+    <string name="favorites">Priljubljene</string>
+    <string name="cloud">Oblak</string>
+    <string name="pink">Rožnat</string>
+    <string name="orange">Oranžna</string>
+    <string name="yellow">Rumena</string>
+    <string name="green">zelen</string>
+    <string name="blue">Moder</string>
+    <string name="indigo">Indigo</string>
+    <string name="purple">Vijolična</string>
+    <string name="image">Slika</string>
+    <string name="category">Kategorije</string>
+
+    <!--Action Strings. Also used as activity titles-->
+    <string name="action_settings">Nastavitve</string>
+    <string name="action_search">Iskanje</string>
+    <string name="action_add">Dodaj opombo</string>
+    <string name="action_done">Končano</string>
+    <string name="action_edit">Izdati</string>
+    <string name="action_delete">Izbriši</string>
+    <string name="action_email">Pošlji e-pošto</string>
+    <string name="action_open_drawer">Meni</string>
+
+    <!--XML Note Edit Strings-->
+    <string name="title_hint">Naslov</string>
+    <string name="content_hint">Vsebina</string>
+    <string name="search_hint">Iskanje naslov ali vsebina</string>
+    <string name="image_description"> </string>
+
+    <!--Alert Dialog Strings-->
+    <string name="note">Opomba</string>
+    <string name="caution">Opozorilo</string>
+    <string name="error">ERROR</string>
+    <string name="confirm">Potrdi</string>
+    <string name="got_it">V Redu</string>
+    <string name="close">Zaprite</string>
+    <string name="exit">Prenehati</string>
+    <string name="send_mail">Pošlji sporočilo…</string>
+    <string name="saved">Shranjevanje</string>
+    <string name="deleted">Brisanje…</string>
+
+    <!--Note Related Strings-->
+    <string name="today">"Danes, "</string>
+    <string name="last_edited">"Zadnja uredil  "</string>
+    <string name="created_at">"Ustvarjeno  "</string>
+
+    <!--Toast and Dialog content Strings-->
+    <string name="wrong_password">Napačno geslo</string>
+    <string name="ask_delete_empty">So izbrani Ni opombe</string>
+    <string name="ask_delete">Izbriši to sporočilo?</string>
+    <string name="ask_delete_multiple">Izbrisati te zapiske?</string>
+    <string name="long_title">Naslov je predolg: največ 255 znakov</string>
+    <string name="empty_title">Vnesite naslov</string>
+    <string name="existing_title">Naslov je že v uporabi</string>
+    <string name="invalid_title">Prosimo, izberite drug naslov</string>
+    <string name="no_color_type">NAPAKA: ni uspelo prejeti vrsto kategorije</string>
+    <string name="backup_fail">Ni za varnostno kopiranje nekaj datotek:\n</string>
+    <string name="previous_save">Prosimo počakajte. Shranjevanje prejšnjo uredi.</string>
+    <string name="empty_photo">Ne najdem slike</string>
+    <string name="no_photo_attachable">Slike ni mogoče poslati za varnost sistema. Vedno pošljem sporočilo?</string>
+
+    <!--Exceptions strings.-->
+    <string name="parse_failed">"Backup ni uspelo: "</string>
+    <string name="backup_error">"Backup proces: "</string>
+    <string name="saving_file_fail">"Shranjevanje datoteke: "</string>
+    <string name="image_lookup_fail">"Image poizvedbo: "</string>
+    <string name="content_storage_fail">"Shranjevanje vsebina: "</string>
+
+    <!--Settings Titles-->
+    <string name="settings_security">Varnost</string>
+    <string name="settings_password">Zaščita z Geslom</string>
+    <string name="settings_parse">Oblak Backup</string>
+    <string name="settings_restore">Obnovitev Backup</string>
+    <string name="settings_delete">Alert izbrisa</string>
+    <string name="settings_font">Style</string>
+
+    <!--Long Settings strings-->
+    <string name="settings_password_detail">Šifriranje aplikacijo in preprečevanje dostopa od drugih ljudi, medtem ko je telefon odklenjen</string>
+    <string name="settings_password_ask">Ta bo programsko zaščito vaših podatkov, vendar vam priporočamo vodenje kopije vseh osebnih podatkov ločeno.</string>
+    <string name="settings_password_set">Vnesite novo geslo</string>
+    <string name="settings_password_reset">Ponovi geslo</string>
+    <string name="do_not_match">Gesla se ne ujemata.</string>
+    <string name="settings_password_decrypt">Vnesite geslo</string>
+    <string name="settings_parse_detail">Ta aplikacija bo opravljal naprava specifične nazaj not v oblaku vsakič, ko uporabnik odpre aplikacijo. Slikovni glave ne bo podprta.</string>
+    <string name="settings_parse_backing_up">Backup v postopku. Prosimo počakajte.</string>
+    <string name="settings_parse_restore">To bo izbrisati in nadomestiti vse beležke z rezervno.</string>
+    <string name="settings_parse_restoring">Obnovitev podatkov: Ne zaprite aplikacijo</string>
+    <string name="settings_parse_successful">Obnovi končan</string>
+    <string name="settings_parse_failed">Ni za pridobivanje podatkov iz oblaka: </string>
+    <string name="settings_delete_detail">Vprašaj uporabnika pred brisanjem opombe</string>
+    <string name="settings_serif">Serif</string>
+    <string name="settings_columns">Število opomb na vrsti</string>
+    <string name="settings_holder_type">Postavitev opombe</string>
+    <string name="settings_apply_layout_change_title">Uporabi spremembe</string>
+    <string name="settings_apply_layout_change">Če želite uporabiti spremembe postavitve, ponovno zaženite aplikacijo.</string>
+</resources>

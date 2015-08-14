@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Title Strings-->
+    <string name="app_name">Brainmark</string>
+    <string name="library">图书馆</string>
+    <string name="favorites">我的最爱</string>
+    <string name="cloud">云</string>
+    <string name="pink">粉红色</string>
+    <string name="orange">橙</string>
+    <string name="yellow">黄</string>
+    <string name="green">绿</string>
+    <string name="blue">蓝色</string>
+    <string name="indigo">靛青</string>
+    <string name="purple">紫</string>
+    <string name="image">图像</string>
+    <string name="category">分类</string>
+
+    <!--Action Strings. Also used as activity titles-->
+    <string name="action_settings">设置</string>
+    <string name="action_search">搜索</string>
+    <string name="action_add">注意添加</string>
+    <string name="action_done">完</string>
+    <string name="action_edit">编辑</string>
+    <string name="action_delete">删除</string>
+    <string name="action_email">发送电子邮件</string>
+    <string name="action_open_drawer">菜单</string>
+
+    <!--XML Note Edit Strings-->
+    <string name="title_hint">称号</string>
+    <string name="content_hint">内容</string>
+    <string name="search_hint">搜索标题或内容</string>
+    <string name="image_description"> </string>
+
+    <!--Alert Dialog Strings-->
+    <string name="note">注意</string>
+    <string name="caution">慎重</string>
+    <string name="error">错误</string>
+    <string name="confirm">确认</string>
+    <string name="got_it">好</string>
+    <string name="close">关闭</string>
+    <string name="exit">退出</string>
+    <string name="send_mail">发送邮件…</string>
+    <string name="saved">节约g…</string>
+    <string name="deleted">删除…</string>
+
+    <!--Note Related Strings-->
+    <string name="today">"今天, "</string>
+    <string name="last_edited">"最后编辑  "</string>
+    <string name="created_at">"在创建    "</string>
+
+    <!--Toast and Dialog content Strings-->
+    <string name="wrong_password">密码错误</string>
+    <string name="ask_delete_empty">没有音符选择</string>
+    <string name="ask_delete">删除备注？</string>
+    <string name="ask_delete_multiple">删除这些注意事项？</string>
+    <string name="long_title">标题过长：最多255个字符</string>
+    <string name="empty_title">请输入标题</string>
+    <string name="existing_title">标题是已在使用中</string>
+    <string name="invalid_title">请选择一个不同的标题</string>
+    <string name="no_color_type">错误：未能收到类别类型</string>
+    <string name="backup_fail">无法备份一些文件：\n</string>
+    <string name="previous_save">请耐心等待。以前保存的编辑。</string>
+    <string name="empty_photo">找不到图像</string>
+    <string name="no_photo_attachable">图片不能发送系统的安全性。还是送票子吗？</string>
+
+    <!--Exceptions strings.-->
+    <string name="parse_failed">"备份失败： "</string>
+    <string name="backup_error">"备份过程: "</string>
+    <string name="saving_file_fail">"保存文件: "</string>
+    <string name="image_lookup_fail">"图片查询: "</string>
+    <string name="content_storage_fail">"内容存储: "</string>
+
+    <!--Settings Titles-->
+    <string name="settings_security">安全</string>
+    <string name="settings_password">通过保护密码</string>
+    <string name="settings_parse">云备份</string>
+    <string name="settings_restore">恢复备份</string>
+    <string name="settings_delete">删除警报</string>
+    <string name="settings_font">风格</string>
+
+    <!--Long Settings strings-->
+    <string name="settings_password_detail">加密您的应用程序，并阻止其他人访问，同时你的手机被解锁</string>
+    <string name="settings_password_ask">这将编程保护您的数据，但我们建议将所有的个人信息的副本分开。</string>
+    <string name="settings_password_set">输入新密码</string>
+    <string name="settings_password_reset">重新输入密码</string>
+    <string name="do_not_match">密码不匹配。</string>
+    <string name="settings_password_decrypt">输入密码</string>
+    <string name="settings_parse_detail">这个程序将执行设备特定的备份笔记云用户打开应用程序每次。图片标题将不会被备份。</string>
+    <string name="settings_parse_backing_up">备份过程。请耐心等待。</string>
+    <string name="settings_parse_restore">这将删除与备份替换所有的笔记。</string>
+    <string name="settings_parse_restoring">恢复数据：不要关闭应用程序</string>
+    <string name="settings_parse_successful">恢复完毕</string>
+    <string name="settings_parse_failed">无法检索从云数据：</string>
+    <string name="settings_delete_detail">要求用户删除前的注意事项</string>
+    <string name="settings_serif">衬线</string>
+    <string name="settings_columns">每行票据号码</string>
+    <string name="settings_holder_type">附注布局</string>
+    <string name="settings_apply_layout_change_title">应用更改</string>
+    <string name="settings_apply_layout_change">要应用布局的变化，重新启动应用程序。</string>
+</resources>

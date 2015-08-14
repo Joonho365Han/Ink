@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Title Strings-->
+    <string name="app_name">Brainmark</string>
+    <string name="library">библиотека</string>
+    <string name="favorites">Бележник</string>
+    <string name="cloud">Oблак</string>
+    <string name="pink">Pозов</string>
+    <string name="orange">Oранжев</string>
+    <string name="yellow">жълт</string>
+    <string name="green">зелен</string>
+    <string name="blue">Cин</string>
+    <string name="indigo">индиго</string>
+    <string name="purple">Лилаво</string>
+    <string name="image">Изображение</string>
+    <string name="category">Категории</string>
+
+    <!--Action Strings. Also used as activity titles-->
+    <string name="action_settings">Hастройки</string>
+    <string name="action_search">Tърсене</string>
+    <string name="action_add">Добави бележка</string>
+    <string name="action_done">Cвършен</string>
+    <string name="action_edit">Pедактирам</string>
+    <string name="action_delete">Изтривам</string>
+    <string name="action_email">Изпратете имейл</string>
+    <string name="action_open_drawer">Mеню</string>
+
+    <!--XML Note Edit Strings-->
+    <string name="title_hint">3аглавие</string>
+    <string name="content_hint">Cъдържание</string>
+    <string name="search_hint">Търсене заглавие или съдържание</string>
+    <string name="image_description"> </string>
+
+    <!--Alert Dialog Strings-->
+    <string name="note">Забележка</string>
+    <string name="caution">Bнимание</string>
+    <string name="error">ГРЕШКА</string>
+    <string name="confirm">потвърждавам</string>
+    <string name="got_it">добре</string>
+    <string name="close">близо</string>
+    <string name="exit">Изход</string>
+    <string name="send_mail">Изпрати мейл…</string>
+    <string name="saved">Cпестяване…</string>
+    <string name="deleted">Изтриване…</string>
+
+    <!--Note Related Strings-->
+    <string name="today">"Днес, "</string>
+    <string name="last_edited">"Последната промяна  "</string>
+    <string name="created_at">"Създаден в  "</string>
+
+    <!--Toast and Dialog content Strings-->
+    <string name="wrong_password">Грешна парола</string>
+    <string name="ask_delete_empty">Няма избрани бележки</string>
+    <string name="ask_delete">Изтриване на тази бележка?</string>
+    <string name="ask_delete_multiple">Изтриване на тези бележки?</string>
+    <string name="long_title">Title е твърде дълъг: максимално 255 символа</string>
+    <string name="empty_title">Моля, въведете заглавие</string>
+    <string name="existing_title">Заглавие вече се използва</string>
+    <string name="invalid_title">Моля, изберете друго заглавие</string>
+    <string name="no_color_type">ГРЕШКА: не успя да получи типово категория</string>
+    <string name="backup_fail">Неуспех да направите резервно копие на някои файлове:\n</string>
+    <string name="previous_save">Моля Изчакай. Спасяването на предишния редактиране.</string>
+    <string name="empty_photo">Не можах да намеря картинката</string>
+    <string name="no_photo_attachable">Изображенията не могат да бъдат изпращани за сигурността на системата. И все пак изпрати бележка?</string>
+
+    <!--Exceptions strings.-->
+    <string name="parse_failed">"Backup неуспешно: "</string>
+    <string name="backup_error">"Backup процес: "</string>
+    <string name="saving_file_fail">"Файлът се запазва: "</string>
+    <string name="image_lookup_fail">"3аявка Изображение: "</string>
+    <string name="content_storage_fail">"Cъхранение Content: "</string>
+
+    <!--Settings Titles-->
+    <string name="settings_security">Cигурност</string>
+    <string name="settings_password">3ащита с парола</string>
+    <string name="settings_parse">Oблак Pезервно Kопие</string>
+    <string name="settings_restore">Възстановяване на Backup</string>
+    <string name="settings_delete">Изтрий Alert</string>
+    <string name="settings_font">Cтил</string>
+
+    <!--Long Settings strings-->
+    <string name="settings_password_detail">Криптирайте приложението си и да се предотврати достъпа от други хора, докато телефонът ви е отключена</string>
+    <string name="settings_password_ask">Това програмно ще защитите данните си, но ние препоръчваме да запазите копия от цялата лична информация отделно.</string>
+    <string name="settings_password_set">Въведете нова парола</string>
+    <string name="settings_password_reset">Повторното въвеждане на парола</string>
+    <string name="do_not_match">Паролите не съвпадат.</string>
+    <string name="settings_password_decrypt">Въведете паролата</string>
+    <string name="settings_parse_detail">Приложението ще извърши специфичен за устройството обратно на ноти на облак всеки път, когато потребителят отвори ап. Хедъри изображението няма да бъдат подкрепени.</string>
+    <string name="settings_parse_backing_up">Backup в процеса. Моля Изчакай.</string>
+    <string name="settings_parse_restore">Това ще изтрие и да замени всички бележки с гръб.</string>
+    <string name="settings_parse_restoring">Възстановяване на данни: Не затваряйте прилагането</string>
+    <string name="settings_parse_successful">Възстановяване на готовия</string>
+    <string name="settings_parse_failed">Неуспешно извличане на данни от облак: </string>
+    <string name="settings_delete_detail">Поиска от потребителя, преди да изтриете бележки</string>
+    <string name="settings_serif">извивка на буква</string>
+    <string name="settings_columns">Брой на банкноти в ред</string>
+    <string name="settings_holder_type">Oформление Note</string>
+    <string name="settings_apply_layout_change_title">Прилагане на промените</string>
+    <string name="settings_apply_layout_change">За да приложите промените оформлението, рестартирайте приложението.</string>
+</resources>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Title Strings-->
+    <string name="app_name">Brainmark</string>
+    <string name="library">Biblioteka</string>
+    <string name="favorites">Mėgstamiausi</string>
+    <string name="cloud">Debesis</string>
+    <string name="pink">Rožinis</string>
+    <string name="orange">Oranžinis</string>
+    <string name="yellow">Geltonas</string>
+    <string name="green">žalias</string>
+    <string name="blue">Mėlynas</string>
+    <string name="indigo">Indigas</string>
+    <string name="purple">Purpurinis</string>
+    <string name="image">Vaizdas</string>
+    <string name="category">Kategorijos</string>
+
+    <!--Action Strings. Also used as activity titles-->
+    <string name="action_settings">Nustatymai</string>
+    <string name="action_search">Paieška</string>
+    <string name="action_add">Pridėti Pastabą</string>
+    <string name="action_done">Padirbtas</string>
+    <string name="action_edit">Redaguoti</string>
+    <string name="action_delete">Panaikinti</string>
+    <string name="action_email">Siųsti Laišką</string>
+    <string name="action_open_drawer">Meniu</string>
+
+    <!--XML Note Edit Strings-->
+    <string name="title_hint">Pavadinimas</string>
+    <string name="content_hint">Turinys</string>
+    <string name="search_hint">Paieškos pavadinimas arba turinio</string>
+    <string name="image_description"> </string>
+
+    <!--Alert Dialog Strings-->
+    <string name="note">Pastaba</string>
+    <string name="caution">Dėmesio</string>
+    <string name="error">KLAIDA</string>
+    <string name="confirm">Patvirtinti</string>
+    <string name="got_it">Gerai</string>
+    <string name="close">Uždaryti šį</string>
+    <string name="exit">Išėjimas</string>
+    <string name="send_mail">Siųsti laišką…</string>
+    <string name="saved">Taupymas…</string>
+    <string name="deleted">Ištrynus…</string>
+
+    <!--Note Related Strings-->
+    <string name="today">"šiandien, "</string>
+    <string name="last_edited">"Paskutinį kartą redagavo  "</string>
+    <string name="created_at">"Sukurta  "</string>
+
+    <!--Toast and Dialog content Strings-->
+    <string name="wrong_password">Neteisingas slaptažodis</string>
+    <string name="ask_delete_empty">Nėra nuorodų pasirinktas</string>
+    <string name="ask_delete">Ištrinti šį įrašą?</string>
+    <string name="ask_delete_multiple">Ištrinti šias pastabas?</string>
+    <string name="long_title">Pavadinimas per ilgas: maksimalus 255 simbolių</string>
+    <string name="empty_title">Prašome įvesti vardą</string>
+    <string name="existing_title">Pavadinimas jau naudojamas</string>
+    <string name="invalid_title">Prašome pasirinkti kitą vardą</string>
+    <string name="no_color_type">KLAIDA: nepavyko gauti kategorija tipas</string>
+    <string name="backup_fail">Nepavyko atsargines kai kuriuos failus:\n</string>
+    <string name="previous_save">Prašau Palauk. Taupymo ankstesnę redaguoti.</string>
+    <string name="empty_photo">Nepavyko rasti vaizdas</string>
+    <string name="no_photo_attachable">Vaizdai gali būti siunčiami sistemos saugumui. Vis siųsti dėmesį?</string>
+
+    <!--Exceptions strings.-->
+    <string name="parse_failed">"Atsarginė nepavyko: "</string>
+    <string name="backup_error">"Atsarginė procesas: "</string>
+    <string name="saving_file_fail">"Taupymo failą: "</string>
+    <string name="image_lookup_fail">"Vaizdo užklausa: "</string>
+    <string name="content_storage_fail">"Turinio saugojimas: "</string>
+
+    <!--Settings Titles-->
+    <string name="settings_security">Saugumas</string>
+    <string name="settings_password">Apsauga Slaptažodis</string>
+    <string name="settings_parse">Debesis Atsarginė</string>
+    <string name="settings_restore">Atkurti iš atsarg</string>
+    <string name="settings_delete">Įspėjimas apie Naikinimas</string>
+    <string name="settings_font">Stilius</string>
+
+    <!--Long Settings strings-->
+    <string name="settings_password_detail">Koduoti savo programą ir neleisti patekti iš kitų žmonių, o jūsų telefonas yra atrakintas</string>
+    <string name="settings_password_ask">Tai bus programiškai apsaugoti savo duomenis, bet mes rekomenduojame laikyti kopijas visą asmeninę informaciją atskirai.</string>
+    <string name="settings_password_set">Įveskite naują slaptažodį</string>
+    <string name="settings_password_reset">Pakartokite slaptažodį</string>
+    <string name="do_not_match">Slaptažodžiai nesutampa.</string>
+    <string name="settings_password_decrypt">Įvesti slaptažodį</string>
+    <string name="settings_parse_detail">App bus atlikti įrenginio konkrečių atsargines pastabose debesis kiekvieną kartą vartotojas atidaro programą. Vaizdo antraštės nebus atsargines kopijas.</string>
+    <string name="settings_parse_backing_up">Atsarginė procese. Prašau Palauk.</string>
+    <string name="settings_parse_restore">Tai bus ištrinti ir pakeisti visus užrašus su atsarginės kopijos.</string>
+    <string name="settings_parse_restoring">Atkurti duomenis: Negalima uždaryti programą</string>
+    <string name="settings_parse_successful">Atkurti baigtas</string>
+    <string name="settings_parse_failed">Nepavyko gauti duomenis iš debesies: </string>
+    <string name="settings_delete_detail">Klauskite vartotoją Prieš trindami užrašus</string>
+    <string name="settings_serif">serif \"</string>
+    <string name="settings_columns">Taškų pastabas vienoje lysvėje</string>
+    <string name="settings_holder_type">Išplanavimas Pastaba</string>
+    <string name="settings_apply_layout_change_title">Taikyti Pakeitimus</string>
+    <string name="settings_apply_layout_change">Norėdami taikyti išdėstymo pakeitimus, iš naujo paleiskite programą.</string>
+</resources>

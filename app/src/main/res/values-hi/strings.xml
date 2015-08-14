@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Title Strings-->
+    <string name="app_name">Brainmark</string>
+    <string name="library">पुस्तकालय</string>
+    <string name="favorites">पसंदीदा</string>
+    <string name="cloud">बादल</string>
+    <string name="pink">गुलाबी</string>
+    <string name="orange">नारंगी</string>
+    <string name="yellow">पीला</string>
+    <string name="green">ग्रीन</string>
+    <string name="blue">नीला</string>
+    <string name="indigo">नील</string>
+    <string name="purple">बैंगनी</string>
+    <string name="image">छवि</string>
+    <string name="category">श्रेणियाँ</string>
+
+    <!--Action Strings. Also used as activity titles-->
+    <string name="action_settings">सेटिंग</string>
+    <string name="action_search">खोज</string>
+    <string name="action_add">नोट जोड़े</string>
+    <string name="action_done">डन</string>
+    <string name="action_edit">संपादित करें</string>
+    <string name="action_delete">हटाना</string>
+    <string name="action_email">ईमेल भेजें</string>
+    <string name="action_open_drawer">मेन्यू</string>
+
+    <!--XML Note Edit Strings-->
+    <string name="title_hint">शीर्षक</string>
+    <string name="content_hint">सामग्री</string>
+    <string name="search_hint">खोज शीर्षक या सामग्री</string>
+    <string name="image_description"> </string>
+
+    <!--Alert Dialog Strings-->
+    <string name="note">ध्यान दें</string>
+    <string name="caution">सावधान</string>
+    <string name="error">त्रुटि</string>
+    <string name="confirm">पुष्टि</string>
+    <string name="got_it">ठीक है</string>
+    <string name="close">बंद करे</string>
+    <string name="exit">बाहर जाएं</string>
+    <string name="send_mail">मेल भेजने…</string>
+    <string name="saved">बचत…</string>
+    <string name="deleted">हटाई जा रही है…</string>
+
+    <!--Note Related Strings-->
+    <string name="today">"आज, "</string>
+    <string name="last_edited">"अंतिम संपादित  "</string>
+    <string name="created_at">"पर बनाया गया  "</string>
+
+    <!--Toast and Dialog content Strings-->
+    <string name="wrong_password">गलत पासवर्ड</string>
+    <string name="ask_delete_empty">कोई नोट चुने गए हैं</string>
+    <string name="ask_delete">इस नोट को हटाना चाहते हैं?</string>
+    <string name="ask_delete_multiple">इन नोटों को हटाना चाहते हैं?</string>
+    <string name="long_title">शीर्षक बहुत लंबा है: अधिकतम 255 अक्षर</string>
+    <string name="empty_title">एक शीर्षक दर्ज करें</string>
+    <string name="existing_title">शीर्षक पहले से प्रयोग में है</string>
+    <string name="invalid_title">एक अलग शीर्षक का चयन करें</string>
+    <string name="no_color_type">त्रुटि: श्रेणी प्रकार प्राप्त करने में विफल</string>
+    <string name="backup_fail">कुछ फाइलों को वापस करने में विफल:\n</string>
+    <string name="previous_save">कृपया प्रतीक्षा करें। पिछले संपादित करें सहेजा जा रहा है।</string>
+    <string name="empty_photo">छवि नहीं मिल सका</string>
+    <string name="no_photo_attachable">छवियाँ सिस्टम की सुरक्षा के लिए नहीं भेजा जा सकता। अभी भी नोट भेजा है?</string>
+
+    <!--Exceptions strings.-->
+    <string name="parse_failed">"विफल बैकअप: "</string>
+    <string name="backup_error">"बैकअप प्रक्रिया: "</string>
+    <string name="saving_file_fail">"फ़ाइल सहेजा जा रहा है: "</string>
+    <string name="image_lookup_fail">"छवि क्वेरी: "</string>
+    <string name="content_storage_fail">"सामग्री का भंडारण: "</string>
+
+    <!--Settings Titles-->
+    <string name="settings_security">सुरक्षा</string>
+    <string name="settings_password">पारणशब्द सुरक्षा</string>
+    <string name="settings_parse">मेघ बैकअप</string>
+    <string name="settings_restore">बैकअप बहाल</string>
+    <string name="settings_delete">हटाए जाने की चेतावनी</string>
+    <string name="settings_font">अंदाज</string>
+
+    <!--Long Settings strings-->
+    <string name="settings_password_detail">आपके एप्लिकेशन एन्क्रिप्ट और अपने फोन खुला है, जबकि अन्य लोगों से पहुँच को रोकने के</string>
+    <string name="settings_password_ask">इस प्रोग्राम के लिए अपने डेटा की रक्षा करेगा, लेकिन हम अलग से सभी व्यक्तिगत जानकारी की प्रतियां रखने की सलाह देते।</string>
+    <string name="settings_password_set">नया पासवर्ड दर्ज करें</string>
+    <string name="settings_password_reset">पासवर्ड फिर से दर्ज करें</string>
+    <string name="do_not_match">पासवर्ड मेल नहीं खाते।</string>
+    <string name="settings_password_decrypt">पास वर्ड दर्ज करें</string>
+    <string name="settings_parse_detail">एप्लिकेशन को उपयोगकर्ता एप्लिकेशन को खोलता है हर बार बादल करने के लिए वापस नोटों से उपकरण-विशिष्ट प्रदर्शन करेंगे। छवि हेडर ऊपर का समर्थन नहीं किया जाएगा।</string>
+    <string name="settings_parse_backing_up">इस प्रक्रिया में बैकअप। कृपया प्रतीक्षा करें।</string>
+    <string name="settings_parse_restore">इसे हटाना और बैकअप के साथ सभी नोटों की जगह लेगा।</string>
+    <string name="settings_parse_restoring">डेटा को बहाल: आवेदन बंद न करें</string>
+    <string name="settings_parse_successful">समाप्त पुनर्स्थापित</string>
+    <string name="settings_parse_failed">बादल से डेटा पुनः प्राप्त करने में असफल: </string>
+    <string name="settings_delete_detail">नोटों को हटाने से पहले उपयोगकर्ता से पूछो</string>
+    <string name="settings_serif">सेरिफ़</string>
+    <string name="settings_columns">पंक्ति प्रति नोटों की संख्या</string>
+    <string name="settings_holder_type">नोट लेआउट</string>
+    <string name="settings_apply_layout_change_title">परिवर्तन लागू करें</string>
+    <string name="settings_apply_layout_change">लेआउट परिवर्तनों को लागू करने के लिए, एप्लिकेशन को पुनः आरंभ।</string>
+</resources>

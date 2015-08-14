@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="eden.notebook.ink" >
+
+    <!--
+    Copyright [Google Inc.]
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.-->
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:hardwareAccelerated="true"
+        android:allowBackup="true"
+        android:largeHeap="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+
+        <activity
+            android:name=".Library"
+            android:label="@string/app_name"
+            android:launchMode="singleTop"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+
+        <activity
+            android:name=".Settings"
+            android:label="@string/action_settings"
+            android:launchMode="singleTop"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
+
+        <activity
+            android:name=".AddNote"
+            android:label="@string/action_add"
+            android:launchMode="singleTop"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
+
+        <activity
+            android:name=".ViewNote"
+            android:label=""
+            android:launchMode="singleTask"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
+
+        <activity
+            android:name=".PhotoViewer"
+            android:launchMode="singleTop"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
+
+        <activity
+            android:name=".EditNote"
+            android:label="@string/action_edit"
+            android:launchMode="singleTop"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ViewNote" />
+        </activity>
+
+        <provider
+            android:name=".NoteSearchSuggestionProvider"
+            android:authorities="eden.notebook.ink.NoteSearchSuggestionProvider"
+            android:exported = "false"/>
+
+    </application>
+</manifest>

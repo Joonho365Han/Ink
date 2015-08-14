@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Title Strings-->
+    <string name="app_name">Brainmark</string>
+    <string name="library">Maktaba</string>
+    <string name="favorites">Yoyote</string>
+    <string name="cloud">Wingu</string>
+    <string name="pink">Rosa</string>
+    <string name="orange">Machungwa</string>
+    <string name="yellow">Njano</string>
+    <string name="green">Kijani</string>
+    <string name="blue">Bluu</string>
+    <string name="indigo">Indigo</string>
+    <string name="purple">Zambarau</string>
+    <string name="image">Bild</string>
+    <string name="category">Jamii</string>
+
+    <!--Action Strings. Also used as activity titles-->
+    <string name="action_settings">Mazingira</string>
+    <string name="action_search">Sök</string>
+    <string name="action_add">Kuongeza Kumbuka</string>
+    <string name="action_done">Klar</string>
+    <string name="action_edit">Hariri</string>
+    <string name="action_delete">Kufuta</string>
+    <string name="action_email">Skicka E-post</string>
+    <string name="action_open_drawer">Orodha</string>
+
+    <!--XML Note Edit Strings-->
+    <string name="title_hint">Cheo</string>
+    <string name="content_hint">yaliyomo</string>
+    <string name="search_hint">Search cheo au maudhui</string>
+    <string name="image_description"> </string>
+
+    <!--Alert Dialog Strings-->
+    <string name="note">Kumbuka</string>
+    <string name="caution">Tahadhari</string>
+    <string name="error">KOSA</string>
+    <string name="confirm">Kuthibitisha</string>
+    <string name="got_it">Sawa</string>
+    <string name="close">karibu</string>
+    <string name="exit">kuacha</string>
+    <string name="send_mail">Kutuma barua…</string>
+    <string name="saved">Kuokoa…</string>
+    <string name="deleted">Kufuta…</string>
+
+    <!--Note Related Strings-->
+    <string name="today">"Leo, "</string>
+    <string name="last_edited">"Ilihaririwa mwisho  "</string>
+    <string name="created_at">"Kuundwa kwa  "</string>
+
+    <!--Toast and Dialog content Strings-->
+    <string name="wrong_password">Lösenord makosa</string>
+    <string name="ask_delete_empty">Hakuna maelezo wanachaguliwa</string>
+    <string name="ask_delete">Kufuta kumbuka hii?</string>
+    <string name="ask_delete_multiple">Kufuta maelezo haya?</string>
+    <string name="long_title">Cheo ni muda mrefu sana: kiwango cha juu wahusika 255</string>
+    <string name="empty_title">Tafadhali kuingia cheo</string>
+    <string name="existing_title">Cheo ni tayari katika matumizi</string>
+    <string name="invalid_title">Tafadhali kuchagua jina tofauti</string>
+    <string name="no_color_type">KOSA: ilishindwa kupokea jamii ya aina</string>
+    <string name="backup_fail">Alishindwa kuunga baadhi mafaili:\n</string>
+    <string name="previous_save">Tafadhali kusubiri. Kuokoa hariri uliopita.</string>
+    <string name="empty_photo">Hakuweza kupata picha</string>
+    <string name="no_photo_attachable">Picha haiwezi kutumwa kwa ajili ya mfumo wa usalama. Bado kutuma kumbuka?</string>
+
+    <!--Exceptions strings.-->
+    <string name="parse_failed">"Backup alishindwa:: "</string>
+    <string name="backup_error">"Backup mchakato: "</string>
+    <string name="saving_file_fail">"Kuokoa faili: "</string>
+    <string name="image_lookup_fail">"Bild swala: "</string>
+    <string name="content_storage_fail">"Kuhifadhi bidhaa: "</string>
+
+    <!--Settings Titles-->
+    <string name="settings_security">Usalama</string>
+    <string name="settings_password">Ulinzi na Nywila</string>
+    <string name="settings_parse">Wingu Backup</string>
+    <string name="settings_restore">Kurejesha Backup</string>
+    <string name="settings_delete">Macho ya Kufutwa</string>
+    <string name="settings_font">Mtindo</string>
+
+    <!--Long Settings strings-->
+    <string name="settings_password_detail">Encrypt programu yako na kuzuia upatikanaji kutoka kwa watu wengine wakati simu yako ni unlocked</string>
+    <string name="settings_password_ask">Hii programmatically kulinda data yako, lakini sisi kupendekeza kuweka nakala za taarifa za kibinafsi tofauti.</string>
+    <string name="settings_password_set">Kuingiza nywila mpya</string>
+    <string name="settings_password_reset">Re-kuingia password</string>
+    <string name="do_not_match">Nywila si mechi.</string>
+    <string name="settings_password_decrypt">Kuingia password</string>
+    <string name="settings_parse_detail">Programu hii kufanya kifaa maalum nyuma juu ya maelezo ya wingu kila wakati mtumiaji kufungua programu. Image headers hautakuwa yanayoambatana.</string>
+    <string name="settings_parse_backing_up">Backup katika mchakato. Tafadhali kusubiri.</string>
+    <string name="settings_parse_restore">Hii kufuta na badala maelezo yote na ziada.</string>
+    <string name="settings_parse_restoring">Kurejesha data: Je, si karibu maombi</string>
+    <string name="settings_parse_successful">Kurejesha kumaliza</string>
+    <string name="settings_parse_failed">Alishindwa retrieve data kutoka wingu: </string>
+    <string name="settings_delete_detail">Kuuliza user kabla ya kufuta maelezo</string>
+    <string name="settings_serif">Serif</string>
+    <string name="settings_columns">Idadi ya maelezo kwa mstari</string>
+    <string name="settings_holder_type">Mpangilio wa Ilani</string>
+    <string name="settings_apply_layout_change_title">Kuomba Mabadiliko</string>
+    <string name="settings_apply_layout_change">Kuomba mabadiliko ya mpangilio, kuanzisha upya programu.</string>
+</resources>

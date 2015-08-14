@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="color_type">
+        <item>Awan sundulan</item>
+        <item>Warna merah muda</item>
+        <item>Jeruk</item>
+        <item>Kuning</item>
+        <item>Hijau</item>
+        <item>Biru</item>
+        <item>Nila</item>
+        <item>Ungu</item>
+        <item>Pilih sundulan album</item>
+    </string-array>
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="color_type">
+        <item>رأس سحابة</item>
+        <item>وردي</item>
+        <item>برتقالي</item>
+        <item>أصفر</item>
+        <item>أخضر</item>
+        <item>أزرق</item>
+        <item>اللون النيلي</item>
+        <item>أرجواني</item>
+        <item>حدد رأس من ألبوم</item>
+    </string-array>
+</resources>

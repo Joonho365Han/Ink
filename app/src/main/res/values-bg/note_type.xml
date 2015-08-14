@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="note_type">
+        <item>Xлабав</item>
+        <item>C примес</item>
+    </string-array>
+</resources>

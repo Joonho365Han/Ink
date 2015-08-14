@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Title Strings-->
+    <string name="app_name">Brainmark</string>
+    <string name="library">Knižnica</string>
+    <string name="favorites">Obľúbené</string>
+    <string name="cloud">Oblak</string>
+    <string name="pink">Ružový</string>
+    <string name="orange">Oranžový</string>
+    <string name="yellow">žltý</string>
+    <string name="green">Zelená</string>
+    <string name="blue">Modrý</string>
+    <string name="indigo">Indigo</string>
+    <string name="purple">nachový</string>
+    <string name="image">Obraz</string>
+    <string name="category">Kategórie</string>
+
+    <!--Action Strings. Also used as activity titles-->
+    <string name="action_settings">Nastavenie</string>
+    <string name="action_search">Vyhľadávanie</string>
+    <string name="action_add">Pridať Poznámku</string>
+    <string name="action_done">Hotový</string>
+    <string name="action_edit">Editovať</string>
+    <string name="action_delete">Vymazať</string>
+    <string name="action_email">Poslať E-Mailom</string>
+    <string name="action_open_drawer">Menu</string>
+
+    <!--XML Note Edit Strings-->
+    <string name="title_hint">Názov</string>
+    <string name="content_hint">Obsah</string>
+    <string name="search_hint">Hľadaj názov alebo obsah</string>
+    <string name="image_description"> </string>
+
+    <!--Alert Dialog Strings-->
+    <string name="note">Poznámka</string>
+    <string name="caution">Pozor</string>
+    <string name="error">CHYBA</string>
+    <string name="confirm">Potvrdiť</string>
+    <string name="got_it">Dobre</string>
+    <string name="close">Zavrieť</string>
+    <string name="exit">Prestať</string>
+    <string name="send_mail">Poslať poštu…</string>
+    <string name="saved">Sporenie…</string>
+    <string name="deleted">Odstránenie…</string>
+
+    <!--Note Related Strings-->
+    <string name="today">"Dnes, "</string>
+    <string name="last_edited">"Naposledy upravil  "</string>
+    <string name="created_at">"Vytvorené na  "</string>
+
+    <!--Toast and Dialog content Strings-->
+    <string name="wrong_password">Zlé heslo</string>
+    <string name="ask_delete_empty">Sú vybraté žiadne poznámky</string>
+    <string name="ask_delete">Odstrániť túto poznámku?</string>
+    <string name="ask_delete_multiple">Odstrániť tieto poznámky?</string>
+    <string name="long_title">Názov je príliš dlhý: maximálne 255 znakov</string>
+    <string name="empty_title">Prosím, zadajte názov</string>
+    <string name="existing_title">Názov sa už používa</string>
+    <string name="invalid_title">Prosím, vyberte iný názov</string>
+    <string name="no_color_type">CHYBA: nepodarilo prijať typu kategórie</string>
+    <string name="backup_fail">Nepodarilo sa zálohovať nejaké súbory:\n</string>
+    <string name="previous_save">Prosím, čakajte. Uloženie predchádzajúcej upravovať.</string>
+    <string name="empty_photo">Nemožno nájsť obrázok</string>
+    <string name="no_photo_attachable">Snímky nemožno odoslať pre zabezpečenie systému. Stále poslať odkaz?</string>
+
+    <!--Exceptions strings.-->
+    <string name="parse_failed">"Zálohovanie zlyhalo: "</string>
+    <string name="backup_error">"Zálohovanie proces: "</string>
+    <string name="saving_file_fail">"Ukladanie súboru: "</string>
+    <string name="image_lookup_fail">"Dotaz Image: "</string>
+    <string name="content_storage_fail">"Obsah skladovanie: "</string>
+
+    <!--Settings Titles-->
+    <string name="settings_security">Zabezpečenie</string>
+    <string name="settings_password">Ochrana Heslom</string>
+    <string name="settings_parse">Oblak Zálohu</string>
+    <string name="settings_restore">Obnoviť Zálohu</string>
+    <string name="settings_delete">Alert Výmazu</string>
+    <string name="settings_font">štýl</string>
+
+    <!--Long Settings strings-->
+    <string name="settings_password_detail">Šifrovanie vašej aplikácie a zabrániť prístup z iných ľudí, zatiaľ čo váš telefón je odomknutý</string>
+    <string name="settings_password_ask">To bude programovo ochranu vašich dát, ale my odporúčame držať kópie všetkých osobných informácií zvlášť.</string>
+    <string name="settings_password_set">Zadajte nové heslo</string>
+    <string name="settings_password_reset">Zadajte heslo znova</string>
+    <string name="do_not_match">Heslá sa nezhodujú.</string>
+    <string name="settings_password_decrypt">Zadajte heslo</string>
+    <string name="settings_parse_detail">Táto aplikácia bude vykonávať špecifické pre zariadenie zálohovanie poznámok na cloud zakaždým, keď používateľ otvorí aplikáciu. Obrázok hlavičky nebudú zálohované.</string>
+    <string name="settings_parse_backing_up">Zálohovanie v procese. Prosím, čakajte.</string>
+    <string name="settings_parse_restore">Zálohovanie v procese. Prosím, čakajte.</string>
+    <string name="settings_parse_restoring">Obnova dát: Nezatvárajte aplikáciu</string>
+    <string name="settings_parse_successful">Obnovenie ukončené</string>
+    <string name="settings_parse_failed">Nepodarilo sa získať dáta z cloudu:</string>
+    <string name="settings_delete_detail">Požiadajte užívateľa pred odstránením poznámky</string>
+    <string name="settings_serif">Serif</string>
+    <string name="settings_columns">Počet bankoviek v rade</string>
+    <string name="settings_holder_type">Rozloženie poznámky</string>
+    <string name="settings_apply_layout_change_title">použiť zmeny</string>
+    <string name="settings_apply_layout_change">Ak chcete použiť zmeny rozvrhnutie, reštartujte aplikáciu.</string>
+</resources>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Title Strings-->
+    <string name="app_name">Brainmark</string>
+    <string name="library">ライブラリ</string>
+    <string name="favorites">お気に入り</string>
+    <string name="cloud">雲</string>
+    <string name="pink">ピンク</string>
+    <string name="orange">オレンジ</string>
+    <string name="yellow">黄</string>
+    <string name="green">緑</string>
+    <string name="blue">青</string>
+    <string name="indigo">藍</string>
+    <string name="purple">紫</string>
+    <string name="image">画像</string>
+    <string name="category">カテゴリー</string>
+
+    <!--Action Strings. Also used as activity titles-->
+    <string name="action_settings">設定</string>
+    <string name="action_search">検索</string>
+    <string name="action_add">メモを追加</string>
+    <string name="action_done">終わりました</string>
+    <string name="action_edit">編集</string>
+    <string name="action_delete">削除</string>
+    <string name="action_email">メールを送ります</string>
+    <string name="action_open_drawer">メニュー</string>
+
+    <!--XML Note Edit Strings-->
+    <string name="title_hint">タイトル</string>
+    <string name="content_hint">コンテンツ</string>
+    <string name="search_hint">検索のタイトルやコンテンツ</string>
+    <string name="image_description"> </string>
+
+    <!--Alert Dialog Strings-->
+    <string name="note">注意</string>
+    <string name="caution">注意</string>
+    <string name="error">ERROR</string>
+    <string name="confirm">確認します</string>
+    <string name="got_it">はい</string>
+    <string name="close">クローズ</string>
+    <string name="exit">やめます</string>
+    <string name="send_mail">メールを送信…</string>
+    <string name="saved">節約…</string>
+    <string name="deleted">削除…</string>
+
+    <!--Note Related Strings-->
+    <string name="today">"今日, "</string>
+    <string name="last_edited">"最後に編集  "</string>
+    <string name="created_at">"で作成されました  "</string>
+
+    <!--Toast and Dialog content Strings-->
+    <string name="wrong_password">間違ったパスワード</string>
+    <string name="ask_delete_empty">いいえノートが選択されていません</string>
+    <string name="ask_delete">このノートを削除しますか？</string>
+    <string name="ask_delete_multiple">これらのメモを削除しますか？</string>
+    <string name="long_title">タイトルが長すぎます：最大255文字</string>
+    <string name="empty_title">タイトルを入力してください</string>
+    <string name="existing_title">タイトルはすでに使用されています</string>
+    <string name="invalid_title">別のタイトルを選択してください</string>
+    <string name="no_color_type">ERROR：カテゴリタイプの受信に失敗しました</string>
+    <string name="backup_fail">いくつかのファイルをバックアップに失敗しました：\n</string>
+    <string name="previous_save">お待ちください。前の編集を保存します。</string>
+    <string name="empty_photo">画像が見つかりませんでした</string>
+    <string name="no_photo_attachable">画像は、システムのセキュリティのために送信することはできません。まだメモを送信しますか？</string>
+
+    <!--Exceptions strings.-->
+    <string name="parse_failed">"失敗したバックアップ: "</string>
+    <string name="backup_error">"バックアッププロセス: "</string>
+    <string name="saving_file_fail">"ファイルを保存します: "</string>
+    <string name="image_lookup_fail">"画像質問: "</string>
+    <string name="content_storage_fail">"コンテンツストレージ: "</string>
+
+    <!--Settings Titles-->
+    <string name="settings_security">セキュリティ</string>
+    <string name="settings_password">パスワード保護</string>
+    <string name="settings_parse">クラウドバックアップ</string>
+    <string name="settings_restore">バックアップのリストア</string>
+    <string name="settings_delete">削除のアラート</string>
+    <string name="settings_font">スタイル</string>
+
+    <!--Long Settings strings-->
+    <string name="settings_password_detail">あなたのアプリを暗号化してお使いの携帯電話のロックが解除されている間に、他の人からのアクセスを防止</string>
+    <string name="settings_password_ask">これは、プログラムでデータを保護しますが、私たちは別々にすべての個人情報のコピーをおくことをお勧めします。</string>
+    <string name="settings_password_set">新しいパスワードを入力してください</string>
+    <string name="settings_password_reset">パスワード再入力</string>
+    <string name="do_not_match">パスワードが一致しません。</string>
+    <string name="settings_password_decrypt">パスワードを入力します</string>
+    <string name="settings_parse_detail">アプリは、ユーザーがアプリを開くたびに、クラウドに戻ってノートのアップデバイス固有の実行されます。画像ヘッダはバックアップされません。</string>
+    <string name="settings_parse_backing_up">プロセスでのバックアップ。 お待ちください。</string>
+    <string name="settings_parse_restore">これは削除し、バックアップとすべてのメモを置き換えます。</string>
+    <string name="settings_parse_restoring">データの復元：アプリケーションを閉じないでください</string>
+    <string name="settings_parse_successful">完成した復元</string>
+    <string name="settings_parse_failed">クラウドからのデータの取得に失敗しました: </string>
+    <string name="settings_delete_detail">ノートを削除する前にユーザーに確認</string>
+    <string name="settings_serif">セリフ</string>
+    <string name="settings_columns">行あたりのノートの数</string>
+    <string name="settings_holder_type">ノートレイアウト</string>
+    <string name="settings_apply_layout_change_title">変更を適用</string>
+    <string name="settings_apply_layout_change">レイアウトの変更を適用するには、アプリを再起動します。</string>
+</resources>

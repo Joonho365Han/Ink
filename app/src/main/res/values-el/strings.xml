@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Title Strings-->
+    <string name="app_name">Brainmark</string>
+    <string name="library">βιβλιοθήκη</string>
+    <string name="favorites">Αγαπημένα</string>
+    <string name="cloud">σύννεφο</string>
+    <string name="pink">ροζ</string>
+    <string name="orange">πορτοκάλι</string>
+    <string name="yellow">κίτρινος</string>
+    <string name="green">πράσινος</string>
+    <string name="blue">μπλε</string>
+    <string name="indigo">λουλάκι</string>
+    <string name="purple">μωβ</string>
+    <string name="image">Εικόνα</string>
+    <string name="category">Κατηγορίες</string>
+
+    <!--Action Strings. Also used as activity titles-->
+    <string name="action_settings">ρυθμίσεις</string>
+    <string name="action_search">έρευνα</string>
+    <string name="action_add">Προσθήκη σημείωσης</string>
+    <string name="action_done">Έγινε</string>
+    <string name="action_edit">Επεξεργασία</string>
+    <string name="action_delete">Διαγραφή</string>
+    <string name="action_email">Να στείλετε e-mail</string>
+    <string name="action_open_drawer">μενού</string>
+
+    <!--XML Note Edit Strings-->
+    <string name="title_hint">τίτλος</string>
+    <string name="content_hint">περιεχόμενο</string>
+    <string name="search_hint">Αναζήτηση τίτλο ή το περιεχόμενο</string>
+    <string name="image_description"> </string>
+
+    <!--Alert Dialog Strings-->
+    <string name="note">Σημείωση</string>
+    <string name="caution">προσοχή</string>
+    <string name="error">ΣΦΑΛΜΑ</string>
+    <string name="confirm">επιβεβαιώνω</string>
+    <string name="got_it">εντάξει</string>
+    <string name="close">κοντά</string>
+    <string name="exit">έξοδος</string>
+    <string name="send_mail">Αποστολή μηνύματος ηλεκτρονικού ταχυδρομείου…</string>
+    <string name="saved">οικονομία…</string>
+    <string name="deleted">Διαγραφή…</string>
+
+    <!--Note Related Strings-->
+    <string name="today">"σήμερα, "</string>
+    <string name="last_edited">"τελευταία επεξεργασία  "</string>
+    <string name="created_at">"δημιουργήθηκε στις  "</string>
+
+    <!--Toast and Dialog content Strings-->
+    <string name="wrong_password">Λάθος κωδικός</string>
+    <string name="ask_delete_empty">Υπάρχουν σημειώσεις επιλεγεί</string>
+    <string name="ask_delete">Διαγράψτε αυτό το σημείωμα;</string>
+    <string name="ask_delete_multiple">Διαγράψτε αυτές τις σημειώσεις;</string>
+    <string name="long_title">Ο τίτλος είναι υπερβολικά μακρύς: μέγιστο 255 χαρακτήρες</string>
+    <string name="empty_title">Παρακαλώ εισάγετε έναν τίτλο</string>
+    <string name="existing_title">Ο τίτλος είναι ήδη σε χρήση</string>
+    <string name="invalid_title">Παρακαλώ επιλέξτε ένα διαφορετικό τίτλο</string>
+    <string name="no_color_type">ΣΦΑΛΜΑ: απέτυχε να λάβει τον τύπο της κατηγορίας</string>
+    <string name="backup_fail">Απέτυχε η δημιουργία αντιγράφων ασφαλείας ορισμένων αρχείων:\n</string>
+    <string name="previous_save">Παρακαλώ περιμένετε. Αποθήκευση προηγούμενη επεξεργασία.</string>
+    <string name="empty_photo">Δεν ήταν δυνατή η εύρεση της εικόνας</string>
+    <string name="no_photo_attachable">Οι εικόνες δεν μπορούν να αποσταλούν για την ασφάλεια του συστήματος. Ακόμα στείλει σημείωμα;</string>
+
+    <!--Exceptions strings.-->
+    <string name="parse_failed">"αντιγράφων ασφαλείας απέτυχε: "</string>
+    <string name="backup_error">"διαδικασία δημιουργίας αντιγράφων ασφαλείας: "</string>
+    <string name="saving_file_fail">"Αποθήκευση αρχείου: "</string>
+    <string name="image_lookup_fail">"ερώτημα εικόνα: "</string>
+    <string name="content_storage_fail">"Aποθήκευση Περιεχομένου: "</string>
+
+    <!--Settings Titles-->
+    <string name="settings_security">Aσφάλεια</string>
+    <string name="settings_password">Προστασία κωδικού πρόσβασης</string>
+    <string name="settings_parse">εφεδρικός σύννεφο</string>
+    <string name="settings_restore">Επαναφορά αντιγράφων ασφαλείας</string>
+    <string name="settings_delete">Ειδοποίηση διαγραφής</string>
+    <string name="settings_font">στυλ</string>
+
+    <!--Long Settings strings-->
+    <string name="settings_password_detail">Κρυπτογράφηση app σας και να εμποδίζουν την πρόσβαση από τους άλλους ανθρώπους, ενώ το τηλέφωνό σας είναι ξεκλείδωτη</string>
+    <string name="settings_password_ask">Αυτό θα προστατεύσει τα προγραμματικά δεδομένα σας, αλλά σας συνιστούμε κρατώντας αντίγραφα όλων των προσωπικών πληροφοριών ξεχωριστά.</string>
+    <string name="settings_password_set">Εισάγετε το νέο κωδικό πρόσβασης</string>
+    <string name="settings_password_reset">Πληκτρολογήστε ξανά τον κωδικό πρόσβασης</string>
+    <string name="do_not_match">Οι κωδικοί πρόσβασης δεν ταιριάζουν.</string>
+    <string name="settings_password_decrypt">Εισάγετε τον κωδικό πρόσβασης</string>
+    <string name="settings_parse_detail">Η εφαρμογή θα εκτελέσει τη συγκεκριμένη συσκευή αντιγράφων ασφαλείας των χαρτονομισμάτων σε σύννεφο κάθε φορά που ο χρήστης ανοίγει το app. Κεφαλίδες εικόνα δεν θα υποστηρίζεται.</string>
+    <string name="settings_parse_backing_up">Δημιουργία αντιγράφων ασφαλείας σε εξέλιξη. Παρακαλώ περιμένετε.</string>
+    <string name="settings_parse_restore">Αυτό θα διαγράψει και να αντικαταστήσει όλες τις σημειώσεις με εφεδρική.</string>
+    <string name="settings_parse_restoring">Επαναφορά δεδομένων: Μην κλείσετε την εφαρμογή</string>
+    <string name="settings_parse_successful">Επαναφορά τελικό</string>
+    <string name="settings_parse_failed">Απέτυχε η ανάκτηση δεδομένων από το σύννεφο: </string>
+    <string name="settings_delete_detail">Ζητήστε από το χρήστη πριν από τη διαγραφή σημειώσεων</string>
+    <string name="settings_serif">ελαφρή γραμμή</string>
+    <string name="settings_columns">Αριθμός σημειώσεις ανά σειρά</string>
+    <string name="settings_holder_type">διάταξης Σημείωση</string>
+    <string name="settings_apply_layout_change_title">Εφαρμογή αλλαγών</string>
+    <string name="settings_apply_layout_change">Για να εφαρμόσετε τις αλλαγές διάταξης, να επανεκκινήσετε την εφαρμογή.</string>
+</resources>

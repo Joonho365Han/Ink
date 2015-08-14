@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Title Strings-->
+    <string name="app_name">Brainmark</string>
+    <string name="library">Biblioteka</string>
+    <string name="favorites">Ulubione</string>
+    <string name="cloud">Chmura</string>
+    <string name="pink">Różowy</string>
+    <string name="orange">Pomarańczowy</string>
+    <string name="yellow">żółty</string>
+    <string name="green">zielony</string>
+    <string name="blue">Niebieski</string>
+    <string name="indigo">Indygo</string>
+    <string name="purple">Fioletowy</string>
+    <string name="image">Obraz</string>
+    <string name="category">Kategorie</string>
+
+    <!--Action Strings. Also used as activity titles-->
+    <string name="action_settings">Ustawienia</string>
+    <string name="action_search">Poszukiwanie</string>
+    <string name="action_add">Dodaj Notatkę</string>
+    <string name="action_done">Gotowe</string>
+    <string name="action_edit">Edytuj</string>
+    <string name="action_delete">Kasować</string>
+    <string name="action_email">Wyślij E-Mail</string>
+    <string name="action_open_drawer">Menu</string>
+
+    <!--XML Note Edit Strings-->
+    <string name="title_hint">Tytuł</string>
+    <string name="content_hint">Zawartość</string>
+    <string name="search_hint">Wyszukaj tytuł lub treść</string>
+    <string name="image_description"> </string>
+
+    <!--Alert Dialog Strings-->
+    <string name="note">Notatka</string>
+    <string name="caution">Uwaga</string>
+    <string name="error">BŁĄD</string>
+    <string name="confirm">Potwierdzać</string>
+    <string name="got_it">Ok</string>
+    <string name="close">Zamknij</string>
+    <string name="exit">Porzucić</string>
+    <string name="send_mail">Wyślij maila…</string>
+    <string name="saved">Oszczędność…</string>
+    <string name="deleted">Usuwanie…</string>
+
+    <!--Note Related Strings-->
+    <string name="today">"Dzisiaj, "</string>
+    <string name="last_edited">"Ostatnio edytowane  "</string>
+    <string name="created_at">"Utworzono  "</string>
+
+    <!--Toast and Dialog content Strings-->
+    <string name="wrong_password">Nieprawidłowe hasło</string>
+    <string name="ask_delete_empty">Brak notatek są wybierane</string>
+    <string name="ask_delete">Skasować tę notatkę?</string>
+    <string name="ask_delete_multiple">Usuń te notatki?</string>
+    <string name="long_title">Tytuł jest zbyt długi: maksymalnie 255 znaków</string>
+    <string name="empty_title">Wprowadź tytuł</string>
+    <string name="existing_title">Nazwa jest już w użyciu</string>
+    <string name="invalid_title">Proszę wybrać inny tytuł</string>
+    <string name="no_color_type">BŁĄD: nie udało się otrzymać kategorii typ</string>
+    <string name="backup_fail">Nie udało się wykonać kopię zapasową niektórych plików:\n</string>
+    <string name="previous_save">Proszę czekać. Zapisywanie poprzedniej edycji.</string>
+    <string name="empty_photo">Nie można znaleźć obrazu</string>
+    <string name="no_photo_attachable">Obrazy nie mogą być wysyłane za bezpieczeństwo systemu. Wciąż wysłać notatkę?</string>
+
+    <!--Exceptions strings.-->
+    <string name="parse_failed">"Kopii zapasowej nie powiodło się: "</string>
+    <string name="backup_error">"Proces tworzenia kopii zapasowej: "</string>
+    <string name="saving_file_fail">"Zapisywanie pliku: "</string>
+    <string name="image_lookup_fail">"Zapytanie zdjęcie: "</string>
+    <string name="content_storage_fail">"Przechowywanie zawartości: "</string>
+
+    <!--Settings Titles-->
+    <string name="settings_security">Bezpieczeństwo</string>
+    <string name="settings_password">Ochrona za pomocą hasła</string>
+    <string name="settings_parse">Chmura Kopia Zapasowa</string>
+    <string name="settings_restore">przywracania Kopii Zapasowej</string>
+    <string name="settings_delete">Usuń powiadomienie</string>
+    <string name="settings_font">Styl</string>
+
+    <!--Long Settings strings-->
+    <string name="settings_password_detail">Szyfrowanie aplikacji i uniemożliwić dostęp od innych ludzi, gdy telefon jest odblokowany</string>
+    <string name="settings_password_ask">To będzie programowo chronić swoje dane, ale zalecamy utrzymywanie kopii wszystkich danych osobowych oddzielnie.</string>
+    <string name="settings_password_set">Wpisz nowe hasło</string>
+    <string name="settings_password_reset">Wprowadź ponownie hasło</string>
+    <string name="do_not_match">Hasło nie pasuje.</string>
+    <string name="settings_password_decrypt">Wprowadź hasło</string>
+    <string name="settings_parse_detail">Ta aplikacja będzie wykonywać specyficzne urządzenie z powrotem do cloud notatek za każdym razem, gdy użytkownik otworzy aplikację. Nagłówki obrazu nie zostaną zarchiwizowane.</string>
+    <string name="settings_parse_backing_up">Tworzenie kopii zapasowych w procesie. Proszę czekać.</string>
+    <string name="settings_parse_restore">Pozwoli to usunąć i zastąpić wszystkie notatki z kopii zapasowej.</string>
+    <string name="settings_parse_restoring">Przywracanie danych: Nie zamknąć aplikację</string>
+    <string name="settings_parse_successful">Przywróć wykończone</string>
+    <string name="settings_parse_failed">Nie można pobrać danych z chmury: </string>
+    <string name="settings_delete_detail">Zwrócić się do użytkownika przed usunięciem notatki</string>
+    <string name="settings_serif">Serif</string>
+    <string name="settings_columns">Liczba notatek na rząd</string>
+    <string name="settings_holder_type">Układ nocie</string>
+    <string name="settings_apply_layout_change_title">Zatwierdź Zmiany</string>
+    <string name="settings_apply_layout_change">Aby zastosować zmiany układu, uruchom ponownie aplikację.</string>
+</resources>

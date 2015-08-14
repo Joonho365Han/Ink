@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Title Strings-->
+    <string name="app_name">Brainmark</string>
+    <string name="library">Biblioteek</string>
+    <string name="favorites">Gunstelinge</string>
+    <string name="cloud">Wolk</string>
+    <string name="pink">Pienk</string>
+    <string name="orange">Oranje</string>
+    <string name="yellow">Geel</string>
+    <string name="green">Groen</string>
+    <string name="blue">Blou</string>
+    <string name="indigo">Indigo</string>
+    <string name="purple">Pers</string>
+    <string name="image">Beeld</string>
+    <string name="category">Kategorieë</string>
+
+    <!--Action Strings. Also used as activity titles-->
+    <string name="action_settings">Instellings</string>
+    <string name="action_search">Soektog</string>
+    <string name="action_add">Voeg Nota</string>
+    <string name="action_done">Gedaan</string>
+    <string name="action_edit">Wysig</string>
+    <string name="action_delete">Verwyder</string>
+    <string name="action_email">Stuur E-pos</string>
+    <string name="action_open_drawer">Spyskaart</string>
+
+    <!--XML Note Edit Strings-->
+    <string name="title_hint">Titel</string>
+    <string name="content_hint">Inhoud</string>
+    <string name="search_hint">Soek titel of inhoud</string>
+    <string name="image_description"> </string>
+
+    <!--Alert Dialog Strings-->
+    <string name="note">Nota</string>
+    <string name="caution">Versigtigheid</string>
+    <string name="error">FOUT</string>
+    <string name="confirm">Bevestig</string>
+    <string name="got_it">Het dit</string>
+    <string name="close">Toemaak</string>
+    <string name="exit">Uitgang</string>
+    <string name="send_mail">E-pos stuur…</string>
+    <string name="saved">Spaar…</string>
+    <string name="deleted">Verwydering…</string>
+
+    <!--Note Related Strings-->
+    <string name="today">"Vandag, "</string>
+    <string name="last_edited">"Laaste geredigeer  "</string>
+    <string name="created_at">"Geskep  "</string>
+
+    <!--Toast and Dialog content Strings-->
+    <string name="wrong_password">Werkeerde wagwoord</string>
+    <string name="ask_delete_empty">Geen notas is gekies</string>
+    <string name="ask_delete">Delete this note?</string>
+    <string name="ask_delete_multiple">Hierdie nota verwyder?</string>
+    <string name="long_title">Titel te lank: maksimum 255 karakters</string>
+    <string name="empty_title">Voer \'n titel</string>
+    <string name="existing_title">Titel is reeds in gebruik</string>
+    <string name="invalid_title">Kies \'n ander titel</string>
+    <string name="no_color_type">FOUT: kon kategorie tipe ontvang</string>
+    <string name="backup_fail">Versuim om terug \'n paar lêers:\n</string>
+    <string name="previous_save">Wag asseblief. Spaar vorige wysig.</string>
+    <string name="empty_photo">Kon die beeld nie vind</string>
+    <string name="no_photo_attachable">Foto\'s kan nie gestuur word vir die stelsel sekuriteit. Nota steeds stuur?</string>
+
+    <!--Exceptions strings.-->
+    <string name="parse_failed">"Friends mislukte: "</string>
+    <string name="backup_error">"Friends proses: "</string>
+    <string name="saving_file_fail">"Spaar lêer: "</string>
+    <string name="image_lookup_fail">"Image navraag: "</string>
+    <string name="content_storage_fail">"Inhoud stoor: "</string>
+
+    <!--Settings Titles-->
+    <string name="settings_security">Sekuriteit</string>
+    <string name="settings_password">Wagwoord Beskerming</string>
+    <string name="settings_parse">Wolk Friends</string>
+    <string name="settings_restore">Herstel Backup</string>
+    <string name="settings_delete">Verwyder Alert</string>
+    <string name="settings_font">Styl</string>
+
+    <!--Long Settings strings-->
+    <string name="settings_password_detail">Enkripteer jou jeug en toegang van ander mense te voorkom, terwyl jou selfoon is ontsluit</string>
+    <string name="settings_password_ask">Dit sal programmaties beskerm jou data, maar ons beveel die behoud van afskrifte van alle persoonlike inligting afsonderlik.</string>
+    <string name="settings_password_set">Tik nuwe wagwoord</string>
+    <string name="settings_password_reset">Re-wagwoord</string>
+    <string name="do_not_match">Wagwoorde stem nie ooreen nie.</string>
+    <string name="settings_password_decrypt">Tik wagwoord</string>
+    <string name="settings_parse_detail">Die app sal toestel-spesifieke voer terug van notas om elke keer die gebruiker die app oopmaak wolk. Image headers sal nie gerugsteun word.</string>
+    <string name="settings_parse_backing_up">Friends in die proses. Wag asseblief.</string>
+    <string name="settings_parse_restore">Friends in die proses. Let wait.This sal verwyder en vervang alle notas met rugsteun.</string>
+    <string name="settings_parse_restoring">Herstel data: Moenie die aansoek nie naby</string>
+    <string name="settings_parse_successful">Finale herstel</string>
+    <string name="settings_parse_failed">Kon data van wolk te haal: </string>
+    <string name="settings_delete_detail">Vra die gebruiker voor die verwydering van notas</string>
+    <string name="settings_serif">Serif</string>
+    <string name="settings_columns">Aantal notas per ry</string>
+    <string name="settings_holder_type">Nota uitleg</string>
+    <string name="settings_apply_layout_change_title">Pas Wysigings</string>
+    <string name="settings_apply_layout_change">Uitleg veranderinge toe te pas, die jeug weer.</string>
+</resources>

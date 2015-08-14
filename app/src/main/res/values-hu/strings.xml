@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Title Strings-->
+    <string name="app_name">Brainmark</string>
+    <string name="library">Könyvtár</string>
+    <string name="favorites">Kedvencek</string>
+    <string name="cloud">Felhő</string>
+    <string name="pink">Rózsaszín</string>
+    <string name="orange">Narancs</string>
+    <string name="yellow">Sárga</string>
+    <string name="green">Zöld</string>
+    <string name="blue">Kék</string>
+    <string name="indigo">Indigó</string>
+    <string name="purple">Lila</string>
+    <string name="image">Kép</string>
+    <string name="category">Kategóriák</string>
+
+    <!--Action Strings. Also used as activity titles-->
+    <string name="action_settings">Beállítások</string>
+    <string name="action_search">Keresés</string>
+    <string name="action_add">Megjegyzés hozzáadása</string>
+    <string name="action_done">Kész</string>
+    <string name="action_edit">Szerkesztés</string>
+    <string name="action_delete">Töröl</string>
+    <string name="action_email">Küldjön e-mailt</string>
+    <string name="action_open_drawer">Menü</string>
+
+    <!--XML Note Edit Strings-->
+    <string name="title_hint">Cím</string>
+    <string name="content_hint">Tartalom</string>
+    <string name="search_hint">Keresés cím vagy a tartalom</string>
+    <string name="image_description"> </string>
+
+    <!--Alert Dialog Strings-->
+    <string name="note">Hangjegy</string>
+    <string name="caution">Vigyázat</string>
+    <string name="error">HIBA</string>
+    <string name="confirm">Erősítse</string>
+    <string name="got_it">Oké</string>
+    <string name="close">Zárja</string>
+    <string name="exit">Kijárat</string>
+    <string name="send_mail">Levél küldés…</string>
+    <string name="saved">Megtakarítás…</string>
+    <string name="deleted">Törlése…</string>
+
+    <!--Note Related Strings-->
+    <string name="today">"Megtakarítás, "</string>
+    <string name="last_edited">"Utoljára szerkesztve  "</string>
+    <string name="created_at">"Létrehozott  "</string>
+
+    <!--Toast and Dialog content Strings-->
+    <string name="wrong_password">Hibás jelszó</string>
+    <string name="ask_delete_empty">Nem jegyzetek kerülnek kiválasztásra</string>
+    <string name="ask_delete">Törli ezt a jegyzetet?</string>
+    <string name="ask_delete_multiple">Törölje ezeket a megjegyzéseket?</string>
+    <string name="long_title">A cím túl hosszú: maximum 255 karakter</string>
+    <string name="empty_title">Kérem adjon meg egy címet</string>
+    <string name="existing_title">Cím már használatban van</string>
+    <string name="invalid_title">Kérjük, válasszon egy másik cím</string>
+    <string name="no_color_type">HIBA: nem kaptak kategóriás</string>
+    <string name="backup_fail">Nem sikerült biztonsági másolatot készíteni néhány fájlt:\n</string>
+    <string name="previous_save">Kérlek várj. Megtakarítási előző szerkesztés.</string>
+    <string name="empty_photo">Nem találta meg a kép</string>
+    <string name="no_photo_attachable">A képeket nem lehet elküldeni a rendszer biztonságát. Még küldeni levelet?</string>
+
+    <!--Exceptions strings.-->
+    <string name="parse_failed">"Biztonsági mentés nem sikerült: "</string>
+    <string name="backup_error">"Mentési folyamat: "</string>
+    <string name="saving_file_fail">"A fájl mentése: "</string>
+    <string name="image_lookup_fail">"Kép lekérdezés: "</string>
+    <string name="content_storage_fail">"Tartalom tároló: "</string>
+
+    <!--Settings Titles-->
+    <string name="settings_security">Biztonság</string>
+    <string name="settings_password">Jelszó védelem</string>
+    <string name="settings_parse">Felhő Mentési</string>
+    <string name="settings_restore">Biztonsági mentés visszaállítása</string>
+    <string name="settings_delete">Alert törlés</string>
+    <string name="settings_font">Stílus</string>
+
+    <!--Long Settings strings-->
+    <string name="settings_password_detail">Titkosítás a app, és akadályozza a többi ember, miközben a telefon van oldva</string>
+    <string name="settings_password_ask">Ez programból az adatok védelmét, de javasoljuk, hogy őrizze másolatot az összes személyes adatot külön-külön.</string>
+    <string name="settings_password_set">Adja meg az új jelszót</string>
+    <string name="settings_password_reset">Jelszó újra</string>
+    <string name="do_not_match">A jelszavak nem egyeznek.</string>
+    <string name="settings_password_decrypt">Adja meg jelszavát</string>
+    <string name="settings_parse_detail">Az alkalmazás elvégzi az eszköz-specifikus biztonsági másolatot a jegyzetek felhő, valahányszor a felhasználó megnyitja az alkalmazást. Képfejlécek nem kell alátámasztani.</string>
+    <string name="settings_parse_backing_up">Backup folyamatban. Kérlek várj.</string>
+    <string name="settings_parse_restore">Ez törli és lecseréli az összes jegyzeteket mentés.</string>
+    <string name="settings_parse_restoring">Az adatok visszaállítása: Ne zárja be az alkalmazást</string>
+    <string name="settings_parse_successful">Visszaállítás kész</string>
+    <string name="settings_parse_failed">Nem sikerült letölteni az adatokat a felhő: </string>
+    <string name="settings_delete_detail">Kérje meg a felhasználót törlése előtt jegyzetek</string>
+    <string name="settings_serif">Betűtalp</string>
+    <string name="settings_columns">Számú jegyzetek soronként</string>
+    <string name="settings_holder_type">Elrendezése Note</string>
+    <string name="settings_apply_layout_change_title">Módosítások Alkalmazása</string>
+    <string name="settings_apply_layout_change">Alkalmazni elrendezése megváltozik, indítsa újra az alkalmazást.</string>
+</resources>

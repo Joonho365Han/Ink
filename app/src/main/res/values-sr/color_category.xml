@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="color_type">
+        <item>Цлоуд заглавља</item>
+        <item>розе</item>
+        <item>поморанџа</item>
+        <item>жут</item>
+        <item>zelen</item>
+        <item>плава</item>
+        <item>индиго</item>
+        <item>љубичаста</item>
+        <item>Избор Главом после албума</item>
+    </string-array>
+</resources>

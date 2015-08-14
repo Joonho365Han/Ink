@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Title Strings-->
+    <string name="app_name">Brainmark</string>
+    <string name="library">Perpustakaan</string>
+    <string name="favorites">Kegemaran</string>
+    <string name="cloud">Awan</string>
+    <string name="pink">Merah jambu</string>
+    <string name="orange">oren</string>
+    <string name="yellow">Kuning</string>
+    <string name="green">Hijau</string>
+    <string name="blue">Biru</string>
+    <string name="indigo">Nila</string>
+    <string name="purple">Ungu</string>
+    <string name="image">Imej</string>
+    <string name="category">Kategori</string>
+
+    <!--Action Strings. Also used as activity titles-->
+    <string name="action_settings">Tetapan</string>
+    <string name="action_search">Carian</string>
+    <string name="action_add">Menambah Nota</string>
+    <string name="action_done">Selesai</string>
+    <string name="action_edit">Sunting</string>
+    <string name="action_delete">Padam</string>
+    <string name="action_email">Menghantar E-Mel</string>
+    <string name="action_open_drawer">Menu</string>
+
+    <!--XML Note Edit Strings-->
+    <string name="title_hint">Tajuk</string>
+    <string name="content_hint">Kandungan</string>
+    <string name="search_hint">Tajuk carian atau kandungan</string>
+    <string name="image_description"> </string>
+
+    <!--Alert Dialog Strings-->
+    <string name="note">Nota</string>
+    <string name="caution">Awas</string>
+    <string name="error">RALAT</string>
+    <string name="confirm">Mengesahkan</string>
+    <string name="got_it">Okay</string>
+    <string name="close">Menutup</string>
+    <string name="exit">Berhenti</string>
+    <string name="send_mail">Hantar mel…</string>
+    <string name="saved">Menyimpan…</string>
+    <string name="deleted">Memadam…</string>
+
+    <!--Note Related Strings-->
+    <string name="today">"Hari ini, "</string>
+    <string name="last_edited">"Lepas disunting  "</string>
+    <string name="created_at">"Dibuat di  "</string>
+
+    <!--Toast and Dialog content Strings-->
+    <string name="wrong_password">Salah kata laluan</string>
+    <string name="ask_delete_empty">Tiada nota dipilih</string>
+    <string name="ask_delete">Memadam nota ini?</string>
+    <string name="ask_delete_multiple">Padam nota ini?</string>
+    <string name="long_title">Tajuk terlalu panjang: maksimum 255 aksara</string>
+    <string name="empty_title">Sila masukkan tajuk</string>
+    <string name="existing_title">Tajuk sudah digunakan</string>
+    <string name="invalid_title">Sila pilih tajuk yang berbeza</string>
+    <string name="no_color_type">RALAT: gagal untuk menerima jenis kategori</string>
+    <string name="backup_fail">Gagal untuk menyokong beberapa fail:\n</string>
+    <string name="previous_save">Sila tunggu. Menyimpan edit sebelumnya.</string>
+    <string name="empty_photo">Tidak dapat mencari imej</string>
+    <string name="no_photo_attachable">Imej tidak boleh dihantar untuk sistem keselamatan. Masih menghantar nota?</string>
+
+    <!--Exceptions strings.-->
+    <string name="parse_failed">"Sandaran gagal: "</string>
+    <string name="backup_error">"Proses sandaran: "</string>
+    <string name="saving_file_fail">"Menyimpan fail: "</string>
+    <string name="image_lookup_fail">"Pertanyaan imej: "</string>
+    <string name="content_storage_fail">"Penyimpanan kandungan: "</string>
+
+    <!--Settings Titles-->
+    <string name="settings_security">Keselamatan</string>
+    <string name="settings_password">Perlindungan Kata Laluan</string>
+    <string name="settings_parse">Cloud Sandaran</string>
+    <string name="settings_restore">Simpan semula Sandaran</string>
+    <string name="settings_delete">Amaran daripada Pemadaman</string>
+    <string name="settings_font">Style</string>
+
+    <!--Long Settings strings-->
+    <string name="settings_password_detail">Sulitkan aplikasi anda dan mencegah akses daripada orang lain semasa telefon anda dikunci</string>
+    <string name="settings_password_ask">Ini pengaturcaraan akan melindungi data anda, tetapi kami mengesyorkan menyimpan salinan semua maklumat secara berasingan.</string>
+    <string name="settings_password_set">Masukkan kata laluan baru</string>
+    <string name="settings_password_reset">Masukkan semula kata laluan</string>
+    <string name="do_not_match">Kata laluan tidak sepadan.</string>
+    <string name="settings_password_decrypt">Masukkan kata laluan</string>
+    <string name="settings_parse_detail">Aplikasi ini akan melaksanakan peranti khusus kembali nota ke awan setiap kali pengguna membuka app. Tajuk imej tidak akan disokong.</string>
+    <string name="settings_parse_backing_up">Sandaran dalam proses. Sila tunggu.</string>
+    <string name="settings_parse_restore">Ini akan menghapuskan dan menggantikan semua nota dengan sandaran.</string>
+    <string name="settings_parse_restoring">Memulihkan data: Jangan tutup permohonan</string>
+    <string name="settings_parse_successful">Simpan semula selesai</string>
+    <string name="settings_parse_failed">Gagal mendapatkan semula data dari langit: </string>
+    <string name="settings_delete_detail">Minta pengguna sebelum memotong nota</string>
+    <string name="settings_serif">Serif</string>
+    <string name="settings_columns">Bilangan nota setiap baris</string>
+    <string name="settings_holder_type">Susun atur nota</string>
+    <string name="settings_apply_layout_change_title">Guna Perubahan</string>
+    <string name="settings_apply_layout_change">Untuk memohon perubahan susun atur, mulakan semula app.</string>
+</resources>

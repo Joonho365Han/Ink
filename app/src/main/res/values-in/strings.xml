@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Title Strings-->
+    <string name="app_name">Brainmark</string>
+    <string name="library">Perpustakaan</string>
+    <string name="favorites">Favorit</string>
+    <string name="cloud">Awan</string>
+    <string name="pink">Warna Merah Muda</string>
+    <string name="orange">Jeruk</string>
+    <string name="yellow">Kuning</string>
+    <string name="green">Hijau</string>
+    <string name="blue">Biru</string>
+    <string name="indigo">Nila</string>
+    <string name="purple">Ungu</string>
+    <string name="image">Gambar</string>
+    <string name="category">Kategori</string>
+
+    <!--Action Strings. Also used as activity titles-->
+    <string name="action_settings">Pengaturan</string>
+    <string name="action_search">Pencarian</string>
+    <string name="action_add">Menambahkan Catatan</string>
+    <string name="action_done">Matang</string>
+    <string name="action_edit">Mengedit</string>
+    <string name="action_delete">Hapus</string>
+    <string name="action_email">Mengirim email</string>
+    <string name="action_open_drawer">Menu</string>
+
+    <!--XML Note Edit Strings-->
+    <string name="title_hint">Judul</string>
+    <string name="content_hint">Kadar</string>
+    <string name="search_hint">Title pencarian atau konten</string>
+    <string name="image_description"> </string>
+
+    <!--Alert Dialog Strings-->
+    <string name="note">Catatan</string>
+    <string name="caution">Peringatan</string>
+    <string name="error">ERROR</string>
+    <string name="confirm">Menegaskan</string>
+    <string name="got_it">Ok</string>
+    <string name="close">Dekat</string>
+    <string name="exit">Keluar</string>
+    <string name="send_mail">Kirim surat…</string>
+    <string name="saved">Hemat…</string>
+    <string name="deleted">Menghapus…</string>
+
+    <!--Note Related Strings-->
+    <string name="today">"Hari ini, "</string>
+    <string name="last_edited">"Terakhir diedit  "</string>
+    <string name="created_at">"Dibuat di  "</string>
+
+    <!--Toast and Dialog content Strings-->
+    <string name="wrong_password">Kata sandi salah</string>
+    <string name="ask_delete_empty">Tidak ada catatan yang dipilih</string>
+    <string name="ask_delete">Menghapus catatan ini?</string>
+    <string name="ask_delete_multiple">Menghapus catatan ini?</string>
+    <string name="long_title">Judul terlalu panjang: maksimal 255 karakter</string>
+    <string name="empty_title">Masukkan judul</string>
+    <string name="existing_title">Judul sudah digunakan</string>
+    <string name="invalid_title">Silakan pilih judul yang berbeda</string>
+    <string name="no_color_type">ERROR: gagal untuk menerima jenis kategori</string>
+    <string name="backup_fail">Gagal cadangan beberapa file:\n</string>
+    <string name="previous_save">Mohon tunggu. Menyimpan mengedit sebelumnya.</string>
+    <string name="empty_photo">Tidak dapat menemukan gambar</string>
+    <string name="no_photo_attachable">Gambar tidak dapat dikirim untuk sistem keamanan. Masih mengirim catatan?</string>
+
+    <!--Exceptions strings.-->
+    <string name="parse_failed">"Backup gagal: "</string>
+    <string name="backup_error">"Proses backup: "</string>
+    <string name="saving_file_fail">"Menyimpan berkas: "</string>
+    <string name="image_lookup_fail">"Permintaan gambar: "</string>
+    <string name="content_storage_fail">"Penyimpanan konten: "</string>
+
+    <!--Settings Titles-->
+    <string name="settings_security">Keamanan</string>
+    <string name="settings_password">Perlindungan Dengan Password</string>
+    <string name="settings_parse">Awan Backup</string>
+    <string name="settings_restore">Kembalikan Backup</string>
+    <string name="settings_delete">Waspada Penghapusan</string>
+    <string name="settings_font">Gaya</string>
+
+    <!--Long Settings strings-->
+    <string name="settings_password_detail">Mengenkripsi aplikasi Anda dan mencegah akses dari orang lain saat ponsel Anda terkunci</string>
+    <string name="settings_password_ask">Pemrograman ini akan melindungi data Anda, tetapi kami merekomendasikan menjaga salinan semua informasi pribadi secara terpisah.</string>
+    <string name="settings_password_set">Masukkan password baru</string>
+    <string name="settings_password_reset">Masukkan Kembali password</string>
+    <string name="do_not_match">Sandi tidak cocok.</string>
+    <string name="settings_password_decrypt">Masukkan kata kunci</string>
+    <string name="settings_parse_detail">Aplikasi ini akan melakukan khusus perangkat kembali catatan awan setiap kali pengguna membuka aplikasi. Gambar header tidak akan didukung.</string>
+    <string name="settings_parse_backing_up">Backup dalam proses. Mohon tunggu.</string>
+    <string name="settings_parse_restore">Ini akan menghapus dan mengganti semua catatan dengan backup.</string>
+    <string name="settings_parse_restoring">Mengembalikan data: Jangan menutup aplikasi</string>
+    <string name="settings_parse_successful">Kembalikan selesai</string>
+    <string name="settings_parse_failed">Gagal untuk mengambil data dari awan: </string>
+    <string name="settings_delete_detail">Meminta pengguna sebelum menghapus catatan</string>
+    <string name="settings_serif">Serif</string>
+    <string name="settings_columns">Jumlah catatan per baris</string>
+    <string name="settings_holder_type">Catatan tata letak</string>
+    <string name="settings_apply_layout_change_title">Terapkan Perubahan</string>
+    <string name="settings_apply_layout_change">Untuk menerapkan perubahan tata letak, restart aplikasi.</string>
+</resources>

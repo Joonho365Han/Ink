@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="color_type">
+        <item>Cabeçalho nuvem</item>
+        <item>Rosa</item>
+        <item>Laranja</item>
+        <item>amarelo</item>
+        <item>Verde</item>
+        <item>Azul</item>
+        <item>índigo</item>
+        <item>Roxo</item>
+        <item>Escolha um cabeçalho do álbum</item>
+    </string-array>
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="color_type">
+        <item>Облако заголовок</item>
+        <item>розовый</item>
+        <item>оранжевый</item>
+        <item>желтый</item>
+        <item>зеленый</item>
+        <item>синий</item>
+        <item>индиго</item>
+        <item>пурпурный</item>
+        <item>Выберите заголовок альбома</item>
+    </string-array>
+</resources>

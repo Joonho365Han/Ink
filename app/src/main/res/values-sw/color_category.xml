@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="color_type">
+        <item>Wingu header</item>
+        <item>Rosa</item>
+        <item>Machungwa</item>
+        <item>Njano</item>
+        <item>Kijani</item>
+        <item>Bluu</item>
+        <item>Indigofärg</item>
+        <item>Zambarau</item>
+        <item>Teule header kutoka katika albamu</item>
+    </string-array>
+</resources>

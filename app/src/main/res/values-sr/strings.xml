@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Title Strings-->
+    <string name="app_name">Brainmark</string>
+    <string name="library">библиотека</string>
+    <string name="favorites">Фаворити</string>
+    <string name="cloud">облак</string>
+    <string name="pink">розе</string>
+    <string name="orange">поморанџа</string>
+    <string name="yellow">жут</string>
+    <string name="green">zelen</string>
+    <string name="blue">плава</string>
+    <string name="indigo">индиго</string>
+    <string name="purple">пурпле</string>
+    <string name="image">слика</string>
+    <string name="category">Категорије</string>
+
+    <!--Action Strings. Also used as activity titles-->
+    <string name="action_settings">Подешавања</string>
+    <string name="action_search">претраживање</string>
+    <string name="action_add">Адд Ноте</string>
+    <string name="action_done">Готово</string>
+    <string name="action_edit">Едит</string>
+    <string name="action_delete">избрисати</string>
+    <string name="action_email">Сенд Емаил</string>
+    <string name="action_open_drawer">мени</string>
+
+    <!--XML Note Edit Strings-->
+    <string name="title_hint">наслов</string>
+    <string name="content_hint">Садржај</string>
+    <string name="search_hint">Тражи наслов или садржај</string>
+    <string name="image_description"> </string>
+
+    <!--Alert Dialog Strings-->
+    <string name="note">Белешка</string>
+    <string name="caution">Опрез</string>
+    <string name="error">ГРЕШКА</string>
+    <string name="confirm">потврдити</string>
+    <string name="got_it">Добро</string>
+    <string name="close">Затвори</string>
+    <string name="exit">одустати</string>
+    <string name="send_mail">Пошаљи емаил</string>
+    <string name="saved">спашавање</string>
+    <string name="deleted">Брисање</string>
+
+    <!--Note Related Strings-->
+    <string name="today">"данас, "</string>
+    <string name="last_edited">"Ласт едитед  "</string>
+    <string name="created_at">"Цреатед ат  "</string>
+
+    <!--Toast and Dialog content Strings-->
+    <string name="wrong_password">погрешна лозинка</string>
+    <string name="ask_delete_empty">Но нотес су изабрани</string>
+    <string name="ask_delete">Обриши ову поруку?</string>
+    <string name="ask_delete_multiple">Обриши ове белешке?</string>
+    <string name="long_title">Наслов је предугачак: максимално 255 знакова</string>
+    <string name="empty_title">Молимо Вас да унесете наслов</string>
+    <string name="existing_title">Наслов је већ у употреби</string>
+    <string name="invalid_title">Молимо изаберите другу титулу</string>
+    <string name="no_color_type">ГРЕШКА: није добио Категорија</string>
+    <string name="backup_fail">Фаилед то резервну копију неке датотеке:\n</string>
+    <string name="previous_save">Сачекајте. Чување претходну едит.</string>
+    <string name="empty_photo">Није могуће пронаћи слику</string>
+    <string name="no_photo_attachable">Слике се не могу послати за безбедност система. Ипак послати поруку?</string>
+
+    <!--Exceptions strings.-->
+    <string name="parse_failed">"Бацкуп фаилед:: "</string>
+    <string name="backup_error">"Подршка процес: "</string>
+    <string name="saving_file_fail">"Савинг филе: "</string>
+    <string name="image_lookup_fail">"Слика упит: "</string>
+    <string name="content_storage_fail">"Садржај складиштење: "</string>
+
+    <!--Settings Titles-->
+    <string name="settings_security">безбедност</string>
+    <string name="settings_password">Заштита од Пассворд</string>
+    <string name="settings_parse">цлоуд бацкуп</string>
+    <string name="settings_restore">Ресторе Бацкуп</string>
+    <string name="settings_delete">Упозорење о брисању</string>
+    <string name="settings_font">стил</string>
+
+    <!--Long Settings strings-->
+    <string name="settings_password_detail">Енцрипт своју апликацију и спрече приступ са другим људима док вам је телефон откључан</string>
+    <string name="settings_password_ask">Ово ће програмски заштитите своје податке, али препоручујемо чување копије свих личних података одвојено.</string>
+    <string name="settings_password_set">Унесите нову лозинку</string>
+    <string name="settings_password_reset">Поново унесите лозинку</string>
+    <string name="do_not_match">Лозинке се не поклапају.</string>
+    <string name="settings_password_decrypt">Унесите лозинку</string>
+    <string name="settings_parse_detail">Ова апликација ће обављати одређени уређај назад у напоменама уз Облак сваки пут корисник отвара апликацију. Слика заглавља неће бити резервне копије.</string>
+    <string name="settings_parse_backing_up">Подршка у процесу. Сачекајте.</string>
+    <string name="settings_parse_restore">Ово ће избрисати и заменити све белешке са бацкуп.</string>
+    <string name="settings_parse_restoring">Враћање података: Не затварајте апликацију</string>
+    <string name="settings_parse_successful">Ресторе завршенd</string>
+    <string name="settings_parse_failed">Фаилед то преузима податке из облака: </string>
+    <string name="settings_delete_detail">Питајте корисника пре брисања белешке</string>
+    <string name="settings_serif">Serif</string>
+    <string name="settings_columns">Број нота по реду</string>
+    <string name="settings_holder_type">Распоред Ноте</string>
+    <string name="settings_apply_layout_change_title">Аппли Цхангес</string>
+    <string name="settings_apply_layout_change">Да бисте применили промене распореда, поново покрените апликацију.</string>
+</resources>

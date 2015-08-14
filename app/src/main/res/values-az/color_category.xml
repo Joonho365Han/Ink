@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="color_type">
+        <item>Bulud header</item>
+        <item>çəhrayı</item>
+        <item>Narıncı</item>
+        <item>Sarı</item>
+        <item>Yaşıl</item>
+        <item>Mavi</item>
+        <item>Sürməyi</item>
+        <item>Tünd Qırmızı</item>
+        <item>Albom seçin header</item>
+    </string-array>
+</resources>

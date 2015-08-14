@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="note_type">
+        <item>Laisvas</item>
+        <item>Pripildytas</item>
+    </string-array>
+</resources>

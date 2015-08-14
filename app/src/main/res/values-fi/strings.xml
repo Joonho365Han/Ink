@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Title Strings-->
+    <string name="app_name">Brainmark</string>
+    <string name="library">Kirjasto</string>
+    <string name="favorites">Suosikit</string>
+    <string name="cloud">Pilvi</string>
+    <string name="pink">Vaaleanpunainen</string>
+    <string name="orange">Oranssi</string>
+    <string name="yellow">Keltainen</string>
+    <string name="green">Vihreä</string>
+    <string name="blue">Sininen</string>
+    <string name="indigo">Indigo</string>
+    <string name="purple">Violetti</string>
+    <string name="image">Kuva</string>
+    <string name="category">Luokat</string>
+
+    <!--Action Strings. Also used as activity titles-->
+    <string name="action_settings">asetukset</string>
+    <string name="action_search">haku</string>
+    <string name="action_add">Lisätä huomautus</string>
+    <string name="action_done">tehty</string>
+    <string name="action_edit">muokata</string>
+    <string name="action_delete">poistaa</string>
+    <string name="action_email">Lähetä sähköposti</string>
+    <string name="action_open_drawer">valikko</string>
+
+    <!--XML Note Edit Strings-->
+    <string name="title_hint">otsikko</string>
+    <string name="content_hint">pitoisuus</string>
+    <string name="search_hint">Etsi otsikko tai sisältö</string>
+    <string name="image_description"> </string>
+
+    <!--Alert Dialog Strings-->
+    <string name="note">Huomautus</string>
+    <string name="caution">varovaisuus</string>
+    <string name="error">VIRHE</string>
+    <string name="confirm">vahvistaa</string>
+    <string name="got_it">Okei</string>
+    <string name="close">lähellä</string>
+    <string name="exit">poistua</string>
+    <string name="send_mail">Lähetä sähköposti…</string>
+    <string name="saved">säästö…</string>
+    <string name="deleted">poistaminen…</string>
+
+    <!--Note Related Strings-->
+    <string name="today">"tänään, "</string>
+    <string name="last_edited">"viimeksi muokattu  "</string>
+    <string name="created_at">"luodaan  "</string>
+
+    <!--Toast and Dialog content Strings-->
+    <string name="wrong_password">Väärä salasana</string>
+    <string name="ask_delete_empty">Ei huomautuksia valitaan</string>
+    <string name="ask_delete">Poistaa tämän merkinnän?</string>
+    <string name="ask_delete_multiple">Poistaa nämä muistiinpanot?</string>
+    <string name="long_title">Otsikko on liian pitkä: maksimi 255 merkkiä</string>
+    <string name="empty_title">Anna otsikko</string>
+    <string name="existing_title">Otsikko on jo käytössä</string>
+    <string name="invalid_title">Valitse toinen otsikko</string>
+    <string name="no_color_type">VIRHE: eivät saaneet luokkaan tyyppi</string>
+    <string name="backup_fail">Ei varmuuskopioida joitakin tiedostoja:\n</string>
+    <string name="previous_save">Odota. Säästäminen edellinen edit.</string>
+    <string name="empty_photo">Ei löytänyt kuvaa</string>
+    <string name="no_photo_attachable">Kuvia ei voi lähettää järjestelmän turvallisuutta. Edelleen lähettää merkinnän?</string>
+
+    <!--Exceptions strings.-->
+    <string name="parse_failed">"varmuuskopiointi epäonnistui: "</string>
+    <string name="backup_error">"varmuuskopiointi: "</string>
+    <string name="saving_file_fail">"Tallennetaan tiedosto: "</string>
+    <string name="image_lookup_fail">"Image kysely: "</string>
+    <string name="content_storage_fail">"Kuva varastointi: "</string>
+
+    <!--Settings Titles-->
+    <string name="settings_security">turvallisuus</string>
+    <string name="settings_password">Salasanasuojaus</string>
+    <string name="settings_parse">Pilvi varmuuskopio</string>
+    <string name="settings_restore">Palauta varmuuskopio</string>
+    <string name="settings_delete">Varoittaa poisto</string>
+    <string name="settings_font">Tyyli</string>
+
+    <!--Long Settings strings-->
+    <string name="settings_password_detail">Salaa app ja estää pääsy muita ihmisiä, kun puhelin on lukitsematon</string>
+    <string name="settings_password_ask">Tämä ohjelmallisesti suojaamaan tietoja, mutta suosittelemme pitämään kopiot kaikki henkilökohtaiset tiedot erikseen.</string>
+    <string name="settings_password_set">Anna uusi salasana</string>
+    <string name="settings_password_reset">Kirjoita salasana uudestaan</string>
+    <string name="do_not_match">Salasanat eivät täsmää.</string>
+    <string name="settings_password_decrypt">Kirjoita salasana</string>
+    <string name="settings_parse_detail">Sovellus suorittaa laitekohtaiset back up muistiinpanoja pilvi aina käyttäjä avaa sovelluksen. Image otsikot ei varmuuskopioida.</string>
+    <string name="settings_parse_backing_up">Varmuuskopiointi prosessi. Odota.</string>
+    <string name="settings_parse_restore">Tämä poistaa ja korvata kaikki toteaa varmuuskopio.</string>
+    <string name="settings_parse_restoring">Tietojen palauttaminen: Älä sulje sovellus</string>
+    <string name="settings_parse_successful">Palauta valmiiden</string>
+    <string name="settings_parse_failed">Failed hakea tietoja pilvi: </string>
+    <string name="settings_delete_detail">Pyytää käyttäjää ennen poistamista muistiinpanoja</string>
+    <string name="settings_serif">Serif</string>
+    <string name="settings_columns">Lukumäärä toteaa rivillä</string>
+    <string name="settings_holder_type">Huomautus asettelu</string>
+    <string name="settings_apply_layout_change_title">Ota muutokset</string>
+    <string name="settings_apply_layout_change">Jos haluat käyttää layout muutokset, käynnistä sovellus.</string>
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="color_type">
+        <item>Oblak Hlavička</item>
+        <item>Růžový</item>
+        <item>Oranžový</item>
+        <item>žlutý</item>
+        <item>Zelená</item>
+        <item>Modrý</item>
+        <item>Indigo</item>
+        <item>Nachový</item>
+        <item>Vyberte záhlaví z alba</item>
+    </string-array>
+</resources>

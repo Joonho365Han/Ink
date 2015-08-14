@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Title Strings-->
+    <string name="app_name">Brainmark</string>
+    <string name="library">مكتبة</string>
+    <string name="favorites">المفضلة</string>
+    <string name="cloud">سحابة</string>
+    <string name="pink">وردي</string>
+    <string name="orange">أصفر</string>
+    <string name="yellow">أصفر</string>
+    <string name="green">أخضر</string>
+    <string name="blue">أزرق</string>
+    <string name="indigo">نيلي لون</string>
+    <string name="purple">أرجواني</string>
+    <string name="image">صورة</string>
+    <string name="category">الفئات</string>
+
+    <!--Action Strings. Also used as activity titles-->
+    <string name="action_settings">إعدادات</string>
+    <string name="action_search">بحث</string>
+    <string name="action_add">اضف ملاحظة</string>
+    <string name="action_done">فعله</string>
+    <string name="action_edit">تحرير</string>
+    <string name="action_delete">حذف</string>
+    <string name="action_email">ارسل ايميل</string>
+    <string name="action_open_drawer">قائمة الطعام</string>
+
+    <!--XML Note Edit Strings-->
+    <string name="title_hint">عنوان</string>
+    <string name="content_hint">محتوى</string>
+    <string name="search_hint">عنوان البحث أو المحتوى</string>
+    <string name="image_description"> </string>
+
+    <!--Alert Dialog Strings-->
+    <string name="note">ملاحظة</string>
+    <string name="caution">الحذر</string>
+    <string name="error">خطأ</string>
+    <string name="confirm">أكد</string>
+    <string name="got_it">حصلت عليه</string>
+    <string name="close">قريب</string>
+    <string name="exit">خروج</string>
+    <string name="send_mail">…إرسال البريد</string>
+    <string name="saved">…إنقاذ</string>
+    <string name="deleted">…حذف</string>
+
+    <!--Note Related Strings-->
+    <string name="today">"اليوم ،"</string>
+    <string name="last_edited">"التعديل الأخير تم  "</string>
+    <string name="created_at">"أنشئت في  "</string>
+
+    <!--Toast and Dialog content Strings-->
+    <string name="wrong_password">كلمة مرور خاطئة</string>
+    <string name="ask_delete_empty">لم يتم تحديد أي ملاحظات</string>
+    <string name="ask_delete">حذف هذه الملاحظة؟</string>
+    <string name="ask_delete_multiple">حذف هذه الملاحظات؟</string>
+    <string name="long_title">العنوان طويل جدا: الحد الأقصى 255 حرفا</string>
+    <string name="empty_title">يرجى إدخال عنوان</string>
+    <string name="existing_title">عنوان قيد الاستخدام</string>
+    <string name="invalid_title">يرجى اختيار عنوان مختلف</string>
+    <string name="no_color_type">خطأ: فشل في الحصول على نوع الفئة</string>
+    <string name="backup_fail">:فشل لإجراء نسخ احتياطي بعض الملفات\n</string>
+    <string name="previous_save">يرجى الانتظار. إنقاذ تحرير السابق.</string>
+    <string name="empty_photo">لا يمكن العثور على صورة</string>
+    <string name="no_photo_attachable">الصور لا يمكن أن ترسل لأمن النظام. لا تزال ترسل الملاحظة؟</string>
+
+    <!--Exceptions strings.-->
+    <string name="parse_failed">"النسخ الاحتياطي أخفق :"</string>
+    <string name="backup_error">"عملية النسخ الاحتياطي :"</string>
+    <string name="saving_file_fail">"حفظ الملف :"</string>
+    <string name="image_lookup_fail">"الاستعلام صورة :"</string>
+    <string name="content_storage_fail">"تخزين المحتوى :"</string>
+
+    <!--Settings Titles-->
+    <string name="settings_security">أمن</string>
+    <string name="settings_password">حماية كلمة المرور</string>
+    <string name="settings_parse">سحابة النسخ الاحتياطي</string>
+    <string name="settings_restore">استرجاع النسخة الاحتياطية</string>
+    <string name="settings_delete">حذف تنبيه</string>
+    <string name="settings_font">أسلوب</string>
+
+    <!--Long Settings strings-->
+    <string name="settings_password_detail">تشفير التطبيق الخاص بك، ومنع الوصول من أشخاص آخرين في حين الهاتف هو مؤمن</string>
+    <string name="settings_password_ask">وهذا برمجيا حماية البيانات الخاصة بك، ولكن من المستحسن حفظ نسخ من جميع المعلومات الشخصية بشكل منفصل.</string>
+    <string name="settings_password_set">إدخال كلمة مرور جديدة</string>
+    <string name="settings_password_reset">إعادة إدخال كلمة المرور</string>
+    <string name="do_not_match">كلمة المرور غير مطابقة.</string>
+    <string name="settings_password_decrypt">ادخل كلمة المرور</string>
+    <string name="settings_parse_detail">فإن التطبيق أداء بالجهاز احتياطية من الملاحظات على سحابة في كل مرة يفتح المستخدم التطبيق. لن يتم إجراء النسخ رؤوس الصورة لأعلى.</string>
+    <string name="settings_parse_backing_up">النسخ الاحتياطي في العملية. يرجى الانتظار.</string>
+    <string name="settings_parse_restore">سيؤدي ذلك إلى حذف واستبدال جميع الملاحظات مع النسخ الاحتياطي.</string>
+    <string name="settings_parse_restoring">استعادة البيانات: لا إغلاق التطبيق</string>
+    <string name="settings_parse_successful">استعادة الانتهاء</string>
+    <string name="settings_parse_failed">فشل في استرداد البيانات من سحابة :</string>
+    <string name="settings_delete_detail">يطلب من المستخدم قبل حذف الملاحظات</string>
+    <string name="settings_serif">الرقيق</string>
+    <string name="settings_columns">عدد من الملاحظات لكل صف</string>
+    <string name="settings_holder_type">مذكرة تخطيط</string>
+    <string name="settings_apply_layout_change_title">نفذ التغييرات</string>
+    <string name="settings_apply_layout_change">لتطبيق التغييرات تخطيط، إعادة تشغيل التطبيق.</string>
+</resources>

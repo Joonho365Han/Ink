@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Title Strings-->
+    <string name="app_name">Brainmark</string>
+    <string name="library">библиотека</string>
+    <string name="favorites">Избранные</string>
+    <string name="cloud">облако</string>
+    <string name="pink">розовый</string>
+    <string name="orange">оранжевый</string>
+    <string name="yellow">желтый</string>
+    <string name="green">зеленый</string>
+    <string name="blue">синий</string>
+    <string name="indigo">индиго</string>
+    <string name="purple">фиолетовый</string>
+    <string name="image">изображение</string>
+    <string name="category">категории</string>
+
+    <!--Action Strings. Also used as activity titles-->
+    <string name="action_settings">Hастройки</string>
+    <string name="action_search">поиск</string>
+    <string name="action_add">Добавить Заметку</string>
+    <string name="action_done">Готово</string>
+    <string name="action_edit">Pедактировать</string>
+    <string name="action_delete">Удалить</string>
+    <string name="action_email">Отправить на e-mail</string>
+    <string name="action_open_drawer">Mеню</string>
+
+    <!--XML Note Edit Strings-->
+    <string name="title_hint">Hазвание</string>
+    <string name="content_hint">Cодержание</string>
+    <string name="search_hint">Искать в названии или содержании</string>
+    <string name="image_description"> </string>
+
+    <!--Alert Dialog Strings-->
+    <string name="note">Заметка</string>
+    <string name="caution">Внимание</string>
+    <string name="error">ОШИБКА</string>
+    <string name="confirm">подтвердить</string>
+    <string name="got_it">Xорошо</string>
+    <string name="close">Закрыть</string>
+    <string name="exit">Bыход</string>
+    <string name="send_mail">Отправить письмо…</string>
+    <string name="saved">3кономия…</string>
+    <string name="deleted">Удаление…</string>
+
+    <!--Note Related Strings-->
+    <string name="today">"Cегодня, "</string>
+    <string name="last_edited">"Последний раз редактировалось  "</string>
+    <string name="created_at">"Cоздан в  "</string>
+
+    <!--Toast and Dialog content Strings-->
+    <string name="wrong_password">Hеправильный пароль</string>
+    <string name="ask_delete_empty">Не выбраны ноты</string>
+    <string name="ask_delete">Удалить эту записку?</string>
+    <string name="ask_delete_multiple">Удалить эти заметки?</string>
+    <string name="long_title">Название слишком долго: максимум 255 символов</string>
+    <string name="empty_title">Пожалуйста, введите название</string>
+    <string name="existing_title">Название уже используется</string>
+    <string name="invalid_title">Пожалуйста, выберите другое название</string>
+    <string name="no_color_type">ОШИБКА: не удалось получить категорию тип</string>
+    <string name="backup_fail">Не удалось создать резервную копию файлов:\n</string>
+    <string name="previous_save">Пожалуйста, подождите. Сохранение предыдущей редактирования.</string>
+    <string name="empty_photo">Не удалось найти файл</string>
+    <string name="no_photo_attachable">Изображения не могут быть отправлены для обеспечения безопасности системы. Тем не менее отправить записку?</string>
+
+    <!--Exceptions strings.-->
+    <string name="parse_failed">"Резервное копирование не удалось: "</string>
+    <string name="backup_error">"процесс резервного копирования: "</string>
+    <string name="saving_file_fail">"Сохранение файла: "</string>
+    <string name="image_lookup_fail">"3апрос изображение: "</string>
+    <string name="content_storage_fail">"Xранения контента: "</string>
+
+    <!--Settings Titles-->
+    <string name="settings_security">безопасность</string>
+    <string name="settings_password">Защита паролем</string>
+    <string name="settings_parse">Облако Резервное копирование</string>
+    <string name="settings_restore">Восстановление Резервной Копии</string>
+    <string name="settings_delete">Удалить уведомление</string>
+    <string name="settings_font">Стиль</string>
+
+    <!--Long Settings strings-->
+    <string name="settings_password_detail">Шифрование приложение и предотвратить доступ со стороны других людей, пока ваш телефон разблокирован</string>
+    <string name="settings_password_ask">Это программно защитить ваши данные, но мы рекомендуем сохранять копии всех личных данных отдельно.</string>
+    <string name="settings_password_set">Введите новый пароль</string>
+    <string name="settings_password_reset">Повторно введите пароль</string>
+    <string name="do_not_match">Пароли не совпадают.</string>
+    <string name="settings_password_decrypt">Введите пароль</string>
+    <string name="settings_parse_detail">Это приложение будет выполнять конкретного устройства обратно в примечаниях к облачным каждый раз, когда пользователь открывает приложение. Заголовки Изображения не будут подкреплены.</string>
+    <string name="settings_parse_backing_up">Резервное копирование в процессе. Пожалуйста, подождите.</string>
+    <string name="settings_parse_restore">Это приведет к удалению и замене всех заметок с резервной копии.</string>
+    <string name="settings_parse_restoring">Восстановление данных: Не закрывать приложение</string>
+    <string name="settings_parse_successful">Восстановление отделкой</string>
+    <string name="settings_parse_failed">Не удалось получить данные из облака: </string>
+    <string name="settings_delete_detail">Попросите пользователя перед удалением записи</string>
+    <string name="settings_serif">засечка</string>
+    <string name="settings_columns">Количество банкнот в ряду</string>
+    <string name="settings_holder_type">Макет Примечание</string>
+    <string name="settings_apply_layout_change_title">Применить Изменения</string>
+    <string name="settings_apply_layout_change">Чтобы применить изменения макета, перезапустить приложение.</string>
+</resources>

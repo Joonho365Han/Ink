@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="color_type">
+        <item>Pilvi ylätunniste</item>
+        <item>Vaaleanpunainen</item>
+        <item>Oranssi</item>
+        <item>Keltainen</item>
+        <item>Vihreä</item>
+        <item>Sininen</item>
+        <item>Indigo</item>
+        <item>Violetti</item>
+        <item>Valitse otsikko albumista</item>
+    </string-array>
+</resources>

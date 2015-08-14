@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Title Strings-->
+    <string name="app_name">Brainmark</string>
+    <string name="library">Knjižnica</string>
+    <string name="favorites">Omiljene</string>
+    <string name="cloud">Oblak</string>
+    <string name="pink">Roze</string>
+    <string name="orange">Narančasta</string>
+    <string name="yellow">žuti</string>
+    <string name="green">Zelena</string>
+    <string name="blue">Plava</string>
+    <string name="indigo">Indigo</string>
+    <string name="purple">Purpurna Boja</string>
+    <string name="image">Slika</string>
+    <string name="category">Kategorije</string>
+
+    <!--Action Strings. Also used as activity titles-->
+    <string name="action_settings">Postavke</string>
+    <string name="action_search">Pretraživanje</string>
+    <string name="action_add">Dodajte Bilješke</string>
+    <string name="action_done">Pospremljen</string>
+    <string name="action_edit">Uredi</string>
+    <string name="action_delete">Izbrisati</string>
+    <string name="action_email">Pošalji e-mail</string>
+    <string name="action_open_drawer">Meni</string>
+
+    <!--XML Note Edit Strings-->
+    <string name="title_hint">Naslov</string>
+    <string name="content_hint">Sadržaj</string>
+    <string name="search_hint">Traži naslov ili sadržaj</string>
+    <string name="image_description"> </string>
+
+    <!--Alert Dialog Strings-->
+    <string name="note">Bilješka</string>
+    <string name="caution">Oprez</string>
+    <string name="error">POGREŠKA</string>
+    <string name="confirm">Potvrditi</string>
+    <string name="got_it">Dobro</string>
+    <string name="close">Zatvorite</string>
+    <string name="exit">Izlaz</string>
+    <string name="send_mail">Pošalji mail…</string>
+    <string name="saved">Spašavanje…</string>
+    <string name="deleted">Brisanje…</string>
+
+    <!--Note Related Strings-->
+    <string name="today">"Danas, "</string>
+    <string name="last_edited">"Zadnje uređivanje  "</string>
+    <string name="created_at">"Stvoren na  "</string>
+
+    <!--Toast and Dialog content Strings-->
+    <string name="wrong_password">Pogrešna lozinka</string>
+    <string name="ask_delete_empty">Nema bilješke biraju</string>
+    <string name="ask_delete">Izbriši ovu poruku?</string>
+    <string name="ask_delete_multiple">Brisanje ove bilješke?</string>
+    <string name="long_title">Naslov je predugačak: maksimalno 255 znakova</string>
+    <string name="empty_title">Unesite naslov</string>
+    <string name="existing_title">Naslov je već u uporabi</string>
+    <string name="invalid_title">Molimo izaberite drugu titulu</string>
+    <string name="no_color_type">POGREŠKA: nije dobila kategorija</string>
+    <string name="backup_fail">Neuspjelo kopiju neke datoteke:\n</string>
+    <string name="previous_save">Molimo pričekajte. Spremanje prethodnu uređivanje.</string>
+    <string name="empty_photo">Ne mogu naći sliku</string>
+    <string name="no_photo_attachable">Slike ne mogu biti poslani na sigurnost sustava. Ipak poslati poruku?</string>
+
+    <!--Exceptions strings.-->
+    <string name="parse_failed">"Rezerva nije uspjelo: "</string>
+    <string name="backup_error">"Rezerva proces: "</string>
+    <string name="saving_file_fail">"Spremanje datoteke: "</string>
+    <string name="image_lookup_fail">"Upita slike: "</string>
+    <string name="content_storage_fail">"Pohranu sadržaja: "</string>
+
+    <!--Settings Titles-->
+    <string name="settings_security">Sigurnosti</string>
+    <string name="settings_password">Zaštita Lozinkom</string>
+    <string name="settings_parse">Oblak Rezerva</string>
+    <string name="settings_restore">Vratiti Rezerva</string>
+    <string name="settings_delete">Upozorenje za Brisanje</string>
+    <string name="settings_font">Stil</string>
+
+    <!--Long Settings strings-->
+    <string name="settings_password_detail">Šifriranje aplikaciju i spriječiti pristup s drugim ljudima, a telefon je otključana</string>
+    <string name="settings_password_ask">To će programski zaštitili svoje podatke, ali preporučujemo čuvanje kopije svih osobnih podataka odvojeno.</string>
+    <string name="settings_password_set">Unesite novu lozinku</string>
+    <string name="settings_password_reset">Ponovno unesite zaporku</string>
+    <string name="do_not_match">Lozinke se ne podudaraju.</string>
+    <string name="settings_password_decrypt">Upišite lozinku</string>
+    <string name="settings_parse_detail">Aplikacija će izvesti uređaj-specifične back up bilješke Oblak svaki put kad korisnik otvara aplikaciju. Zaglavlja Slika neće biti podupirač gore.</string>
+    <string name="settings_parse_backing_up">Sigurnosna kopija u procesu. Molimo pričekajte.</string>
+    <string name="settings_parse_restore">To će izbrisati i zamijeniti sve bilješke s backup.</string>
+    <string name="settings_parse_restoring">Vraćanje podataka: Nemojte zatvorite program</string>
+    <string name="settings_parse_successful">Vrati gotov</string>
+    <string name="settings_parse_failed">Nisam uspio dohvatiti podatke iz oblaka: </string>
+    <string name="settings_delete_detail">Pitajte korisnika prije brisanja bilješke</string>
+    <string name="settings_serif">Crtica</string>
+    <string name="settings_columns">Broj bilješke po redu</string>
+    <string name="settings_holder_type">Raspored Napomena</string>
+    <string name="settings_apply_layout_change_title">Primijeni promjene</string>
+    <string name="settings_apply_layout_change">Da biste primijenili promjene izgleda, ponovno pokrenite aplikaciju.</string>
+</resources>

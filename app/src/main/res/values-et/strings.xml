@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Title Strings-->
+    <string name="app_name">Brainmark</string>
+    <string name="library">Raamatukogu</string>
+    <string name="favorites">Lemmikud</string>
+    <string name="cloud">Pilv</string>
+    <string name="pink">Roosa</string>
+    <string name="orange">Oranž</string>
+    <string name="yellow">Kollane</string>
+    <string name="green">Roheline</string>
+    <string name="blue">Sinine</string>
+    <string name="indigo">Indigo</string>
+    <string name="purple">Purpurne</string>
+    <string name="image">Pilt</string>
+    <string name="category">Kategooriad</string>
+
+    <!--Action Strings. Also used as activity titles-->
+    <string name="action_settings">Seaded</string>
+    <string name="action_search">Otsing</string>
+    <string name="action_add">Lisada Märkus</string>
+    <string name="action_done">Küps</string>
+    <string name="action_edit">Muuta</string>
+    <string name="action_delete">Kustutama</string>
+    <string name="action_email">Saada E-post</string>
+    <string name="action_open_drawer">Menüü</string>
+
+    <!--XML Note Edit Strings-->
+    <string name="title_hint">Pealkiri</string>
+    <string name="content_hint">Sisu</string>
+    <string name="search_hint">Otsingu pealkiri või sisu</string>
+    <string name="image_description"> </string>
+
+    <!--Alert Dialog Strings-->
+    <string name="note">Märge</string>
+    <string name="caution">Ettevaatust</string>
+    <string name="error">VIGA</string>
+    <string name="confirm">Kinnitama</string>
+    <string name="got_it">Okei</string>
+    <string name="close">Lähedal</string>
+    <string name="exit">Väljapääs</string>
+    <string name="send_mail">Saada e-post…</string>
+    <string name="saved">Säästmine…</string>
+    <string name="deleted">Kustutamine…</string>
+
+    <!--Note Related Strings-->
+    <string name="today">"Täna, "</string>
+    <string name="last_edited">"Viimati muutis  "</string>
+    <string name="created_at">"Loodud on  "</string>
+
+    <!--Toast and Dialog content Strings-->
+    <string name="wrong_password">Vale parool</string>
+    <string name="ask_delete_empty">Märkmete on valitud</string>
+    <string name="ask_delete">Kustuta käesoleva märkuse?</string>
+    <string name="ask_delete_multiple">Kustuta need märkmed?</string>
+    <string name="long_title">Pealkiri on liiga pikk: maksimaalselt 255 tähemärki</string>
+    <string name="empty_title">Palun sisestage pealkiri</string>
+    <string name="existing_title">Pealkiri on juba kasutusel</string>
+    <string name="invalid_title">Palun vali mõni teine pealkiri</string>
+    <string name="no_color_type">VIGA: ei saanud kategooria tüübist</string>
+    <string name="backup_fail">Ebaõnnestunud varundada mõned failid:\n</string>
+    <string name="previous_save">Palun oota. Saving eelmise muuta.</string>
+    <string name="empty_photo">Ei leia pilti</string>
+    <string name="no_photo_attachable">Pilte ei ole võimalik saata süsteemi turvalisuse. Ikka Kirjuta märkus?</string>
+
+    <!--Exceptions strings.-->
+    <string name="parse_failed">"Backup ebaõnnestunud: "</string>
+    <string name="backup_error">"Backup protsess: "</string>
+    <string name="saving_file_fail">"Faili salvestamine: "</string>
+    <string name="image_lookup_fail">"Pilt päringu: "</string>
+    <string name="content_storage_fail">"Sisu ladustamine: "</string>
+
+    <!--Settings Titles-->
+    <string name="settings_security">Turvalisus</string>
+    <string name="settings_password">Salasõna kaitse</string>
+    <string name="settings_parse">Pilv Backup</string>
+    <string name="settings_restore">Taasta Backup</string>
+    <string name="settings_delete">Kustuta Alert</string>
+    <string name="settings_font">Stiil</string>
+
+    <!--Long Settings strings-->
+    <string name="settings_password_detail">Krüpti app ja takistada juurdepääsu teiste inimeste kui telefon on lukustamata</string>
+    <string name="settings_password_ask">See programmiliselt kaitsta oma andmeid, kuid soovitame hoida koopiad kõigist isikuandmeid eraldi.</string>
+    <string name="settings_password_set">Sisesta uus parool</string>
+    <string name="settings_password_reset">Sisesta parool uuesti</string>
+    <string name="do_not_match">Paroolid ei kattu.</string>
+    <string name="settings_password_decrypt">Sisestage parool</string>
+    <string name="settings_parse_detail">App täidab seadme-spetsiifilisi tagasi üles märkmeid pilve iga kord, kui kasutaja avab app. Pilt päised ei käiks.</string>
+    <string name="settings_parse_backing_up">Backup protsess. Palun oota.</string>
+    <string name="settings_parse_restore">See kustutada ja asendada kõik märkmed backup.</string>
+    <string name="settings_parse_restoring">Andmete taastamine: Ärge sulgege rakendus</string>
+    <string name="settings_parse_successful">Taasta valmis</string>
+    <string name="settings_parse_failed">Andmete toomiseks pilv: </string>
+    <string name="settings_delete_detail">Küsi kasutaja enne kustutamist märkmed</string>
+    <string name="settings_serif">Serif</string>
+    <string name="settings_columns">Arv märkmed rea kohta</string>
+    <string name="settings_holder_type">Paigutus Märkus</string>
+    <string name="settings_apply_layout_change_title">Rakenda Muudatused</string>
+    <string name="settings_apply_layout_change">Kandideerimiseks paigutus muutub, taaskäivitada app.</string>
+</resources>

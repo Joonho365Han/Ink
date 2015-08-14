@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="note_type">
+        <item>느슨</item>
+        <item>압축</item>
+    </string-array>
+</resources>

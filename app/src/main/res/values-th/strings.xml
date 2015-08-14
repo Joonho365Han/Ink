@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Title Strings-->
+    <string name="app_name">Brainmark</string>
+    <string name="library">ห้องสมุด</string>
+    <string name="favorites">ที่ชื่นชอบ</string>
+    <string name="cloud">เมฆ</string>
+    <string name="pink">สีชมพู</string>
+    <string name="orange">สีส้ม</string>
+    <string name="yellow">สีเหลือง</string>
+    <string name="green">สีเขียว</string>
+    <string name="blue">สีน้ำเงิน</string>
+    <string name="indigo">คราม</string>
+    <string name="purple">สีม่วง</string>
+    <string name="image">ภาพ</string>
+    <string name="category">หมวดหมู่</string>
+
+    <!--Action Strings. Also used as activity titles-->
+    <string name="action_settings">การตั้งค่า</string>
+    <string name="action_search">ค้นหา</string>
+    <string name="action_add">เพิ่มบันทึก</string>
+    <string name="action_done">เสร็จสิ้น</string>
+    <string name="action_edit">แก้ไข</string>
+    <string name="action_delete">ลบ</string>
+    <string name="action_email">ส่งอีเมล์</string>
+    <string name="action_open_drawer">เมนู</string>
+
+    <!--XML Note Edit Strings-->
+    <string name="title_hint">ชื่อเรื่อง</string>
+    <string name="content_hint">เนื้อหา</string>
+    <string name="search_hint">ค้นหาชื่อเรื่องหรือเนื้อหา</string>
+    <string name="image_description"> </string>
+
+    <!--Alert Dialog Strings-->
+    <string name="note">บันทึก</string>
+    <string name="caution">คำเตือน</string>
+    <string name="error">ข้อผิดพลาด</string>
+    <string name="confirm">ยืนยัน</string>
+    <string name="got_it">ถูก</string>
+    <string name="close">ปิด</string>
+    <string name="exit">เลิก</string>
+    <string name="send_mail">ส่งอีเมล์…</string>
+    <string name="saved">ประหยัด…</string>
+    <string name="deleted">ลบ…</string>
+
+    <!--Note Related Strings-->
+    <string name="today">"ในวันนี้, "</string>
+    <string name="last_edited">"แก้ไขครั้งสุดท้าย  "</string>
+    <string name="created_at">"สร้างเมื่อ  "</string>
+
+    <!--Toast and Dialog content Strings-->
+    <string name="wrong_password">รหัสผ่านผิด</string>
+    <string name="ask_delete_empty">บันทึกไม่ได้รับการคัดเลือก</string>
+    <string name="ask_delete">ลบข้อมูลนี้?</string>
+    <string name="ask_delete_multiple">ลบบันทึกเหล่านี้หรือไม่</string>
+    <string name="long_title">ชื่อยาวเกินไป: สูงสุด 255 ตัวอักษร</string>
+    <string name="empty_title">กรุณากรอกชื่อ</string>
+    <string name="existing_title">ชื่อที่มีอยู่แล้วในการใช้งาน</string>
+    <string name="invalid_title">โปรดเลือกชื่อที่แตกต่างกัน</string>
+    <string name="no_color_type">ข้อผิดพลาด: ล้มเหลวที่จะได้รับประเภทหมวดหมู่</string>
+    <string name="backup_fail">ล้มเหลวในการสำรองไฟล์บางอย่าง\n</string>
+    <string name="previous_save">กรุณารอ บันทึกการแก้ไขก่อนหน้านี้</string>
+    <string name="empty_photo">ไม่พบภาพ</string>
+    <string name="no_photo_attachable">ภาพไม่สามารถส่งสำหรับระบบรักษาความปลอดภัย ยังคงส่งบันทึก?</string>
+
+    <!--Exceptions strings.-->
+    <string name="parse_failed">"การสำรองข้อมูลล้มเหลว: "</string>
+    <string name="backup_error">"ขั้นตอนการสำรองข้อมูล: "</string>
+    <string name="saving_file_fail">"บันทึกไฟล์: "</string>
+    <string name="image_lookup_fail">"แบบสอบถามภาพ: "</string>
+    <string name="content_storage_fail">"การจัดเก็บเนื้อหา: "</string>
+
+    <!--Settings Titles-->
+    <string name="settings_security">ความปลอดภัย</string>
+    <string name="settings_password">การป้องกันโดยใช้รหัสผ่าน</string>
+    <string name="settings_parse">เมฆสำรอง</string>
+    <string name="settings_restore">การคืนค่าการสำรองข้อมูล</string>
+    <string name="settings_delete">การแจ้งเตือนของการลบ</string>
+    <string name="settings_font">สไตล์</string>
+
+    <!--Long Settings strings-->
+    <string name="settings_password_detail">การเข้ารหัสลับแอพลิเคชันของคุณและป้องกันการเข้าถึงจากคนอื่น ๆ ในขณะที่โทรศัพท์ของคุณจะถูกปลดล็อก</string>
+    <string name="settings_password_ask">โปรแกรมนี้จะช่วยป้องกันข้อมูลของคุณ แต่เราขอแนะนำการรักษาสำเนาของข้อมูลส่วนบุคคลทั้งหมดแยก</string>
+    <string name="settings_password_set">ป้อนรหัสผ่านใหม่</string>
+    <string name="settings_password_reset">เข้าใหม่รหัสผ่าน</string>
+    <string name="do_not_match">รหัสผ่านไม่ตรงกัน</string>
+    <string name="settings_password_decrypt">ใส่รหัสผ่าน</string>
+    <string name="settings_parse_detail">การตรวจสอบนี้จะดำเนินการเฉพาะอุปกรณ์สำรองของบันทึกไปยังเมฆทุกครั้งที่ผู้ใช้เปิดแอพพลิเค ส่วนหัวของภาพจะไม่ได้รับการสนับสนุน</string>
+    <string name="settings_parse_backing_up">การสำรองข้อมูลในกระบวนการ กรุณารอ</string>
+    <string name="settings_parse_restore">นี้จะลบและแทนที่บันทึกทั้งหมดด้วยการสำรองข้อมูล</string>
+    <string name="settings_parse_restoring">การกู้คืนข้อมูล: อย่าปิดโปรแกรม</string>
+    <string name="settings_parse_successful">ฟื้นฟูเสร็จแล้ว</string>
+    <string name="settings_parse_failed">ล้มเหลวในการดึงข้อมูลจากระบบคลาวด์: </string>
+    <string name="settings_delete_detail">ขอให้ผู้ใช้ก่อนที่จะลบบันทึก</string>
+    <string name="settings_serif">เส้นขวางที่เท้าตัวอักษรโรมัน</string>
+    <string name="settings_columns">จำนวนบันทึกต่อแถว</string>
+    <string name="settings_holder_type">รูปแบบของหมายเหตุ</string>
+    <string name="settings_apply_layout_change_title">ใช้การเปลี่ยนแปลง</string>
+    <string name="settings_apply_layout_change">เพื่อใช้การเปลี่ยนแปลงรูปแบบแอพพลิเครีสตาร์ท</string>
+</resources>

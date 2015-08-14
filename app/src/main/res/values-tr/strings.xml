@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Title Strings-->
+    <string name="app_name">Brainmark</string>
+    <string name="library">Kütüphane</string>
+    <string name="favorites">Sık</string>
+    <string name="cloud">Bulut</string>
+    <string name="pink">Pembe</string>
+    <string name="orange">Turuncu</string>
+    <string name="yellow">Sarı</string>
+    <string name="green">Yeşil</string>
+    <string name="blue">Mavi</string>
+    <string name="indigo">çivit</string>
+    <string name="purple">Mor</string>
+    <string name="image">Görüntü</string>
+    <string name="category">Kategoriler</string>
+
+    <!--Action Strings. Also used as activity titles-->
+    <string name="action_settings">Ayarlar</string>
+    <string name="action_search">Arama</string>
+    <string name="action_add">Not Ekle</string>
+    <string name="action_done">Tamam</string>
+    <string name="action_edit">Düzenlemek</string>
+    <string name="action_delete">Silmek</string>
+    <string name="action_email">Eposta Gönder</string>
+    <string name="action_open_drawer">Menü</string>
+
+    <!--XML Note Edit Strings-->
+    <string name="title_hint">Başlık</string>
+    <string name="content_hint">Içerik</string>
+    <string name="search_hint">Arama başlığı veya içerik</string>
+    <string name="image_description"> </string>
+
+    <!--Alert Dialog Strings-->
+    <string name="note">Not</string>
+    <string name="caution">Dikkat</string>
+    <string name="error">HATA</string>
+    <string name="confirm">Onaylamak</string>
+    <string name="got_it">Tamam</string>
+    <string name="close">Kapat</string>
+    <string name="exit">çıkmak</string>
+    <string name="send_mail">Posta gönder…</string>
+    <string name="saved">Tasarruf…</string>
+    <string name="deleted">Silme…</string>
+
+    <!--Note Related Strings-->
+    <string name="today">"Bugün mü, "</string>
+    <string name="last_edited">"Son düzenleme  "</string>
+    <string name="created_at">"Oluşturulan  "</string>
+
+    <!--Toast and Dialog content Strings-->
+    <string name="wrong_password">Yanlış şifre</string>
+    <string name="ask_delete_empty">Hiçbir not seçilir</string>
+    <string name="ask_delete">Bu notu silinsin mi?</string>
+    <string name="ask_delete_multiple">Bu notları sil?</string>
+    <string name="long_title">Başlık çok uzun: Maksimum 255 karakter</string>
+    <string name="empty_title">Lütfen bir başlık girin</string>
+    <string name="existing_title">Başlık zaten kullanımda</string>
+    <string name="invalid_title">Farklı bir başlık seçiniz</string>
+    <string name="no_color_type">HATA: kategori tipini almak için başarısız oldu</string>
+    <string name="backup_fail">Bazı dosyaları yedeklemek için başarısız oldu:\n</string>
+    <string name="previous_save">Lütfen bekleyin. Bir önceki düzenlemeyi kaydediliyor.</string>
+    <string name="empty_photo">Görüntüyü bulunamadı</string>
+    <string name="no_photo_attachable">Görüntüler sistem güvenliği için gönderilemez. Hala not göndermek?</string>
+
+    <!--Exceptions strings.-->
+    <string name="parse_failed">"Yedekleme başarısız oldu: "</string>
+    <string name="backup_error">"Yedekleme işlemi: "</string>
+    <string name="saving_file_fail">"Dosyayı kaydetme: "</string>
+    <string name="image_lookup_fail">"Görüntü sorgusu: "</string>
+    <string name="content_storage_fail">"İçerik depolama: "</string>
+
+    <!--Settings Titles-->
+    <string name="settings_security">Güvenlik</string>
+    <string name="settings_password">Şifre Koruma</string>
+    <string name="settings_parse">Bulut Yedekleme</string>
+    <string name="settings_restore">Yedeği Geri</string>
+    <string name="settings_delete">Silme Uyarısı</string>
+    <string name="settings_font">Stil</string>
+
+    <!--Long Settings strings-->
+    <string name="settings_password_detail">Uygulamanızı şifrelemek ve telefon kilidi ise diğer insanlardan erişimi engellemek</string>
+    <string name="settings_password_ask">Bu programlı verilerinizi korumak olacak, ama biz ayrı ayrı tüm kişisel bilgilerin kopyalarını tutmak öneririz.</string>
+    <string name="settings_password_set">Yeni şifreyi girin</string>
+    <string name="settings_password_reset">Şifrenizi tekrar girin</string>
+    <string name="do_not_match">Şifreler uyuşmuyor.</string>
+    <string name="settings_password_decrypt">şifre girin</string>
+    <string name="settings_parse_detail">Bu uygulama kullanıcı uygulaması her açışında bulut geri notları kadar cihaza özgü gerçekleştirecektir. Görüntü başlıklarını yedeklenen olmayacaktır.</string>
+    <string name="settings_parse_backing_up">Işlemde Yedekleme. Lütfen bekleyin.</string>
+    <string name="settings_parse_restore">Bu silme ve yedekleme ile tüm notları yerini alacak.</string>
+    <string name="settings_parse_restoring">Verileri geri yükleme: uygulamayı kapatmak etmeyin</string>
+    <string name="settings_parse_successful">bitmiş Restore</string>
+    <string name="settings_parse_failed">Bulut veri alınamadı:</string>
+    <string name="settings_delete_detail">Notları silmeden önce kullanıcıyı sor</string>
+    <string name="settings_serif">Harfin uzatılmış çizgisi</string>
+    <string name="settings_columns">Satır başına notları sayısı</string>
+    <string name="settings_holder_type">Not Düzeni</string>
+    <string name="settings_apply_layout_change_title">Değişiklikleri Uygula</string>
+    <string name="settings_apply_layout_change">Düzen değişiklikleri uygulamak için, uygulamayı yeniden başlatın.</string>
+</resources>

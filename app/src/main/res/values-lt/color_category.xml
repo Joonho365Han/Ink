@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="color_type">
+        <item>Debesis antraštė</item>
+        <item>Rožinis</item>
+        <item>Oranžinis</item>
+        <item>Geltonas</item>
+        <item>žalias</item>
+        <item>Mėlynas</item>
+        <item>Indigas</item>
+        <item>Purpurinis</item>
+        <item>Pasirinkite antraštės iš albumo</item>
+    </string-array>
+</resources>

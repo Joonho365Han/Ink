@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Title Strings-->
+    <string name="app_name">Brainmark</string>
+    <string name="library">Kitabxana</string>
+    <string name="favorites">Seçilmişlərə</string>
+    <string name="cloud">Bulud</string>
+    <string name="pink">çəhrayı</string>
+    <string name="orange">Narıncı</string>
+    <string name="yellow">Sarı</string>
+    <string name="green">Yaşıl</string>
+    <string name="blue">Mavi</string>
+    <string name="indigo">Sürməyi</string>
+    <string name="purple">Tünd Qırmızı</string>
+    <string name="image">Təsvir</string>
+    <string name="category">Kateqoriyalar</string>
+
+    <!--Action Strings. Also used as activity titles-->
+    <string name="action_settings">Parametrlər</string>
+    <string name="action_search">Axtarış</string>
+    <string name="action_add">Qeyd əlavə</string>
+    <string name="action_done">Görülən</string>
+    <string name="action_edit">Redaktə etmək</string>
+    <string name="action_delete">Sil</string>
+    <string name="action_email">E-poçt göndər</string>
+    <string name="action_open_drawer">menyu</string>
+
+    <!--XML Note Edit Strings-->
+    <string name="title_hint">Başlıq</string>
+    <string name="content_hint">Məzmun</string>
+    <string name="search_hint">Axtarış adı və ya məzmun</string>
+    <string name="image_description"> </string>
+
+    <!--Alert Dialog Strings-->
+    <string name="note">Qeyd</string>
+    <string name="caution">Xəbərdar</string>
+    <string name="error">Səhv</string>
+    <string name="confirm">Təsdiqləmək</string>
+    <string name="got_it">Əvət</string>
+    <string name="close">Yaxın</string>
+    <string name="exit">çıxış</string>
+    <string name="send_mail">Məktub göndər…</string>
+    <string name="saved">əmanət…</string>
+    <string name="deleted">Silme…</string>
+
+    <!--Note Related Strings-->
+    <string name="today">"Bu gün, "</string>
+    <string name="last_edited">"Son redaktə  "</string>
+    <string name="created_at">"Yerləşdirilmişdir  "</string>
+
+    <!--Toast and Dialog content Strings-->
+    <string name="wrong_password">Yanlış parol</string>
+    <string name="ask_delete_empty">No qeydlər seçilir</string>
+    <string name="ask_delete">Bu qeyd sil?</string>
+    <string name="ask_delete_multiple">Bu qeydləri silmək?</string>
+    <string name="long_title">Title çox uzun: maksimum 255 simvol</string>
+    <string name="empty_title">Başlıq daxil edin</string>
+    <string name="existing_title">Title istifadə artıq</string>
+    <string name="invalid_title">Başqa bir adı seçin</string>
+    <string name="no_color_type">ERROR: Bölmə Növ almaq üçün uğursuz</string>
+    <string name="backup_fail">Bəzi faylları geri bilmədi:\n</string>
+    <string name="previous_save">Xahiş edirik gözləyin. Əvvəlki redaktə qənaət.</string>
+    <string name="empty_photo">Şəkil tapa bilmədi</string>
+    <string name="no_photo_attachable">Şəkillər sistemi təhlükəsizlik üçün göndərilə bilməz. Hələ Qeydi göndərmək?</string>
+
+    <!--Exceptions strings.-->
+    <string name="parse_failed">"Uğursuz backup: "</string>
+    <string name="backup_error">"Backup prosesi: "</string>
+    <string name="saving_file_fail">"Fayl qənaət: "</string>
+    <string name="image_lookup_fail">"Image sorğu: "</string>
+    <string name="content_storage_fail">"Məzmun storage: "</string>
+
+    <!--Settings Titles-->
+    <string name="settings_security">Təhlükəsizlik</string>
+    <string name="settings_password">Şifre qorunması</string>
+    <string name="settings_parse">Cloud Backup</string>
+    <string name="settings_restore">Backup Bərpa</string>
+    <string name="settings_delete">Alert sil</string>
+    <string name="settings_font">Stil</string>
+
+    <!--Long Settings strings-->
+    <string name="settings_password_detail">Sizin app şifrele və telefon oxunuş isə digər insanların qarşısını almaq</string>
+    <string name="settings_password_ask">Bu program sizin data qorumaq, lakin biz ayrı-ayrılıqda bütün şəxsi məlumatların surətlərini saxlanılması gəlir.</string>
+    <string name="settings_password_set">Yeni şifrəni daxil edin</string>
+    <string name="settings_password_reset">Parolu yenidən daxil edin</string>
+    <string name="do_not_match">Parollar uyğun gəlmir.</string>
+    <string name="settings_password_decrypt">şifrəni daxil edin</string>
+    <string name="settings_parse_detail">The app istifadəçi app açır hər zaman bulud geri qeydlər up cihaz xüsusi çıxış edəcək. Image mövzular yedeklenir olmaz.</string>
+    <string name="settings_parse_backing_up">Prosesində Backup. Xahiş edirik gözləyin.</string>
+    <string name="settings_parse_restore">Bu silin və backup ilə bütün qeydləri əvəz edəcək.</string>
+    <string name="settings_parse_restoring">Məlumat bərpası: tətbiqi yaxın etməyin</string>
+    <string name="settings_parse_successful">Hazır bərpa</string>
+    <string name="settings_parse_failed">Bulud məlumat almaq üçün bilməyib: </string>
+    <string name="settings_delete_detail">Qeyd silmə əvvəl istifadəçi xahiş</string>
+    <string name="settings_serif">Serif</string>
+    <string name="settings_columns">Satır başına qeydlər sayı</string>
+    <string name="settings_holder_type">Qeyd layout</string>
+    <string name="settings_apply_layout_change_title">Dəyişiklikləri Müraciət</string>
+    <string name="settings_apply_layout_change">Layout dəyişikliklər tətbiq etmək üçün, app yenidən başladın.</string>
+</resources>

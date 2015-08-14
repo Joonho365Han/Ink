@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/add_title"
+            android:hint="@string/title_hint"
+            android:inputType="textCapWords|textMultiLine"
+            android:maxLines="3"
+            android:minLines="2"
+            android:gravity="bottom"
+            android:textColor="#555555"
+            android:scrollHorizontally="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingBottom="8dp"
+            android:paddingTop="72dp"/>
+
+        <Spinner
+            android:id="@+id/color_code_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"/>
+
+        <EditText
+            android:id="@+id/add_content"
+            android:hint="@string/content_hint"
+            android:gravity="top"
+            android:inputType="textMultiLine|textCapSentences"
+            android:scrollHorizontally="false"
+            android:layout_width="match_parent"
+            android:textColor="#555555"
+            android:layout_height="match_parent"
+            android:background="#ffffff"
+            android:paddingTop="8dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingBottom="16dp"/>
+
+    </LinearLayout>
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar_layout"/>
+
+</merge>

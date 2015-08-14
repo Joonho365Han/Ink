@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Title Strings-->
+    <string name="app_name">Brainmark</string>
+    <string name="library">Bibliotek</string>
+    <string name="favorites">Favoriter</string>
+    <string name="cloud">Moln</string>
+    <string name="pink">Rosa</string>
+    <string name="orange">Apelsin</string>
+    <string name="yellow">Gul</string>
+    <string name="green">Grön</string>
+    <string name="blue">Blå</string>
+    <string name="indigo">Indigo</string>
+    <string name="purple">Lila</string>
+    <string name="image">Bild</string>
+    <string name="category">Kategorier</string>
+
+    <!--Action Strings. Also used as activity titles-->
+    <string name="action_settings">Inställningar</string>
+    <string name="action_search">Sök</string>
+    <string name="action_add">Lägg Till Anteckning</string>
+    <string name="action_done">Klar</string>
+    <string name="action_edit">Redigera</string>
+    <string name="action_delete">Radera</string>
+    <string name="action_email">Skicka Epost</string>
+    <string name="action_open_drawer">Meny</string>
+
+    <!--XML Note Edit Strings-->
+    <string name="title_hint">Titel</string>
+    <string name="content_hint">Innehåll</string>
+    <string name="search_hint">Sök titel eller innehåll</string>
+    <string name="image_description"> </string>
+
+    <!--Alert Dialog Strings-->
+    <string name="note">Notera</string>
+    <string name="caution">Varning</string>
+    <string name="error">FEL</string>
+    <string name="confirm">Bekräfta</string>
+    <string name="got_it">Okej</string>
+    <string name="close">Stäng</string>
+    <string name="exit">Avsluta</string>
+    <string name="send_mail">Skicka mail…</string>
+    <string name="saved">Spara…</string>
+    <string name="deleted">Radera…</string>
+
+    <!--Note Related Strings-->
+    <string name="today">"I dag, "</string>
+    <string name="last_edited">"Senast ändrad  "</string>
+    <string name="created_at">"Skapas vid  "</string>
+
+    <!--Toast and Dialog content Strings-->
+    <string name="wrong_password">Fel lösenord</string>
+    <string name="ask_delete_empty">Inga anteckningar väljs</string>
+    <string name="ask_delete">Radera denna note?</string>
+    <string name="ask_delete_multiple">Radera dessa anteckningar?</string>
+    <string name="long_title">Titel är för lång: max 255 tecken</string>
+    <string name="empty_title">Skriv in en rubrik</string>
+    <string name="existing_title">Titeln är redan i bruk</string>
+    <string name="invalid_title">Välj en annan titel</string>
+    <string name="no_color_type">FEL: misslyckades med att ta emot kategori typ</string>
+    <string name="backup_fail">Det gick inte att säkerhetskopiera vissa filer:\n</string>
+    <string name="previous_save">Vänta. Spara tidigare redigera.</string>
+    <string name="empty_photo">Det gick inte att hitta bilden</string>
+    <string name="no_photo_attachable">Bilder kan inte skickas för säkerheten i systemet. Fortfarande skicka note?</string>
+
+    <!--Exceptions strings.-->
+    <string name="parse_failed">"Säkerhetskopiering misslyckades: "</string>
+    <string name="backup_error">"Backupprocess: "</string>
+    <string name="saving_file_fail">"Spara filen: "</string>
+    <string name="image_lookup_fail">"Bild sökfråga: "</string>
+    <string name="content_storage_fail">"Innehåll lagring: "</string>
+
+    <!--Settings Titles-->
+    <string name="settings_security">Säkerhet</string>
+    <string name="settings_password">Skydd av lösenord</string>
+    <string name="settings_parse">Moln Reserv</string>
+    <string name="settings_restore">återställa Backup</string>
+    <string name="settings_delete">Alert av borttagning</string>
+    <string name="settings_font">Stil</string>
+
+    <!--Long Settings strings-->
+    <string name="settings_password_detail">Kryptera din app och förhindra åtkomst från andra människor medan telefonen är upplåst</string>
+    <string name="settings_password_ask">Detta kommer programmatiskt skydda dina data, men vi rekommenderar att hålla kopior av all personlig information separat.</string>
+    <string name="settings_password_set">Ange nytt lösenord</string>
+    <string name="settings_password_reset">Skriv lösenordet igen</string>
+    <string name="do_not_match">Lösenorden matchar inte.</string>
+    <string name="settings_password_decrypt">Skriv in lösenord</string>
+    <string name="settings_parse_detail">Denna app kommer att utföra enhetsspecifik backup av anteckningar till molnet varje gång användaren öppnar appen. Bild rubriker kommer inte att säkerhetskopieras.</string>
+    <string name="settings_parse_backing_up">Backup i processen. Vänta.</string>
+    <string name="settings_parse_restore">Detta kommer att radera och ersätta alla anteckningar med backup.</string>
+    <string name="settings_parse_restoring">Återställa information: Får inte stänga programmet</string>
+    <string name="settings_parse_successful">Restore färdiga</string>
+    <string name="settings_parse_failed">Det gick inte att hämta data från moln: </string>
+    <string name="settings_delete_detail">Fråga användaren innan du raderar anteckningar</string>
+    <string name="settings_serif">Serif</string>
+    <string name="settings_columns">Antal anmärkningar per rad</string>
+    <string name="settings_holder_type">Layout i anmärkning</string>
+    <string name="settings_apply_layout_change_title">Tillämpa ändringar</string>
+    <string name="settings_apply_layout_change">Om du vill använda layoutförändringar, startar appen.</string>
+</resources>

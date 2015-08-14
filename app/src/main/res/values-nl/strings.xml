@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Title Strings-->
+    <string name="app_name">Brainmark</string>
+    <string name="library">Bibliotheek</string>
+    <string name="favorites">Favorieten</string>
+    <string name="cloud">Wolk</string>
+    <string name="pink">Roze</string>
+    <string name="orange">Oranje</string>
+    <string name="yellow">Geel</string>
+    <string name="green">Groen</string>
+    <string name="blue">Blauw</string>
+    <string name="indigo">Indigo</string>
+    <string name="purple">Purper</string>
+    <string name="image">Image</string>
+    <string name="category">Categorieën</string>
+
+    <!--Action Strings. Also used as activity titles-->
+    <string name="action_settings">Instellingen</string>
+    <string name="action_search">Zoeken</string>
+    <string name="action_add">Notitie Toevoegen</string>
+    <string name="action_done">Gedaan</string>
+    <string name="action_edit">Bewerk</string>
+    <string name="action_delete">Verwijder</string>
+    <string name="action_email">E-mail verzenden</string>
+    <string name="action_open_drawer">Menu</string>
+
+    <!--XML Note Edit Strings-->
+    <string name="title_hint">Titel</string>
+    <string name="content_hint">Inhoud</string>
+    <string name="search_hint">Zoek in titel of inhoud</string>
+    <string name="image_description"> </string>
+
+    <!--Alert Dialog Strings-->
+    <string name="note">Aantekening</string>
+    <string name="caution">Voorzichtig</string>
+    <string name="error">FOUT</string>
+    <string name="confirm">bevestigen</string>
+    <string name="got_it">Oke</string>
+    <string name="close">Sluit</string>
+    <string name="exit">Ophouden</string>
+    <string name="send_mail">Verzend mail…</string>
+    <string name="saved">Besparing…</string>
+    <string name="deleted">Wissen…</string>
+
+    <!--Note Related Strings-->
+    <string name="today">"Vandaag, "</string>
+    <string name="last_edited">"Laatst gewijzigd  "</string>
+    <string name="created_at">"Gemaakt op  "</string>
+
+    <!--Toast and Dialog content Strings-->
+    <string name="wrong_password">Verkeerd wachtwoord</string>
+    <string name="ask_delete_empty">Geen noten worden geselecteerd</string>
+    <string name="ask_delete">Deze notitie wilt verwijderen?</string>
+    <string name="ask_delete_multiple">Verwijder deze aantekeningen?</string>
+    <string name="long_title">Titel is te lang: maximaal 255 tekens</string>
+    <string name="empty_title">Voer een titel</string>
+    <string name="existing_title">De titel is al in gebruik</string>
+    <string name="invalid_title">Kies een andere titel</string>
+    <string name="no_color_type">FOUT: niet categorie het type ontvangen</string>
+    <string name="backup_fail">Kan geen back-up van sommige bestanden:\n</string>
+    <string name="previous_save">Wacht alstublieft. Besparing vorige bewerken.</string>
+    <string name="empty_photo">Kan de afbeelding niet vinden</string>
+    <string name="no_photo_attachable">Beelden kunnen niet worden verzonden voor beveiliging van het systeem. Notitie nog sturen?</string>
+
+    <!--Exceptions strings.-->
+    <string name="parse_failed">"Backup mislukt: "</string>
+    <string name="backup_error">"Backup-proces: "</string>
+    <string name="saving_file_fail">"Opslaan van bestanden: "</string>
+    <string name="image_lookup_fail">"Afbeelding-query: "</string>
+    <string name="content_storage_fail">"Content opslag: "</string>
+
+    <!--Settings Titles-->
+    <string name="settings_security">Veiligheid</string>
+    <string name="settings_password">Bescherming met een Wachtwoord</string>
+    <string name="settings_parse">Wolk Backup</string>
+    <string name="settings_restore">Back-Up Terugzetten</string>
+    <string name="settings_delete">Alert van Verwijdering</string>
+    <string name="settings_font">Stijl</string>
+
+    <!--Long Settings strings-->
+    <string name="settings_password_detail">Versleutel uw app en de toegang van andere mensen te voorkomen terwijl de telefoon is ontgrendeld</string>
+    <string name="settings_password_ask">Dit zal programmatisch bescherming van uw gegevens, maar wij raden het houden van een kopie van alle persoonlijke informatie apart.</string>
+    <string name="settings_password_set">Voer nieuw wachtwoord</string>
+    <string name="settings_password_reset">Herhaal het wachtwoord</string>
+    <string name="do_not_match">Wachtwoorden komen niet overeen.</string>
+    <string name="settings_password_decrypt">Voer wachtwoord in</string>
+    <string name="settings_parse_detail">Deze app zal het apparaat-specifieke uit te voeren back-up van toelichting bij elke keer dat de gebruiker de app opent wolk. Afbeelding headers zal geen back-up.</string>
+    <string name="settings_parse_backing_up">Backup in proces. Wacht alstublieft.</string>
+    <string name="settings_parse_restore">Dit zal verwijderen en vervangen alle notities met back-up.</string>
+    <string name="settings_parse_restoring">Het herstellen van data: Weet de aanvraag niet te sluiten</string>
+    <string name="settings_parse_successful">Afgewerkte herstellen</string>
+    <string name="settings_parse_failed">Kan geen gegevens van cloud te halen: </string>
+    <string name="settings_delete_detail">Vraag de gebruiker vóór het verwijderen van notities</string>
+    <string name="settings_serif">Serif</string>
+    <string name="settings_columns">Aantal noten per rij</string>
+    <string name="settings_holder_type">Lay-out van aantekening</string>
+    <string name="settings_apply_layout_change_title">Wijzigingen toepassen</string>
+    <string name="settings_apply_layout_change">Om de lay-out wijzigingen toe te passen, start de app.</string>
+</resources>

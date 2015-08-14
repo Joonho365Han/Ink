@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="color_type">
+        <item>Cloud header</item>
+        <item>Pink</item>
+        <item>Appelsin</item>
+        <item>Gul</item>
+        <item>Grøn</item>
+        <item>Blå</item>
+        <item>Indigo</item>
+        <item>Lilla</item>
+        <item>Select header from album</item>
+    </string-array>
+</resources>

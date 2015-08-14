@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Title Strings-->
+    <string name="app_name">Brainmark</string>
+    <string name="library">Bibliotēka</string>
+    <string name="favorites">Favorīti</string>
+    <string name="cloud">Mākonis</string>
+    <string name="pink">Sārts</string>
+    <string name="orange">Oranžs</string>
+    <string name="yellow">Dzeltens</string>
+    <string name="green">Zaļš</string>
+    <string name="blue">Zils</string>
+    <string name="indigo">Indigo</string>
+    <string name="purple">Purpurs</string>
+    <string name="image">Attēls</string>
+    <string name="category">Kategorijas</string>
+
+    <!--Action Strings. Also used as activity titles-->
+    <string name="action_settings">Iestatījumi</string>
+    <string name="action_search">Meklēšana</string>
+    <string name="action_add">Pievienot Piezīmi</string>
+    <string name="action_done">Gatavots</string>
+    <string name="action_edit">Rediģēt</string>
+    <string name="action_delete">Izdzēst</string>
+    <string name="action_email">Sūtīt E-Pastu</string>
+    <string name="action_open_drawer">ēdienkarte</string>
+
+    <!--XML Note Edit Strings-->
+    <string name="title_hint">Virsraksts</string>
+    <string name="content_hint">Saturs</string>
+    <string name="search_hint">Meklēšanas nosaukums vai saturs</string>
+    <string name="image_description"> </string>
+
+    <!--Alert Dialog Strings-->
+    <string name="note">Piezīme</string>
+    <string name="caution">Piesardzība</string>
+    <string name="error">ERROR</string>
+    <string name="confirm">Apstiprināt</string>
+    <string name="got_it">Labi</string>
+    <string name="close">Aizvērt</string>
+    <string name="exit">Izeja</string>
+    <string name="send_mail">Sūtīt pastu…</string>
+    <string name="saved">Glābšana…</string>
+    <string name="deleted">Dzēšana…</string>
+
+    <!--Note Related Strings-->
+    <string name="today">"šodien, "</string>
+    <string name="last_edited">"Pēdējo reizi  "</string>
+    <string name="created_at">"Izveidots at  "</string>
+
+    <!--Toast and Dialog content Strings-->
+    <string name="wrong_password">Nepareiza parole</string>
+    <string name="ask_delete_empty">Nav piezīmes tiek izvēlētas</string>
+    <string name="ask_delete">Dzēst šo piezīmi?</string>
+    <string name="ask_delete_multiple">Izdzēst šos piezīmes?</string>
+    <string name="long_title">Nosaukums ir pārāk garš: maksimālais 255 zīmes</string>
+    <string name="empty_title">Ievadiet nosaukumu</string>
+    <string name="existing_title">Nosaukums jau tiek izmantots</string>
+    <string name="invalid_title">Lūdzu, izvēlieties citu nosaukumu</string>
+    <string name="no_color_type">ERROR: Neizdevās saņemt kategorijas veids</string>
+    <string name="backup_fail">Neizdevās dublētu dažus failus:\n</string>
+    <string name="previous_save">Lūdzu uzgaidiet. Taupot iepriekšējo rediģēt.</string>
+    <string name="empty_photo">Nevar atrast attēlu</string>
+    <string name="no_photo_attachable">Attēlu nevar nosūtīt uz sistēmas drošību. Still nosūtīt piezīmi?</string>
+
+    <!--Exceptions strings.-->
+    <string name="parse_failed">"Backup neizdevās: "</string>
+    <string name="backup_error">"Backup process: "</string>
+    <string name="saving_file_fail">"Saglabā failu: "</string>
+    <string name="image_lookup_fail">"Image vaicājums: "</string>
+    <string name="content_storage_fail">"Satura uzglabāšana: "</string>
+
+    <!--Settings Titles-->
+    <string name="settings_security">Drošība</string>
+    <string name="settings_password">Paroles Aizsardzība</string>
+    <string name="settings_parse">Mākonis Backup</string>
+    <string name="settings_restore">Atjaunot Backup</string>
+    <string name="settings_delete">Alert par Dzēšanu</string>
+    <string name="settings_font">Stils</string>
+
+    <!--Long Settings strings-->
+    <string name="settings_password_detail">Šifrēt jūsu lietotni un nevarētu piekļūt no citiem cilvēkiem, bet jūsu tālrunis ir atslēgts</string>
+    <string name="settings_password_ask">Tas programmatiski aizsargāt savus datus, taču mēs iesakām saglabājot kopijas visu personisko informāciju atsevišķi.</string>
+    <string name="settings_password_set">Ievadiet jaunu paroli</string>
+    <string name="settings_password_reset">Ievadiet paroli vēlreiz</string>
+    <string name="do_not_match">Paroles nesakrīt.</string>
+    <string name="settings_password_decrypt">Ievadiet paroli</string>
+    <string name="settings_parse_detail">App uzstāsies ierīce specifisku dublēt piezīmes mākonis katru reizi lietotājs atver app. Attēlu galvenes netiks atbalstītas.</string>
+    <string name="settings_parse_backing_up">Backup procesā. Lūdzu uzgaidiet.</string>
+    <string name="settings_parse_restore">Tas dzēst un aizstās visas piezīmes ar backup.</string>
+    <string name="settings_parse_restoring">Atjaunojot dati: Nelietojiet aizvērtu programmu</string>
+    <string name="settings_parse_successful">Atjaunot pabeigts</string>
+    <string name="settings_parse_failed">Neizdevās iegūt datus no mākoņa: </string>
+    <string name="settings_delete_detail">Jautājiet lietotājam pirms dzēšanas piezīmes</string>
+    <string name="settings_serif">Serif</string>
+    <string name="settings_columns">Skaits piezīmes vienā rindā</string>
+    <string name="settings_holder_type">Izkārtojums Piezīme</string>
+    <string name="settings_apply_layout_change_title">Piemērot Izmaiņas</string>
+    <string name="settings_apply_layout_change">Lai pieteiktos izkārtojuma izmaiņas, restartējiet lietotni.</string>
+</resources>

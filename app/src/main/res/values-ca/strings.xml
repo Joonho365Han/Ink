@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Title Strings-->
+    <string name="app_name">Brainmark</string>
+    <string name="library">Biblioteca</string>
+    <string name="favorites">Favorits</string>
+    <string name="cloud">Núvol</string>
+    <string name="pink">Rosa</string>
+    <string name="orange">Taronja</string>
+    <string name="yellow">Groc</string>
+    <string name="green">Verd</string>
+    <string name="blue">Blau</string>
+    <string name="indigo">Anyil</string>
+    <string name="purple">Porpra</string>
+    <string name="image">Imatge</string>
+    <string name="category">Categories</string>
+
+    <!--Action Strings. Also used as activity titles-->
+    <string name="action_settings">Ajustos</string>
+    <string name="action_search">Cerca</string>
+    <string name="action_add">Afegir nota</string>
+    <string name="action_done">Fet</string>
+    <string name="action_edit">Edita</string>
+    <string name="action_delete">Esborrar</string>
+    <string name="action_email">Envia un correu electrònic</string>
+    <string name="action_open_drawer">Menú</string>
+
+    <!--XML Note Edit Strings-->
+    <string name="title_hint">Títol</string>
+    <string name="content_hint">Contingut</string>
+    <string name="search_hint">Cercar en títols o contingut</string>
+    <string name="image_description"> </string>
+
+    <!--Alert Dialog Strings-->
+    <string name="note">Nota</string>
+    <string name="caution">Precaució</string>
+    <string name="error">ERROR</string>
+    <string name="confirm">Confirmar</string>
+    <string name="got_it">D\'acord</string>
+    <string name="close">Tancar</string>
+    <string name="exit">Sortida</string>
+    <string name="send_mail">Enviar correu…</string>
+    <string name="saved">Estalvi…</string>
+    <string name="deleted">Esborrat…</string>
+
+    <!--Note Related Strings-->
+    <string name="today">"Avui, "</string>
+    <string name="last_edited">"última edició  "</string>
+    <string name="created_at">"Creat en  "</string>
+
+    <!--Toast and Dialog content Strings-->
+    <string name="wrong_password">Contrasenya incorrecta</string>
+    <string name="ask_delete_empty">No hi ha notes se seleccionen</string>
+    <string name="ask_delete">Eliminar aquesta nota?</string>
+    <string name="ask_delete_multiple">Eliminar aquestes notes?</string>
+    <string name="long_title">El títol és massa llarg: un màxim de 255 caràcters</string>
+    <string name="empty_title">Si us plau, introdueixi un títol</string>
+    <string name="existing_title">Títol ja està en ús</string>
+    <string name="invalid_title">Si us plau, escolliu un títol diferent</string>
+    <string name="no_color_type">ERROR: Error en rebre tipus de categoria</string>
+    <string name="backup_fail">No s\'ha pogut realitzar una còpia de seguretat d\'alguns arxius:\n</string>
+    <string name="previous_save">Si us plau espera. Estalviar edició anterior.</string>
+    <string name="empty_photo">No s\'ha pogut trobar la imatge</string>
+    <string name="no_photo_attachable">Les imatges no poden ser enviats a la seguretat del sistema. Encara enviar nota?</string>
+
+    <!--Exceptions strings.-->
+    <string name="parse_failed">"Còpia de seguretat fallida: "</string>
+    <string name="backup_error">"Procés de Còpia de Seguretat: "</string>
+    <string name="saving_file_fail">"Guardant Arxiu: "</string>
+    <string name="image_lookup_fail">"Consulta d\'imatge: "</string>
+    <string name="content_storage_fail">"Emmagatzematge de Contingut: "</string>
+
+    <!--Settings Titles-->
+    <string name="settings_security">Seguretat</string>
+    <string name="settings_password">Protecció de Contrasenya</string>
+    <string name="settings_parse">Núvol de Còpia de Seguretat</string>
+    <string name="settings_restore">Restaurar Còpia De Seguretat</string>
+    <string name="settings_delete">Alerta d\'eliminació</string>
+    <string name="settings_font">Estil</string>
+
+    <!--Long Settings strings-->
+    <string name="settings_password_detail">Xifrar la teva aplicació i impedir l\'accés d\'altres persones mentre el telèfon està desbloquejat</string>
+    <string name="settings_password_ask">Això protegirà les seves dades mitjançant programació, però es recomana mantenir còpies de tota la informació personal per separat.</string>
+    <string name="settings_password_set">Introduïu una nova contrasenya</string>
+    <string name="settings_password_reset">Torna a escriure la contrasenya</string>
+    <string name="do_not_match">Les contrasenyes no coincideixen.</string>
+    <string name="settings_password_decrypt">Introduir la contrasenya</string>
+    <string name="settings_parse_detail">L\'aplicació va a realitzar específic del dispositiu una còpia de seguretat dels bitllets al núvol cada vegada que l\'usuari obre l\'aplicació. Capçaleres Imatge no seran recolzats.</string>
+    <string name="settings_parse_backing_up">Còpia de seguretat en procés. Si us plau espera.</string>
+    <string name="settings_parse_restore">Això eliminarà i reemplaçarà totes les notes amb còpia de seguretat.</string>
+    <string name="settings_parse_restoring">Restauració de les dades: No tanqui la aplicació</string>
+    <string name="settings_parse_successful">Restaurar acabada</string>
+    <string name="settings_parse_failed">No s\'ha pogut recuperar dades de núvol: </string>
+    <string name="settings_delete_detail">Demani a l\'usuari abans de suprimir notes</string>
+    <string name="settings_serif">Serif</string>
+    <string name="settings_columns">Nombre de notes per fila</string>
+    <string name="settings_holder_type">Disseny Nota</string>
+    <string name="settings_apply_layout_change_title">Aplicar Canvis</string>
+    <string name="settings_apply_layout_change">Per aplicar els canvis de disseny, reinicieu l\'aplicació.</string>
+</resources>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Title Strings-->
+    <string name="app_name">Brainmark</string>
+    <string name="library">Biblioteca</string>
+    <string name="favorites">Favoritos</string>
+    <string name="cloud">Nuvem</string>
+    <string name="pink">Rosa</string>
+    <string name="orange">Laranja</string>
+    <string name="yellow">Amarelo</string>
+    <string name="green">Verde</string>
+    <string name="blue">Azul</string>
+    <string name="indigo">índigo</string>
+    <string name="purple">Roxo</string>
+    <string name="image">Imagem</string>
+    <string name="category">Categorias</string>
+
+    <!--Action Strings. Also used as activity titles-->
+    <string name="action_settings">Definições</string>
+    <string name="action_search">Pesquisa</string>
+    <string name="action_add">Adicionar Nota</string>
+    <string name="action_done">Feito</string>
+    <string name="action_edit">Editar</string>
+    <string name="action_delete">Dxcluir</string>
+    <string name="action_email">Enviar Email</string>
+    <string name="action_open_drawer">Cardápio</string>
+
+    <!--XML Note Edit Strings-->
+    <string name="title_hint">Título</string>
+    <string name="content_hint">Conteúdo</string>
+    <string name="search_hint">Pesquisa título ou conteúdo</string>
+    <string name="image_description"> </string>
+
+    <!--Alert Dialog Strings-->
+    <string name="note">Nota</string>
+    <string name="caution">Atenção</string>
+    <string name="error">ERRO</string>
+    <string name="confirm">Confirmar</string>
+    <string name="got_it">OK</string>
+    <string name="close">Feche</string>
+    <string name="exit">Desistir</string>
+    <string name="send_mail">Enviar correio…</string>
+    <string name="saved">Economia…</string>
+    <string name="deleted">Excluindo…</string>
+
+    <!--Note Related Strings-->
+    <string name="today">"Hoje, "</string>
+    <string name="last_edited">"Última Edição  "</string>
+    <string name="created_at">"Criado em  "</string>
+
+    <!--Toast and Dialog content Strings-->
+    <string name="wrong_password">Senha incorreta</string>
+    <string name="ask_delete_empty">Não há notas são selecionados</string>
+    <string name="ask_delete">Excluir esta anotação?</string>
+    <string name="ask_delete_multiple">Excluir essas notas?</string>
+    <string name="long_title">Título é muito longo: máximo de 255 caracteres</string>
+    <string name="empty_title">Por favor insira um título</string>
+    <string name="existing_title">Título já está em uso</string>
+    <string name="invalid_title">Por favor, escolha um título diferente</string>
+    <string name="no_color_type">ERRO: não conseguiu receber tipo de categoria</string>
+    <string name="backup_fail">Falha ao fazer backup de alguns arquivos:\n</string>
+    <string name="previous_save">Por favor, aguarde. Salvando edição anterior.</string>
+    <string name="empty_photo">Não foi possível localizar a imagem</string>
+    <string name="no_photo_attachable">As imagens não podem ser enviados para a segurança do sistema. Ainda enviar nota?</string>
+
+    <!--Exceptions strings.-->
+    <string name="parse_failed">"Falha no backup: "</string>
+    <string name="backup_error">"Processo de backup: "</string>
+    <string name="saving_file_fail">"Salvando arquivo: "</string>
+    <string name="image_lookup_fail">"Consulta imagem: "</string>
+    <string name="content_storage_fail">"Armazenamento de conteúdo: "</string>
+
+    <!--Settings Titles-->
+    <string name="settings_security">Segurança</string>
+    <string name="settings_password">Proteção por Senha</string>
+    <string name="settings_parse">Nuvem de backup</string>
+    <string name="settings_restore">Restaurar Backup</string>
+    <string name="settings_delete">Alerta de Supressão</string>
+    <string name="settings_font">Estilo</string>
+
+    <!--Long Settings strings-->
+    <string name="settings_password_detail">Criptografar o seu aplicativo e impedir o acesso de outras pessoas, enquanto o seu telefone é desbloqueado</string>
+    <string name="settings_password_ask">Isto irá proteger seus dados de forma programática, mas recomendamos manter cópias de todas as informações pessoais separadamente.</string>
+    <string name="settings_password_set">Insira a nova senha</string>
+    <string name="settings_password_reset">Digite novamente a senha</string>
+    <string name="do_not_match">As senhas não coincidem.</string>
+    <string name="settings_password_decrypt">Digite a senha</string>
+    <string name="settings_parse_detail">Este aplicativo irá executar específicas do dispositivo back-up de notas para a nuvem toda vez que o usuário abre o aplicativo. Cabeçalhos de imagem não será feito o backup.</string>
+    <string name="settings_parse_backing_up">Backup no processo. Por favor, aguarde.</string>
+    <string name="settings_parse_restore">Isto irá apagar e substituir todas as notas com backup.</string>
+    <string name="settings_parse_restoring">A restauração de dados: Não feche o aplicativo</string>
+    <string name="settings_parse_successful">Restaurar acabado</string>
+    <string name="settings_parse_failed">Falha ao recuperar dados de nuvem: </string>
+    <string name="settings_delete_detail">Peça ao usuário antes de excluir notas</string>
+    <string name="settings_serif">Serif</string>
+    <string name="settings_columns">Número de notas por fila</string>
+    <string name="settings_holder_type">Disposição de Nota</string>
+    <string name="settings_apply_layout_change_title">Aplicar Mudanças</string>
+    <string name="settings_apply_layout_change">Para aplicar alterações de layout, reinicie o aplicativo..</string>
+</resources>

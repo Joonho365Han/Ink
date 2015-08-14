@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Title Strings-->
+    <string name="app_name">Brainmark</string>
+    <string name="library">Bibliotek</string>
+    <string name="favorites">Foretrukne</string>
+    <string name="cloud">Cloud</string>
+    <string name="pink">Pink</string>
+    <string name="orange">Appelsin</string>
+    <string name="yellow">Gul</string>
+    <string name="green">Grøn</string>
+    <string name="blue">Blå</string>
+    <string name="indigo">Indigo</string>
+    <string name="purple">Lilla</string>
+    <string name="image">Billede</string>
+    <string name="category">Kategorier</string>
+
+    <!--Action Strings. Also used as activity titles-->
+    <string name="action_settings">Indstillinger</string>
+    <string name="action_search">Søg</string>
+    <string name="action_add">Tilføj Note</string>
+    <string name="action_done">Færdig</string>
+    <string name="action_edit">Rediger</string>
+    <string name="action_delete">Slet</string>
+    <string name="action_email">Send e-mail</string>
+    <string name="action_open_drawer">menu</string>
+
+    <!--XML Note Edit Strings-->
+    <string name="title_hint">Titel</string>
+    <string name="content_hint">indhold</string>
+    <string name="search_hint">Søg titel eller indhold</string>
+    <string name="image_description"> </string>
+
+    <!--Alert Dialog Strings-->
+    <string name="note">Note</string>
+    <string name="caution">Giv agt</string>
+    <string name="error">FEJL</string>
+    <string name="confirm">bekræfte</string>
+    <string name="got_it">okay</string>
+    <string name="close">Luk</string>
+    <string name="exit">Frakørsel</string>
+    <string name="send_mail">Sende post…</string>
+    <string name="saved">Lagring…</string>
+    <string name="deleted">Sletning…</string>
+
+    <!--Note Related Strings-->
+    <string name="today">"I dag, "</string>
+    <string name="last_edited">"Sidst ændret  "</string>
+    <string name="created_at">"Skabt på  "</string>
+
+    <!--Toast and Dialog content Strings-->
+    <string name="wrong_password">Forkert adgangskode</string>
+    <string name="ask_delete_empty">Ingen noter vælges</string>
+    <string name="ask_delete">Slet denne note?</string>
+    <string name="ask_delete_multiple">Slet disse noter?</string>
+    <string name="long_title">Titlen er for lang: højst 255 tegn</string>
+    <string name="empty_title">Indtast venligst en titel</string>
+    <string name="existing_title">Titlen er allerede i brug</string>
+    <string name="invalid_title">Vælg en anden titel</string>
+    <string name="no_color_type">FEJL: undladt at modtage kategori typen</string>
+    <string name="backup_fail">Kunne ikke sikkerhedskopiere nogle filer:\n</string>
+    <string name="previous_save">Vent venligst. Lagring forrige redigering.</string>
+    <string name="empty_photo">Kunne ikke finde billedet</string>
+    <string name="no_photo_attachable">Billeder kan ikke sendes til systemets sikkerhed. Stadig sende note?</string>
+
+    <!--Exceptions strings.-->
+    <string name="parse_failed">"backup mislykkedes: "</string>
+    <string name="backup_error">"backup-processen: "</string>
+    <string name="saving_file_fail">"Gemmer fil: "</string>
+    <string name="image_lookup_fail">"Billede forespørgsel: "</string>
+    <string name="content_storage_fail">"Lagring af indhold: "</string>
+
+    <!--Settings Titles-->
+    <string name="settings_security">Sikkerhed</string>
+    <string name="settings_password">Adgangskode Beskyttelse</string>
+    <string name="settings_parse">Cloud Backup</string>
+    <string name="settings_restore">Gendan Sikkerhedskopi</string>
+    <string name="settings_delete">Alarm for Sletning</string>
+    <string name="settings_font">Stil</string>
+
+    <!--Long Settings strings-->
+    <string name="settings_password_detail">Krypter din app og forhindre adgang fra andre mennesker, mens telefonen er låst op</string>
+    <string name="settings_password_ask">Dette vil programmatisk beskytte dine data, men vi anbefaler at holde kopier af alle personlige oplysninger separat.</string>
+    <string name="settings_password_set">Indtast ny adgangskode</string>
+    <string name="settings_password_reset">Genindtast kodeord</string>
+    <string name="do_not_match">Passwords er ikke ens.</string>
+    <string name="settings_password_decrypt">Indtast adgangskode</string>
+    <string name="settings_parse_detail">Den app vil udføre enhedsspecifik back up af noter til cloud, hver gang brugeren åbner app\'en. Billede overskrifter vil ikke blive sikkerhedskopieret.</string>
+    <string name="settings_parse_backing_up">Backup i processen. Vent venligst.</string>
+    <string name="settings_parse_restore">Dette vil slette og erstatte alle noter med backup.</string>
+    <string name="settings_parse_restoring">Gendannelse af data: Må ikke lukke programmet</string>
+    <string name="settings_parse_successful">Gendan færdig</string>
+    <string name="settings_parse_failed">Kunne ikke hente data fra skyen: </string>
+    <string name="settings_delete_detail">Spørg brugeren, før du sletter noter</string>
+    <string name="settings_serif">Serif</string>
+    <string name="settings_columns">Antal noter pr række</string>
+    <string name="settings_holder_type">Bemærk layout</string>
+    <string name="settings_apply_layout_change_title">Anvend ændringer</string>
+    <string name="settings_apply_layout_change">For at anvende layout ændringer, skal du genstarte den app.</string>
+</resources>

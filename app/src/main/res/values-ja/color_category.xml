@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="color_type">
+        <item>クラウドヘッダ</item>
+        <item>ピンク</item>
+        <item>オレンジ</item>
+        <item>黄</item>
+        <item>緑</item>
+        <item>青</item>
+        <item>藍</item>
+        <item>紫</item>
+        <item>アルバムから選択して、ヘッダ</item>
+    </string-array>
+</resources>

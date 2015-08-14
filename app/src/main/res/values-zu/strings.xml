@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Title Strings-->
+    <string name="app_name">Brainmark</string>
+    <string name="library">Library</string>
+    <string name="favorites">Izintandokazi</string>
+    <string name="cloud">Amafu</string>
+    <string name="pink">Umbala Pink</string>
+    <string name="orange">Umbala Orange</string>
+    <string name="yellow">Umbala Ophuzi</string>
+    <string name="green">Umbala Oluhlaza</string>
+    <string name="blue">Umbala Blue</string>
+    <string name="indigo">Umbala Indigo</string>
+    <string name="purple">Umbala Onsomi</string>
+    <string name="image">Isithombe</string>
+    <string name="category">Isigaba</string>
+
+    <!--Action Strings. Also used as activity titles-->
+    <string name="action_settings">Izilungiselelo</string>
+    <string name="action_search">Ukucinga</string>
+    <string name="action_add">Yengeza Inothi</string>
+    <string name="action_done">Kwenziwe</string>
+    <string name="action_edit">Hlela</string>
+    <string name="action_delete">Susa</string>
+    <string name="action_email">Thumela imeyili</string>
+    <string name="action_open_drawer">Imenyu</string>
+
+    <!--XML Note Edit Strings-->
+    <string name="title_hint">Isihloko</string>
+    <string name="content_hint">Okuqukethwe</string>
+    <string name="search_hint">Ukucinga isihloko noma okuqukethwe</string>
+    <string name="image_description"> </string>
+
+    <!--Alert Dialog Strings-->
+    <string name="note">Inothi</string>
+    <string name="caution">Isexwayiso</string>
+    <string name="error">IPHUTHA</string>
+    <string name="confirm">Qinisekisa</string>
+    <string name="got_it">Okay</string>
+    <string name="close">Vala</string>
+    <string name="exit">Lahla</string>
+    <string name="send_mail">Thumela mail…</string>
+    <string name="saved">Ukusindisa…</string>
+    <string name="deleted">Ukususa…</string>
+
+    <!--Note Related Strings-->
+    <string name="today">"Namuhla, "</string>
+    <string name="last_edited">"Last eyahlelwa  "</string>
+    <string name="created_at">"Wadala at  "</string>
+
+    <!--Toast and Dialog content Strings-->
+    <string name="wrong_password">Iphasiwedi Wrong</string>
+    <string name="ask_delete_empty">No amanothi akhethwe</string>
+    <string name="ask_delete">Susa lokhu inothi?</string>
+    <string name="ask_delete_multiple">Susa lezi amanothi?</string>
+    <string name="long_title">Isihloko side kakhulu: esiphezulu izinhlamvu 255</string>
+    <string name="empty_title">Sicela ufake isihloko</string>
+    <string name="existing_title">Isihloko isivele iyasebenza</string>
+    <string name="invalid_title">Sicela ukhethe isihloko ezahlukene</string>
+    <string name="no_color_type">IPHUTHA: yehlulekile ukuthola isigaba uhlobo</string>
+    <string name="backup_fail">Yehlulekile isipele amanye amafayela:\n</string>
+    <string name="previous_save">Ngicela ulinde. Igcina yokuhlela eyandulele.</string>
+    <string name="empty_photo">Asikwazanga ukuthola isithombee</string>
+    <string name="no_photo_attachable">Izithombe azikwazi kuthunyelwe for zokuphepha kwesistimu. Noma kunjalo ukuthumela inothi?</string>
+
+    <!--Exceptions strings.-->
+    <string name="parse_failed">"Backup wehluleka: "</string>
+    <string name="backup_error">"Inqubo Backup: "</string>
+    <string name="saving_file_fail">"Ukugcina ifayela: "</string>
+    <string name="image_lookup_fail">"Nombuzo image: "</string>
+    <string name="content_storage_fail">"Isitoreji okuqukethwe: "</string>
+
+    <!--Settings Titles-->
+    <string name="settings_security">Isibambiso</string>
+    <string name="settings_password">Ukuvikelwa by Iphasiwedi</string>
+    <string name="settings_parse">Cloud Backup</string>
+    <string name="settings_restore">Buyisela Backup</string>
+    <string name="settings_delete">Alert of Ukwesulwa</string>
+    <string name="settings_font">Style</string>
+
+    <!--Long Settings strings-->
+    <string name="settings_password_detail">Ngokufihla kuhlelo lwakho lokusebenza ukuvimbela ukufinyelela kwabanye abantu ngenkathi ifoni yakho ivuliwe</string>
+    <string name="settings_password_ask">Lokhu kuzokwenza programmatically ukuvikela idatha yakho, kodwa sincoma nokugcina amakhophi lonke ulwazi lomuntu siqu ngokwehlukana.</string>
+    <string name="settings_password_set">Faka iphasiwedi entsha</string>
+    <string name="settings_password_reset">Faka futhi iphasiwedi</string>
+    <string name="do_not_match">Amaphasiwedi awafani.</string>
+    <string name="settings_password_decrypt">Faka iphasiwedi</string>
+    <string name="settings_parse_detail">Lolu hlelo lokusebenza ngeke enze eqondene nedivayisi emuva up of amanothi ukuba ifu sonke isikhathi umsebenzisi kuvula lokusebenza. Image izihloko ngeke isipele.</string>
+    <string name="settings_parse_backing_up">Backup in inqubo. Ngicela ulinde.</string>
+    <string name="settings_parse_restore">Lokhu kuzosusa futhi indawo yabo bonke namanothi isipele.</string>
+    <string name="settings_parse_restoring">Ukubuyisela idatha: Ungavali isicelo</string>
+    <string name="settings_parse_successful">Buyisela siphelile</string>
+    <string name="settings_parse_failed">Yehlulekile ukubuyisa idatha kusuka ifu</string>
+    <string name="settings_delete_detail">Buza umsebenzisi ngaphambi kokususa amanothi</string>
+    <string name="settings_serif">Serif</string>
+    <string name="settings_columns">Inani amanothi ngomugqa</string>
+    <string name="settings_holder_type">Qaphela Layout</string>
+    <string name="settings_apply_layout_change_title">Faka isicelo Izinguquko</string>
+    <string name="settings_apply_layout_change">Ukuze isicelo izinguquko layout, uqale kabusha uhlelo lokusebenza.</string>
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="color_type">
+        <item>Moln sidhuvud</item>
+        <item>Rosa</item>
+        <item>Apelsin</item>
+        <item>Gul</item>
+        <item>Grön</item>
+        <item>Blå</item>
+        <item>Indigo</item>
+        <item>Lila</item>
+        <item>Välj nick från album</item>
+    </string-array>
+</resources>

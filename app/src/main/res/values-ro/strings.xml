@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Title Strings-->
+    <string name="app_name">Brainmark</string>
+    <string name="library">Bibliotecă</string>
+    <string name="favorites">Favorite</string>
+    <string name="cloud">Nor</string>
+    <string name="pink">Roz</string>
+    <string name="orange">Portocale</string>
+    <string name="yellow">Galben</string>
+    <string name="green">Verde</string>
+    <string name="blue">Albastru</string>
+    <string name="indigo">Indigo</string>
+    <string name="purple">Violet</string>
+    <string name="image">Imagine</string>
+    <string name="category">Categorii</string>
+
+    <!--Action Strings. Also used as activity titles-->
+    <string name="action_settings">Setări</string>
+    <string name="action_search">Căutare</string>
+    <string name="action_add">Adauga Notita</string>
+    <string name="action_done">Făcut</string>
+    <string name="action_edit">Edita</string>
+    <string name="action_delete">șterge</string>
+    <string name="action_email">Trimite Email</string>
+    <string name="action_open_drawer">Meniu</string>
+
+    <!--XML Note Edit Strings-->
+    <string name="title_hint">Titlu</string>
+    <string name="content_hint">Conținut</string>
+    <string name="search_hint">Cauta in titlul sau conținutul</string>
+    <string name="image_description"> </string>
+
+    <!--Alert Dialog Strings-->
+    <string name="note">Notă</string>
+    <string name="caution">Atenție</string>
+    <string name="error">EROARE</string>
+    <string name="confirm">confirma</string>
+    <string name="got_it">Bine</string>
+    <string name="close">Inchide</string>
+    <string name="exit">părăsi</string>
+    <string name="send_mail">Trimitere e-mail…</string>
+    <string name="saved">Economisire…</string>
+    <string name="deleted">Ștergerea…</string>
+
+    <!--Note Related Strings-->
+    <string name="today">"Astăzi, "</string>
+    <string name="last_edited">"Ultima editare  "</string>
+    <string name="created_at">"Creat la  "</string>
+
+    <!--Toast and Dialog content Strings-->
+    <string name="wrong_password">Parola gresita</string>
+    <string name="ask_delete_empty">Nu există note sunt selectate</string>
+    <string name="ask_delete">Ștergeți această notă?</string>
+    <string name="ask_delete_multiple">Ștergeți aceste note?</string>
+    <string name="long_title">Titlul este prea lung: maxim 255 de caractere</string>
+    <string name="empty_title">Vă rugăm să introduceți un titlu</string>
+    <string name="existing_title">Titlu este deja în uz</string>
+    <string name="invalid_title">Vă rugăm să alegeți un alt titlu</string>
+    <string name="no_color_type">EROARE: nu a reușit să primească Tip</string>
+    <string name="backup_fail">Nu a reușit să susțină cateva fisiere:\n</string>
+    <string name="previous_save">Va rugam asteptati. Salvarea edita anterior.</string>
+    <string name="empty_photo">Nu a putut găsi imaginea</string>
+    <string name="no_photo_attachable">Imaginile nu pot fi trimise pentru securitatea sistemului. Încă trimite nota?</string>
+
+    <!--Exceptions strings.-->
+    <string name="parse_failed">"Backup nu a reușit: "</string>
+    <string name="backup_error">"Proces de backup: "</string>
+    <string name="saving_file_fail">"Salvarea fișier: "</string>
+    <string name="image_lookup_fail">"Interogare imagine: "</string>
+    <string name="content_storage_fail">"Stocare conținut: "</string>
+
+    <!--Settings Titles-->
+    <string name="settings_security">Securitate</string>
+    <string name="settings_password">Protecție prin parolă</string>
+    <string name="settings_parse">Nor de Rezervă</string>
+    <string name="settings_restore">Restabili Backup</string>
+    <string name="settings_delete">Alert de ștergere</string>
+    <string name="settings_font">Stil</string>
+
+    <!--Long Settings strings-->
+    <string name="settings_password_detail">Criptarea aplicația și pentru a preveni accesul la alte persoane în timp ce telefonul este deblocat</string>
+    <string name="settings_password_ask">Acest lucru va proteja programatic datele dvs., dar vă recomandăm păstrarea copii ale tuturor informațiilor cu caracter personal separat.</string>
+    <string name="settings_password_set">Introduceți o parolă nouă</string>
+    <string name="settings_password_reset">Reintroduceți parola</string>
+    <string name="do_not_match">Parolele nu se potrivesc.</string>
+    <string name="settings_password_decrypt">Introdu parola</string>
+    <string name="settings_parse_detail">Această aplicație va efectua-dispozitiv specific back-up de note la nor de fiecare dată când utilizatorul deschide aplicația. Anteturile fotografie nu vor fi susținute.</string>
+    <string name="settings_parse_backing_up">Backup în proces. Va rugam asteptati.</string>
+    <string name="settings_parse_restore">Aceasta va șterge și înlocui toate notele cu rezervă.</string>
+    <string name="settings_parse_restoring">Restaurarea datelor: Nu închideți aplicația</string>
+    <string name="settings_parse_successful">Restaurare terminat</string>
+    <string name="settings_parse_failed">Nu a reușit pentru a prelua datele de la nor: </string>
+    <string name="settings_delete_detail">Cere utilizatorului înainte de a șterge note</string>
+    <string name="settings_serif">Serif</string>
+    <string name="settings_columns">Numărul de note pe rând</string>
+    <string name="settings_holder_type">Aspect de Note</string>
+    <string name="settings_apply_layout_change_title">Aplica Schimbarile</string>
+    <string name="settings_apply_layout_change">Pentru a aplica modificările de aspect, reporniți aplicația.</string>
+</resources>
