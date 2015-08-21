@@ -2,7 +2,7 @@
 <resources>
 
     <!--Title Strings-->
-    <string name="app_name">Brainmark</string>
+    <string name="app_name">Μελάνι</string>
     <string name="library">βιβλιοθήκη</string>
     <string name="favorites">Αγαπημένα</string>
     <string name="cloud">σύννεφο</string>

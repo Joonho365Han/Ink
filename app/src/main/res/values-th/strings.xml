@@ -2,7 +2,7 @@
 <resources>
 
     <!--Title Strings-->
-    <string name="app_name">Brainmark</string>
+    <string name="app_name">หมึก</string>
     <string name="library">ห้องสมุด</string>
     <string name="favorites">ที่ชื่นชอบ</string>
     <string name="cloud">เมฆ</string>

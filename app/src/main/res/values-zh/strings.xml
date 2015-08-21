@@ -2,7 +2,7 @@
 <resources>
 
     <!--Title Strings-->
-    <string name="app_name">Brainmark</string>
+    <string name="app_name">墨</string>
     <string name="library">图书馆</string>
     <string name="favorites">我的最爱</string>
     <string name="cloud">云</string>

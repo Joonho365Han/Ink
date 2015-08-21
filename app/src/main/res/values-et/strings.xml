@@ -2,7 +2,7 @@
 <resources>
 
     <!--Title Strings-->
-    <string name="app_name">Brainmark</string>
+    <string name="app_name">Tint</string>
     <string name="library">Raamatukogu</string>
     <string name="favorites">Lemmikud</string>
     <string name="cloud">Pilv</string>

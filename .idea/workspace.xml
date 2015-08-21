@@ -28,8 +28,6 @@
     </layouts>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="New INtent" />
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="DEBUG" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
@@ -60,42 +58,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Library.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/eden/notebook/ink/Library.java">
+      <file leaf-file-name="BookAdapter.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/eden/notebook/ink/BookAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3771331">
-              <caret line="45" column="81" selection-start-line="45" selection-start-column="81" selection-end-line="45" selection-end-column="81" />
+            <state vertical-scroll-proportion="0.49774775">
+              <caret line="47" column="27" selection-start-line="47" selection-start-column="27" selection-end-line="47" selection-end-column="27" />
               <folding>
-                <element signature="method#onCreate#0;class#Library#0" expanded="false" />
-                <element signature="e#4071#4087#0" expanded="true" />
-                <element signature="e#5146#5173#0" expanded="true" />
-                <element signature="e#5175#5189#0" expanded="true" />
-                <element signature="class#5094:5758" expanded="false" />
-                <element signature="e#6223#6248#0" expanded="true" />
-                <element signature="e#6621#6637#0" expanded="true" />
-                <element signature="e#6690#6712#0" expanded="true" />
-                <element signature="e#7384#7403#0" expanded="true" />
-                <element signature="e#7482#7510#0" expanded="true" />
-                <element signature="method#onStart#0;class#Library#0" expanded="false" />
-                <element signature="e#8586#8602#0" expanded="true" />
-                <element signature="method#onNewIntent#0;class#Library#0" expanded="false" />
-                <element signature="method#onCreateOptionsMenu#0;class#Library#0" expanded="false" />
-                <element signature="class#13659:14415" expanded="false" />
-                <element signature="method#onOptionsItemSelected#0;class#Library#0" expanded="false" />
-                <element signature="method#onBackPressed#0;class#Library#0" expanded="false" />
-                <element signature="e#17109#17125#0" expanded="true" />
-                <element signature="method#unlock#0;class#Library#0" expanded="false" />
-                <element signature="e#17695#17729#0" expanded="true" />
-                <element signature="e#17770#17786#0" expanded="true" />
-                <element signature="e#18486#18499#0" expanded="true" />
-                <element signature="method#groupDelete#0;class#Library#0" expanded="false" />
-                <element signature="e#19816#19832#0" expanded="true" />
-                <element signature="method#backupData#0;class#Library#0" expanded="false" />
-                <element signature="e#20889#20936#0" expanded="true" />
-                <element signature="e#23198#23218#0" expanded="true" />
-                <element signature="e#23552#23566#0" expanded="true" />
-                <element signature="e#23612#23659#0" expanded="true" />
-                <element signature="e#23725#23739#0" expanded="true" />
+                <element signature="method#BookAdapter#0;class#BookAdapter#0" expanded="false" />
+                <element signature="method#initializeDataArray#0;class#BookAdapter#0" expanded="false" />
+                <element signature="method#initializeColorArray#0;class#BookAdapter#0" expanded="false" />
+                <element signature="method#initializeSearchResult#0;class#BookAdapter#0" expanded="false" />
+                <element signature="method#initializeFavorites#0;class#BookAdapter#0" expanded="false" />
+                <element signature="method#wipeDataArray#0;class#BookAdapter#0" expanded="false" />
+                <element signature="method#deleteNote#0;class#BookAdapter#0" expanded="false" />
+                <element signature="method#addNote#0;class#BookAdapter#0" expanded="false" />
+                <element signature="method#getDate#0;class#BookAdapter#0" expanded="false" />
+                <element signature="method#onCreateViewHolder#0;class#BookAdapter#0" expanded="false" />
+                <element signature="method#onBindViewHolder#0;class#BookAdapter#0" expanded="false" />
+                <element signature="class#NoteHolder#0;class#BookAdapter#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -1558,10 +1538,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/film_holder.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_library.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_settings.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/film_holder_filled.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/toolbar_layout.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_viewnote.xml" />
@@ -1575,10 +1553,15 @@
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values-it/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values-sk/note_type.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/eden/notebook/ink/Library.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/eden/notebook/ink/NoteDatabaseAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/eden/notebook/ink/BookAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/eden/notebook/ink/DrawerAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/color_category.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_addnote.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/film_holder_filled.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/film_holder.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/eden/notebook/ink/Library.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/eden/notebook/ink/BookAdapter.java" />
       </list>
     </option>
   </component>
@@ -1614,6 +1597,10 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="ProjectPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -1622,104 +1609,8 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Ink" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Ink" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="menu" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Ink" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Ink" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Ink" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ink" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Ink" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="ProjectPane" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1944,12 +1835,11 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32994652" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32899022" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32790446" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.325" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24973261" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
@@ -1963,6 +1853,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32994652" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1984,41 +1875,173 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/eden/notebook/ink/BookAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="method#BookAdapter#0;class#BookAdapter#0" expanded="false" />
+            <element signature="method#initializeDataArray#0;class#BookAdapter#0" expanded="false" />
+            <element signature="method#initializeColorArray#0;class#BookAdapter#0" expanded="false" />
+            <element signature="method#initializeSearchResult#0;class#BookAdapter#0" expanded="false" />
+            <element signature="method#initializeFavorites#0;class#BookAdapter#0" expanded="false" />
+            <element signature="method#wipeDataArray#0;class#BookAdapter#0" expanded="false" />
+            <element signature="method#deleteNote#0;class#BookAdapter#0" expanded="false" />
+            <element signature="method#addNote#0;class#BookAdapter#0" expanded="false" />
+            <element signature="method#getDate#0;class#BookAdapter#0" expanded="false" />
+            <element signature="method#onCreateViewHolder#0;class#BookAdapter#0" expanded="false" />
+            <element signature="method#onBindViewHolder#0;class#BookAdapter#0" expanded="false" />
+            <element signature="class#NoteHolder#0;class#BookAdapter#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/eden/notebook/ink/BookAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="method#BookAdapter#0;class#BookAdapter#0" expanded="false" />
+            <element signature="method#initializeDataArray#0;class#BookAdapter#0" expanded="false" />
+            <element signature="method#initializeColorArray#0;class#BookAdapter#0" expanded="false" />
+            <element signature="method#initializeSearchResult#0;class#BookAdapter#0" expanded="false" />
+            <element signature="method#initializeFavorites#0;class#BookAdapter#0" expanded="false" />
+            <element signature="method#wipeDataArray#0;class#BookAdapter#0" expanded="false" />
+            <element signature="method#deleteNote#0;class#BookAdapter#0" expanded="false" />
+            <element signature="method#addNote#0;class#BookAdapter#0" expanded="false" />
+            <element signature="method#getDate#0;class#BookAdapter#0" expanded="false" />
+            <element signature="method#onCreateViewHolder#0;class#BookAdapter#0" expanded="false" />
+            <element signature="method#onBindViewHolder#0;class#BookAdapter#0" expanded="false" />
+            <element signature="class#NoteHolder#0;class#BookAdapter#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/eden/notebook/ink/BookAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="method#BookAdapter#0;class#BookAdapter#0" expanded="false" />
+            <element signature="method#initializeDataArray#0;class#BookAdapter#0" expanded="false" />
+            <element signature="method#initializeColorArray#0;class#BookAdapter#0" expanded="false" />
+            <element signature="method#initializeSearchResult#0;class#BookAdapter#0" expanded="false" />
+            <element signature="method#initializeFavorites#0;class#BookAdapter#0" expanded="false" />
+            <element signature="method#wipeDataArray#0;class#BookAdapter#0" expanded="false" />
+            <element signature="method#deleteNote#0;class#BookAdapter#0" expanded="false" />
+            <element signature="method#addNote#0;class#BookAdapter#0" expanded="false" />
+            <element signature="method#getDate#0;class#BookAdapter#0" expanded="false" />
+            <element signature="method#onCreateViewHolder#0;class#BookAdapter#0" expanded="false" />
+            <element signature="method#onBindViewHolder#0;class#BookAdapter#0" expanded="false" />
+            <element signature="class#NoteHolder#0;class#BookAdapter#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/eden/notebook/ink/BookAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="method#BookAdapter#0;class#BookAdapter#0" expanded="false" />
+            <element signature="method#initializeDataArray#0;class#BookAdapter#0" expanded="false" />
+            <element signature="method#initializeColorArray#0;class#BookAdapter#0" expanded="false" />
+            <element signature="method#initializeSearchResult#0;class#BookAdapter#0" expanded="false" />
+            <element signature="method#initializeFavorites#0;class#BookAdapter#0" expanded="false" />
+            <element signature="method#wipeDataArray#0;class#BookAdapter#0" expanded="false" />
+            <element signature="method#deleteNote#0;class#BookAdapter#0" expanded="false" />
+            <element signature="method#addNote#0;class#BookAdapter#0" expanded="false" />
+            <element signature="method#getDate#0;class#BookAdapter#0" expanded="false" />
+            <element signature="method#onCreateViewHolder#0;class#BookAdapter#0" expanded="false" />
+            <element signature="method#onBindViewHolder#0;class#BookAdapter#0" expanded="false" />
+            <element signature="class#NoteHolder#0;class#BookAdapter#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/eden/notebook/ink/Library.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="method#onCreate#0;class#Library#0" expanded="false" />
+            <element signature="method#onStart#0;class#Library#0" expanded="false" />
+            <element signature="method#onNewIntent#0;class#Library#0" expanded="false" />
             <element signature="method#onCreateOptionsMenu#0;class#Library#0" expanded="false" />
-            <element signature="e#4071#4087#0" expanded="true" />
-            <element signature="e#5146#5173#0" expanded="true" />
-            <element signature="e#5175#5189#0" expanded="true" />
-            <element signature="e#5952#7693#0" expanded="false" />
-            <element signature="e#6223#6248#0" expanded="true" />
-            <element signature="e#6621#6637#0" expanded="true" />
-            <element signature="e#6690#6712#0" expanded="true" />
-            <element signature="e#6714#6943#0" expanded="false" />
-            <element signature="e#6942#6943#0" expanded="false" />
-            <element signature="e#7384#7403#0" expanded="true" />
-            <element signature="e#7482#7510#0" expanded="true" />
-            <element signature="e#7692#7693#0" expanded="false" />
-            <element signature="e#8586#8602#0" expanded="true" />
-            <element signature="e#17109#17125#0" expanded="true" />
-            <element signature="e#17695#17729#0" expanded="true" />
-            <element signature="e#17770#17786#0" expanded="true" />
-            <element signature="e#17788#18466#0" expanded="false" />
-            <element signature="e#18465#18466#0" expanded="false" />
-            <element signature="e#18486#18499#0" expanded="true" />
-            <element signature="e#18501#18701#0" expanded="false" />
-            <element signature="e#18700#18701#0" expanded="false" />
-            <element signature="e#19816#19832#0" expanded="true" />
-            <element signature="e#20471#24066#0" expanded="false" />
-            <element signature="e#20889#20936#0" expanded="true" />
-            <element signature="e#23198#23218#0" expanded="true" />
-            <element signature="e#23552#23566#0" expanded="true" />
-            <element signature="e#23612#23659#0" expanded="true" />
-            <element signature="e#23725#23739#0" expanded="true" />
-            <element signature="e#24065#24066#0" expanded="false" />
+            <element signature="method#onOptionsItemSelected#0;class#Library#0" expanded="false" />
+            <element signature="method#onBackPressed#0;class#Library#0" expanded="false" />
+            <element signature="method#unlock#0;class#Library#0" expanded="false" />
+            <element signature="method#groupDelete#0;class#Library#0" expanded="false" />
+            <element signature="method#backupData#0;class#Library#0" expanded="false" />
+            <element signature="e#20492#24087#0" expanded="true" />
+            <element signature="e#24086#24087#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/eden/notebook/ink/Library.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="method#onCreate#0;class#Library#0" expanded="false" />
+            <element signature="method#onStart#0;class#Library#0" expanded="false" />
+            <element signature="method#onNewIntent#0;class#Library#0" expanded="false" />
+            <element signature="method#onCreateOptionsMenu#0;class#Library#0" expanded="false" />
+            <element signature="method#onOptionsItemSelected#0;class#Library#0" expanded="false" />
+            <element signature="method#onBackPressed#0;class#Library#0" expanded="false" />
+            <element signature="method#unlock#0;class#Library#0" expanded="false" />
+            <element signature="method#groupDelete#0;class#Library#0" expanded="false" />
+            <element signature="method#backupData#0;class#Library#0" expanded="false" />
+            <element signature="e#20492#24087#0" expanded="true" />
+            <element signature="e#24086#24087#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/eden/notebook/ink/Library.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="method#onCreate#0;class#Library#0" expanded="false" />
+            <element signature="method#onStart#0;class#Library#0" expanded="false" />
+            <element signature="method#onNewIntent#0;class#Library#0" expanded="false" />
+            <element signature="method#onCreateOptionsMenu#0;class#Library#0" expanded="false" />
+            <element signature="method#onOptionsItemSelected#0;class#Library#0" expanded="false" />
+            <element signature="method#onBackPressed#0;class#Library#0" expanded="false" />
+            <element signature="method#unlock#0;class#Library#0" expanded="false" />
+            <element signature="method#groupDelete#0;class#Library#0" expanded="false" />
+            <element signature="method#backupData#0;class#Library#0" expanded="false" />
+            <element signature="e#20492#24087#0" expanded="true" />
+            <element signature="e#24086#24087#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/eden/notebook/ink/Library.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="method#onCreate#0;class#Library#0" expanded="false" />
+            <element signature="method#onStart#0;class#Library#0" expanded="false" />
+            <element signature="method#onNewIntent#0;class#Library#0" expanded="false" />
+            <element signature="method#onCreateOptionsMenu#0;class#Library#0" expanded="false" />
+            <element signature="method#onOptionsItemSelected#0;class#Library#0" expanded="false" />
+            <element signature="method#onBackPressed#0;class#Library#0" expanded="false" />
+            <element signature="method#unlock#0;class#Library#0" expanded="false" />
+            <element signature="method#groupDelete#0;class#Library#0" expanded="false" />
+            <element signature="method#backupData#0;class#Library#0" expanded="false" />
+            <element signature="e#20492#24087#0" expanded="true" />
+            <element signature="e#24086#24087#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2027,10 +2050,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="method#onCreateView#0;class#NoteFragment#0" expanded="false" />
-            <element signature="method#onResume#0;class#NoteFragment#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2064,28 +2083,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/film_holder_filled.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.123411976">
-          <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_addnote.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.70961887">
-          <caret line="29" column="38" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.26153848">
@@ -2097,14 +2094,6 @@
     <entry file="android-dummy://C:\Users\Mason D. Hahn\Documents\Programming\AndroidStudio\Ink/app/Translations Editor">
       <provider selected="true" editor-type-id="string-resource-editor">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.39783">
-          <caret line="9" column="41" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/columns.xml">
@@ -2130,10 +2119,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4641638">
           <caret line="39" column="28" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="28" />
-          <folding>
-            <element signature="method#onCreateView#0;class#NoteFragment#0" expanded="false" />
-            <element signature="method#onResume#0;class#NoteFragment#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2141,7 +2126,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.11604095">
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2156,9 +2140,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.40614334">
           <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding>
-            <element signature="method#blur#0;class#StackBlur#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2166,17 +2147,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5221843">
           <caret line="78" column="5" selection-start-line="78" selection-start-column="5" selection-end-line="78" selection-end-column="5" />
-          <folding>
-            <element signature="method#onCreate#0;class#ViewNote#0" expanded="false" />
-            <element signature="class#NoteAdapter#0;class#ViewNote#0" expanded="false" />
-            <element signature="method#onNewIntent#0;class#ViewNote#0" expanded="false" />
-            <element signature="method#onStart#0;class#ViewNote#0" expanded="false" />
-            <element signature="method#onCreateOptionsMenu#0;class#ViewNote#0" expanded="false" />
-            <element signature="method#onOptionsItemSelected#0;class#ViewNote#0" expanded="false" />
-            <element signature="method#deleteNote#0;class#ViewNote#0" expanded="false" />
-            <element signature="method#sendNoteMail#0;class#ViewNote#0" expanded="false" />
-            <element signature="class#DeleteBitmapTask#0;class#ViewNote#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2206,17 +2176,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.79692835">
           <caret line="372" column="53" selection-start-line="372" selection-start-column="53" selection-end-line="372" selection-end-column="53" />
-          <folding>
-            <element signature="method#onCreate#0;class#Settings#0" expanded="false" />
-            <element signature="method#onCreateOptionsMenu#0;class#Settings#0" expanded="false" />
-            <element signature="method#onOptionsItemSelected#0;class#Settings#0" expanded="false" />
-            <element signature="method#saveSettings#0;class#Settings#0" expanded="false" />
-            <element signature="method#setPassword#0;class#Settings#0" expanded="false" />
-            <element signature="method#restoreBackup#0;class#Settings#0" expanded="false" />
-            <element signature="class#20289:20510" expanded="false" />
-            <element signature="e#21421#21477#0" expanded="true" />
-            <element signature="class#21561:21758" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2224,17 +2183,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="3.0433996">
           <caret line="99" column="98" selection-start-line="99" selection-start-column="98" selection-end-line="99" selection-end-column="98" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_viewnote.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.3550725">
-          <caret line="44" column="35" selection-start-line="44" selection-start-column="35" selection-end-line="44" selection-end-column="35" />
           <folding />
         </state>
       </provider>
@@ -2293,17 +2241,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/film_holder.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.092391305">
-          <caret line="12" column="44" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values-sk/note_type.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.09572072">
@@ -2351,44 +2288,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7679181">
           <caret line="173" column="28" selection-start-line="173" selection-start-column="28" selection-end-line="173" selection-end-column="28" />
-          <folding>
-            <element signature="method#onCreate#0;class#EditNote#0" expanded="false" />
-            <element signature="method#onActivityResult#0;class#EditNote#0" expanded="false" />
-            <element signature="method#onCreateOptionsMenu#0;class#EditNote#0" expanded="false" />
-            <element signature="method#onOptionsItemSelected#0;class#EditNote#0" expanded="false" />
-            <element signature="method#saveFile#0;class#EditNote#0" expanded="false" />
-            <element signature="class#SaveBitmapTask#0;class#EditNote#0" expanded="false" />
-            <element signature="class#DeleteBitmapTask#0;class#EditNote#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/eden/notebook/ink/BookAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.046075087">
-          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
-          <folding>
-            <element signature="method#BookAdapter#0;class#BookAdapter#0" expanded="false" />
-            <element signature="method#initializeDataArray#0;class#BookAdapter#0" expanded="false" />
-            <element signature="method#initializeColorArray#0;class#BookAdapter#0" expanded="false" />
-            <element signature="method#initializeSearchResult#0;class#BookAdapter#0" expanded="false" />
-            <element signature="method#initializeFavorites#0;class#BookAdapter#0" expanded="false" />
-            <element signature="method#wipeDataArray#0;class#BookAdapter#0" expanded="false" />
-            <element signature="method#deleteNote#0;class#BookAdapter#0" expanded="false" />
-            <element signature="method#addNote#0;class#BookAdapter#0" expanded="false" />
-            <element signature="method#getDate#0;class#BookAdapter#0" expanded="false" />
-            <element signature="method#onCreateViewHolder#0;class#BookAdapter#0" expanded="false" />
-            <element signature="method#onBindViewHolder#0;class#BookAdapter#0" expanded="false" />
-            <element signature="class#NoteHolder#0;class#BookAdapter#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31911263">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2404,41 +2303,126 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_viewnote.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3381555">
+          <caret line="46" column="38" selection-start-line="46" selection-start-column="38" selection-end-line="46" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/color_category.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.08688245">
+          <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_addnote.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4159132">
+          <caret line="29" column="38" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/film_holder.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.522604">
+          <caret line="21" column="44" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/film_holder_filled.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43037975">
+          <caret line="18" column="44" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.12230216">
+          <caret line="75" column="65" selection-start-line="75" selection-start-column="65" selection-end-line="75" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/eden/notebook/ink/Library.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3771331">
-          <caret line="45" column="81" selection-start-line="45" selection-start-column="81" selection-end-line="45" selection-end-column="81" />
+        <state vertical-scroll-proportion="0.045918368">
+          <caret line="89" column="24" selection-start-line="89" selection-start-column="24" selection-end-line="89" selection-end-column="24" />
           <folding>
             <element signature="method#onCreate#0;class#Library#0" expanded="false" />
-            <element signature="e#4071#4087#0" expanded="true" />
-            <element signature="e#5146#5173#0" expanded="true" />
-            <element signature="e#5175#5189#0" expanded="true" />
-            <element signature="class#5094:5758" expanded="false" />
-            <element signature="e#6223#6248#0" expanded="true" />
-            <element signature="e#6621#6637#0" expanded="true" />
-            <element signature="e#6690#6712#0" expanded="true" />
-            <element signature="e#7384#7403#0" expanded="true" />
-            <element signature="e#7482#7510#0" expanded="true" />
             <element signature="method#onStart#0;class#Library#0" expanded="false" />
-            <element signature="e#8586#8602#0" expanded="true" />
             <element signature="method#onNewIntent#0;class#Library#0" expanded="false" />
             <element signature="method#onCreateOptionsMenu#0;class#Library#0" expanded="false" />
-            <element signature="class#13659:14415" expanded="false" />
             <element signature="method#onOptionsItemSelected#0;class#Library#0" expanded="false" />
             <element signature="method#onBackPressed#0;class#Library#0" expanded="false" />
-            <element signature="e#17109#17125#0" expanded="true" />
             <element signature="method#unlock#0;class#Library#0" expanded="false" />
-            <element signature="e#17695#17729#0" expanded="true" />
-            <element signature="e#17770#17786#0" expanded="true" />
-            <element signature="e#18486#18499#0" expanded="true" />
             <element signature="method#groupDelete#0;class#Library#0" expanded="false" />
-            <element signature="e#19816#19832#0" expanded="true" />
             <element signature="method#backupData#0;class#Library#0" expanded="false" />
-            <element signature="e#20889#20936#0" expanded="true" />
-            <element signature="e#23198#23218#0" expanded="true" />
-            <element signature="e#23552#23566#0" expanded="true" />
-            <element signature="e#23612#23659#0" expanded="true" />
-            <element signature="e#23725#23739#0" expanded="true" />
+            <element signature="e#20492#24087#0" expanded="true" />
+            <element signature="e#24086#24087#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="67" selection-start-line="8" selection-start-column="67" selection-end-line="8" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/anim/group_delete_disselect.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/anim/group_delete_candidate.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/eden/notebook/ink/BookAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.49774775">
+          <caret line="47" column="27" selection-start-line="47" selection-start-column="27" selection-end-line="47" selection-end-column="27" />
+          <folding>
+            <element signature="method#BookAdapter#0;class#BookAdapter#0" expanded="false" />
+            <element signature="method#initializeDataArray#0;class#BookAdapter#0" expanded="false" />
+            <element signature="method#initializeColorArray#0;class#BookAdapter#0" expanded="false" />
+            <element signature="method#initializeSearchResult#0;class#BookAdapter#0" expanded="false" />
+            <element signature="method#initializeFavorites#0;class#BookAdapter#0" expanded="false" />
+            <element signature="method#wipeDataArray#0;class#BookAdapter#0" expanded="false" />
+            <element signature="method#deleteNote#0;class#BookAdapter#0" expanded="false" />
+            <element signature="method#addNote#0;class#BookAdapter#0" expanded="false" />
+            <element signature="method#getDate#0;class#BookAdapter#0" expanded="false" />
+            <element signature="method#onCreateViewHolder#0;class#BookAdapter#0" expanded="false" />
+            <element signature="method#onBindViewHolder#0;class#BookAdapter#0" expanded="false" />
+            <element signature="class#NoteHolder#0;class#BookAdapter#0" expanded="false" />
           </folding>
         </state>
       </provider>

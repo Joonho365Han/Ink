@@ -2,7 +2,7 @@
 <resources>
 
     <!--Title Strings-->
-    <string name="app_name">Brainmark</string>
+    <string name="app_name">Mürekkep</string>
     <string name="library">Kütüphane</string>
     <string name="favorites">Sık</string>
     <string name="cloud">Bulut</string>

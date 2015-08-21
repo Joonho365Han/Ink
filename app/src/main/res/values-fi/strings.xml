@@ -2,7 +2,7 @@
 <resources>
 
     <!--Title Strings-->
-    <string name="app_name">Brainmark</string>
+    <string name="app_name">Muste</string>
     <string name="library">Kirjasto</string>
     <string name="favorites">Suosikit</string>
     <string name="cloud">Pilvi</string>

@@ -2,7 +2,7 @@
 <resources>
 
     <!--Title Strings-->
-    <string name="app_name">Brainmark</string>
+    <string name="app_name">Cerneală</string>
     <string name="library">Bibliotecă</string>
     <string name="favorites">Favorite</string>
     <string name="cloud">Nor</string>

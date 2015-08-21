@@ -2,7 +2,7 @@
 <resources>
 
     <!--Title Strings-->
-    <string name="app_name">Brainmark</string>
+    <string name="app_name">स्याही</string>
     <string name="library">पुस्तकालय</string>
     <string name="favorites">पसंदीदा</string>
     <string name="cloud">बादल</string>

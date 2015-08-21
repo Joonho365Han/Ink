@@ -2,7 +2,7 @@
 <resources>
 
     <!--Title Strings-->
-    <string name="app_name">Brainmark</string>
+    <string name="app_name">Tinta</string>
     <string name="library">Könyvtár</string>
     <string name="favorites">Kedvencek</string>
     <string name="cloud">Felhő</string>

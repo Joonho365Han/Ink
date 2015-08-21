@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
@@ -287,23 +288,23 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.NoteHolder> {
                 //Always be full size when not in group delete mode nor is not selected.
                 noteHolder.mBackground.setScaleX(1);
                 noteHolder.mBackground.setScaleY(1);
+                noteHolder.mPhotoTint.setVisibility(View.VISIBLE);
 
                 int colorIndex = allColors.get(index);
                 if (colorIndex == 8) { //Image background.
                     try {
                     noteHolder.mBackground.setBackground(new BitmapDrawable(context.getResources(), BitmapFactory
                             .decodeFile(new File(context.getFilesDir(), title + "AG5463#$1!#$&").getAbsolutePath(),
-                                    new BitmapFactory.Options())/*<-Creating bitmap image*/) /*<-Creating drawable(int id) from bitmap*/ );
-                    noteHolder.mPhotoTint.setVisibility(View.VISIBLE); }
+                                    new BitmapFactory.Options())/*<-Creating bitmap image*/) /*<-Creating drawable(int id) from bitmap*/);}
                         catch (Exception e) {
                             noteHolder.mBackground.setBackgroundColor(BookAdapter.COLOR_ARRAY[9]);
-                            noteHolder.mPhotoTint.setVisibility(View.GONE);
                             Toast.makeText(context, "onBindViewHolder: "+e.toString() , Toast.LENGTH_SHORT).show(); }
+                    noteHolder.mPhotoTint.setBackgroundColor(Color.parseColor("#1E000000"));
                     noteHolder.mTitle.setTextColor(Color.WHITE);
                     noteHolder.mEdited.setTextColor(Color.WHITE);
                 } else { //Other background
                     noteHolder.mBackground.setBackgroundColor(COLOR_ARRAY[colorIndex]);
-                    noteHolder.mPhotoTint.setVisibility(View.GONE);
+                    noteHolder.mPhotoTint.setBackground(null);
                     noteHolder.mTitle.setTextColor(COLOR_ARRAY[9]);
                     noteHolder.mEdited.setTextColor(COLOR_ARRAY[9]);
                 }
@@ -344,6 +345,25 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.NoteHolder> {
             mEdited = (TextView) itemView.findViewById(R.id.textView9);
             mStar = (ImageView) itemView.findViewById(R.id.imageView4);
 
+            mBackground.setOnTouchListener(new View.OnTouchListener() {
+                @Override
+                public boolean onTouch(View view, MotionEvent motionEvent) {
+
+                    int action = motionEvent.getAction();
+
+                    if (action == MotionEvent.ACTION_DOWN)
+                        if (allColors.get(getAdapterPosition() - columns) == 8)
+                            mPhotoTint.setBackgroundColor(Color.parseColor("#33000000"));
+                        else
+                            mPhotoTint.setBackgroundColor(Color.parseColor("#13000000"));
+                    else if (action == MotionEvent.ACTION_CANCEL || action == MotionEvent.ACTION_UP)
+                        if (allColors.get(getAdapterPosition() - columns) == 8)
+                            mPhotoTint.setBackgroundColor(Color.parseColor("#1E000000"));
+                        else
+                            mPhotoTint.setBackground(null);
+                    return false;
+                }
+            });
             mBackground.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -351,61 +371,65 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.NoteHolder> {
                     int adapterIndex = getAdapterPosition() - columns;
 
                     if (groupDelete) {
-                    //Group-delete mode makes notes go checked or unchecked.
+                        //Group-delete mode makes notes go checked or unchecked.
 
-                                    String title = mTitle.getText().toString();
-                                    if (allDeleteList.contains(title)){
-                                    //Uncheck
-                                                allDeleteList.remove(title);
+                        String title = mTitle.getText().toString();
+                        if (allDeleteList.contains(title)) {
+                            //Uncheck
+                            allDeleteList.remove(title);
+                            mPhotoTint.setVisibility(View.VISIBLE);
 
-                                                int colorIndex = allColors.get(adapterIndex);
-                                                if (colorIndex == 8) { //Image background.
-                                                    try {
-                                                    mBackground.setBackground(new BitmapDrawable(context.getResources(),/*<-creating drawable*/
-                                                                                                 BitmapFactory /*<-creating bitmap*/
-                                                                                                         .decodeFile(new File(context.getFilesDir(), title + "AG5463#$1!#$&")
-                                                                                                                 .getAbsolutePath(), new BitmapFactory.Options())));
-                                                    mPhotoTint.setVisibility(View.VISIBLE); }
-                                                            catch (Exception e) {
-                                                            mBackground.setBackgroundColor(BookAdapter.COLOR_ARRAY[9]);
-                                                            Toast.makeText(context, e.toString() , Toast.LENGTH_SHORT).show(); }
-                                                } else { //Color Background
-                                                    mBackground.setBackgroundColor(COLOR_ARRAY[colorIndex]);
-                                                    mTitle.setTextColor(COLOR_ARRAY[9]);
-                                                    mEdited.setTextColor(COLOR_ARRAY[9]);
-                                                }
+                            int colorIndex = allColors.get(adapterIndex);
+                            if (colorIndex == 8) { //Image background.
+                                try {
+                                    mBackground.setBackground(new BitmapDrawable(context.getResources(),/*<-creating drawable*/
+                                            BitmapFactory /*<-creating bitmap*/
+                                                    .decodeFile(new File(context.getFilesDir(), title + "AG5463#$1!#$&")
+                                                            .getAbsolutePath(), new BitmapFactory.Options())));
+                                } catch (Exception e) {
+                                    mBackground.setBackgroundColor(BookAdapter.COLOR_ARRAY[9]);
+                                    Toast.makeText(context, e.toString(), Toast.LENGTH_SHORT).show();
+                                }
+                                mPhotoTint.setBackgroundColor(Color.parseColor("#1E000000"));
+                            } else { //Color Background
+                                mBackground.setBackgroundColor(COLOR_ARRAY[colorIndex]);
+                                mPhotoTint.setBackground(null);
+                                mTitle.setTextColor(COLOR_ARRAY[9]);
+                                mEdited.setTextColor(COLOR_ARRAY[9]);
+                            }
 
-                                                //Setting favorites status.
-                                                if (allStars.get(adapterIndex)==1)
-                                                    if (colorIndex==0) mStar.setBackgroundResource(R.drawable.ic_stars_white_36dp_alternative);
-                                                    else               mStar.setBackgroundResource(R.drawable.ic_stars_white_36dp);
-                                                else               mStar.setBackgroundResource(R.drawable.ic_star_border_white_24dp);
+                            //Setting favorites status.
+                            if (allStars.get(adapterIndex) == 1)
+                                if (colorIndex == 0)
+                                    mStar.setBackgroundResource(R.drawable.ic_stars_white_36dp_alternative);
+                                else mStar.setBackgroundResource(R.drawable.ic_stars_white_36dp);
+                            else mStar.setBackgroundResource(R.drawable.ic_star_border_white_24dp);
 
-                                                if (colorIndex == 0) mCloud.setVisibility(View.VISIBLE);
-                                                mBackground.setScaleX(1);
-                                                mBackground.setScaleY(1);
-                                                mBackground.startAnimation(AnimationUtils.loadAnimation(context, R.anim.group_delete_disselect));
-                                    } else {
-                                    //Check
-                                                allDeleteList.add(title);
-                                                mBackground.setBackgroundColor(COLOR_ARRAY[10]);
-                                                mPhotoTint.setVisibility(View.GONE);
-                                                mCloud.setVisibility(View.GONE);
-                                                mTitle.setTextColor(Color.WHITE);
-                                                mEdited.setTextColor(Color.WHITE);
-                                                mStar.setBackgroundResource(R.drawable.ic_star_border_white_24dp);
+                            if (colorIndex == 0) mCloud.setVisibility(View.VISIBLE);
+                            mBackground.setScaleX(1);
+                            mBackground.setScaleY(1);
+                            mBackground.startAnimation(AnimationUtils.loadAnimation(context, R.anim.group_delete_disselect));
+                        } else {
+                            //Check
+                            allDeleteList.add(title);
+                            mBackground.setBackgroundColor(COLOR_ARRAY[10]);
+                            mPhotoTint.setVisibility(View.GONE);
+                            mCloud.setVisibility(View.GONE);
+                            mTitle.setTextColor(Color.WHITE);
+                            mEdited.setTextColor(Color.WHITE);
+                            mStar.setBackgroundResource(R.drawable.ic_star_border_white_24dp);
 
-                                                mBackground.setScaleX((float) .9);
-                                                mBackground.setScaleY((float) .9);
-                                                mBackground.startAnimation(AnimationUtils.loadAnimation(context, R.anim.group_delete_candidate));
-                                    }
+                            mBackground.setScaleX((float) .9);
+                            mBackground.setScaleY((float) .9);
+                            mBackground.startAnimation(AnimationUtils.loadAnimation(context, R.anim.group_delete_candidate));
+                        }
 
                     } else {
-                    //Non-group-delete mode simply takes the user to the next activity
-                                    if (Library.locked) return; //But don't do ANYTHING if app is still locked.
-                                    Intent intent = new Intent(context, ViewNote.class);
-                                    intent.putExtra("index", adapterIndex);
-                                    context.startActivity(intent);
+                        //Non-group-delete mode simply takes the user to the next activity
+                        if (Library.locked) return; //But don't do ANYTHING if app is still locked.
+                        Intent intent = new Intent(context, ViewNote.class);
+                        intent.putExtra("index", adapterIndex);
+                        context.startActivity(intent);
                     }
                 }
             });
@@ -441,7 +465,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.NoteHolder> {
                     if (Library.locked || groupDelete)
                         return; //Users cannot change favorites while app is locked or group selecting.
 
-                    int index   = getAdapterPosition() - columns;
+                    int index = getAdapterPosition() - columns;
                     int starred = allStars.get(index);
 
                     if (starred == 1) { //Unfavoriting

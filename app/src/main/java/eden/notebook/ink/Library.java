@@ -84,7 +84,7 @@ public class Library extends ActionBarActivity {
     static FloatingActionButton deleteButton; //Must be static so BookAdapter can access it and show the delete button.
 
     private String query;
-    private int colorSearch = -2;
+    private int colorSearch;
     private SearchRecentSuggestions suggestions;
     private SharedPreferences prefs;
     private int columns;
@@ -178,6 +178,7 @@ public class Library extends ActionBarActivity {
         });
 
         // Search history initiation.
+        colorSearch = -2;
         suggestions = new SearchRecentSuggestions(this,NoteSearchSuggestionProvider.AUTHORITY, NoteSearchSuggestionProvider.MODE);
 
         //If password protected, query for password.

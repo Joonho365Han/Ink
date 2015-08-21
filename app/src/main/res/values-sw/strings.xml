@@ -2,7 +2,7 @@
 <resources>
 
     <!--Title Strings-->
-    <string name="app_name">Brainmark</string>
+    <string name="app_name">Wino</string>
     <string name="library">Maktaba</string>
     <string name="favorites">Yoyote</string>
     <string name="cloud">Wingu</string>
