@@ -98,4 +98,12 @@
     <string name="settings_holder_type">Note layout</string>
     <string name="settings_apply_layout_change_title">Apply Changes</string>
     <string name="settings_apply_layout_change">To apply layout changes, restart the app.</string>
+
+    <!--The Default column array-->
+    <string-array name="columns" translatable="false">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
 </resources>

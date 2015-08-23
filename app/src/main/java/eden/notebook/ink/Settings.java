@@ -243,7 +243,7 @@ public class Settings extends ActionBarActivity {
             }
         });
 
-        //Initializing color spinner.
+        //Initializing column spinner.
         Spinner spinner = (Spinner) findViewById(R.id.spinner);
         ArrayAdapter<CharSequence> columnAdapter = ArrayAdapter.createFromResource(this,R.array.columns,android.R.layout.simple_spinner_item);
         columnAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -257,7 +257,7 @@ public class Settings extends ActionBarActivity {
             public void onNothingSelected(AdapterView<?> adapterView) {}
         });
 
-        //Initializing color spinner.
+        //Initializing note type spinner.
         spinner = (Spinner) findViewById(R.id.spinner2);
         ArrayAdapter<CharSequence> holderAdapter = ArrayAdapter.createFromResource(this,R.array.note_type,android.R.layout.simple_spinner_item);
         holderAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

@@ -236,9 +236,15 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.NoteHolder> {
         if (day.length() == 1)
             day = "0"+day;
 
-        date = String.valueOf(calendar.get(Calendar.YEAR))+"/"+
+        String newdate = String.valueOf(calendar.get(Calendar.YEAR))+"/"+
                 month+"/"+
                 day;
+        if (Library.updated && date != null && !newdate.equals(date)){ // Changes the date on the note holders if date has changed.
+            date = newdate;
+            notifyDataSetChanged();
+        }
+        else
+            date = newdate;
     }
 
     @Override
