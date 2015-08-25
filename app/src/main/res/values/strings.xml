@@ -15,6 +15,8 @@
     <string name="purple">Purple</string>
     <string name="image">Image</string>
     <string name="category">Categories</string>
+    <string name="cloud_header">Cloud header</string>
+    <string name="select_from_album">Select header from album</string>
 
     <!--Action Strings. Also used as activity titles-->
     <string name="action_settings">Settings</string>
@@ -43,6 +45,7 @@
     <string name="send_mail">Send mail…</string>
     <string name="saved">Saving…</string>
     <string name="deleted">Deleting…</string>
+    <string name="new_title">Enter new title</string>
 
     <!--Note Related Strings-->
     <string name="today">"Today, "</string>
@@ -55,6 +58,7 @@
     <string name="ask_delete">Delete this note?</string>
     <string name="ask_delete_multiple">Delete these notes?</string>
     <string name="long_title">Title is too long: maximum 255 characters</string>
+    <string name="long_category_title">Title is too long: maximum 25 characters</string>
     <string name="empty_title">Please enter a title</string>
     <string name="existing_title">Title is already in use</string>
     <string name="invalid_title">Please choose a different title</string>

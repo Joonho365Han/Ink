@@ -15,6 +15,8 @@
     <string name="purple">Umbala Onsomi</string>
     <string name="image">Isithombe</string>
     <string name="category">Isigaba</string>
+    <string name="cloud_header">Ifu Unhlokweni</string>
+    <string name="select_from_album">Khetha unhlokweni albhamu</string>
 
     <!--Action Strings. Also used as activity titles-->
     <string name="action_settings">Izilungiselelo</string>
@@ -43,6 +45,7 @@
     <string name="send_mail">Thumela mail…</string>
     <string name="saved">Ukusindisa…</string>
     <string name="deleted">Ukususa…</string>
+    <string name="new_title">Faka isihloko esisha</string>
 
     <!--Note Related Strings-->
     <string name="today">"Namuhla, "</string>
@@ -55,6 +58,7 @@
     <string name="ask_delete">Susa lokhu inothi?</string>
     <string name="ask_delete_multiple">Susa lezi amanothi?</string>
     <string name="long_title">Isihloko side kakhulu: esiphezulu izinhlamvu 255</string>
+    <string name="long_category_title">Isihloko side kakhulu: esiphezulu izinhlamvu 25</string>
     <string name="empty_title">Sicela ufake isihloko</string>
     <string name="existing_title">Isihloko isivele iyasebenza</string>
     <string name="invalid_title">Sicela ukhethe isihloko ezahlukene</string>

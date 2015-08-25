@@ -15,6 +15,8 @@
     <string name="purple">Ungu</string>
     <string name="image">Gambar</string>
     <string name="category">Kategori</string>
+    <string name="cloud_header">Awan sundulan</string>
+    <string name="select_from_album">Pilih sundulan album</string>
 
     <!--Action Strings. Also used as activity titles-->
     <string name="action_settings">Pengaturan</string>
@@ -43,6 +45,7 @@
     <string name="send_mail">Kirim surat…</string>
     <string name="saved">Hemat…</string>
     <string name="deleted">Menghapus…</string>
+    <string name="new_title">Masukkan judul baru</string>
 
     <!--Note Related Strings-->
     <string name="today">"Hari ini, "</string>
@@ -55,6 +58,7 @@
     <string name="ask_delete">Menghapus catatan ini?</string>
     <string name="ask_delete_multiple">Menghapus catatan ini?</string>
     <string name="long_title">Judul terlalu panjang: maksimal 255 karakter</string>
+    <string name="long_category_title">Judul terlalu panjang: maksimal 25 karakter</string>
     <string name="empty_title">Masukkan judul</string>
     <string name="existing_title">Judul sudah digunakan</string>
     <string name="invalid_title">Silakan pilih judul yang berbeda</string>

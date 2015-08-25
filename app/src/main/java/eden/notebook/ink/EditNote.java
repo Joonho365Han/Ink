@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Point;
@@ -25,9 +26,7 @@ import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
@@ -93,7 +92,19 @@ public class EditNote extends ActionBarActivity {
 
         //Initializing color spinner.
         spinner = (Spinner) findViewById(R.id.color_code_spinner);
-        ArrayAdapter<CharSequence> colorAdapter = ArrayAdapter.createFromResource(this,R.array.color_type,android.R.layout.simple_spinner_item);
+        ArrayList<String> categories = new ArrayList<>();
+        Resources res = getResources();
+        categories.add(prefs.getString("Cloud",res.getString(R.string.cloud_header)));
+        categories.add(prefs.getString("Pink",res.getString(R.string.pink)));
+        categories.add(prefs.getString("Orange",res.getString(R.string.orange)));
+        categories.add(prefs.getString("Yellow",res.getString(R.string.yellow)));
+        categories.add(prefs.getString("Green",res.getString(R.string.green)));
+        categories.add(prefs.getString("Blue",res.getString(R.string.blue)));
+        categories.add(prefs.getString("Indigo",res.getString(R.string.indigo)));
+        categories.add(prefs.getString("Purple",res.getString(R.string.purple)));
+        categories.add(prefs.getString("Image",res.getString(R.string.select_from_album)));
+
+        ArrayAdapter<String> colorAdapter = new ArrayAdapter<>(this,android.R.layout.simple_spinner_item,categories);
         colorAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(colorAdapter);
 
@@ -177,7 +188,7 @@ public class EditNote extends ActionBarActivity {
         newTitle = title.getText().toString().trim();
 
         //Make sure the file name is valid.
-        if (newTitle.length() >= 255){
+        if (newTitle.length() > 255){
             Toast.makeText(this, R.string.long_title, Toast.LENGTH_SHORT).show();
         } else if (newTitle.length() == 0) {
             Toast.makeText(this, R.string.empty_title, Toast.LENGTH_SHORT).show();
@@ -191,6 +202,11 @@ public class EditNote extends ActionBarActivity {
 
             //Saving big note info
             try {FileOutputStream fos;
+
+                //Overwriting or newly writing text into file as a byte format.
+                fos = openFileOutput(newTitle, MODE_PRIVATE);
+                fos.write(content.getText().toString().getBytes());
+                fos.close();
 
                 //Save photo image if set as header.
                 if (colorIndex == 8){
@@ -229,23 +245,8 @@ public class EditNote extends ActionBarActivity {
                     fos = openFileOutput(newTitle + "AG5463#$1!#$&", MODE_PRIVATE);
                     StackBlur.blur(Bitmap.createScaledBitmap(originalPhoto, 200, 40, true),10).compress(Bitmap.CompressFormat.PNG, 100, fos);
                     fos.close();
-                }
-
-                //Overwriting or newly writing text into file as a byte format.
-                fos = openFileOutput(newTitle, MODE_PRIVATE);
-                fos.write(content.getText().toString().getBytes());
-                fos.close();
-                                                                                        }
-            catch (FileNotFoundException | OutOfMemoryError e) {
-                new AlertDialog.Builder(this)
-                        .setTitle(R.string.error)
-                        .setMessage(getResources().getString(R.string.saving_file_fail)+e.toString())
-                        .setPositiveButton(R.string.close, new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                            }
-                        }).create().show(); return; }
-            catch (IOException e) {
+                }                                                                                        }
+            catch (Exception e){
                 new AlertDialog.Builder(this)
                         .setTitle(R.string.error)
                         .setMessage(getResources().getString(R.string.saving_file_fail)+e.toString())
@@ -262,16 +263,6 @@ public class EditNote extends ActionBarActivity {
                         deleteFile(newTitle+"AG5463#$1!#$&");
                     }
                 }
-                return; }
-            catch (Exception e){
-                new AlertDialog.Builder(this)
-                        .setTitle(R.string.error)
-                        .setMessage(getResources().getString(R.string.saving_file_fail)+e.toString())
-                        .setPositiveButton(R.string.close, new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                            }
-                        }).create().show();
                 return;
             }
 

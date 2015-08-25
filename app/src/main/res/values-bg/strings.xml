@@ -15,6 +15,8 @@
     <string name="purple">Лилаво</string>
     <string name="image">Изображение</string>
     <string name="category">Категории</string>
+    <string name="cloud_header">Oблак глава</string>
+    <string name="select_from_album">Изберете с глава от албума</string>
 
     <!--Action Strings. Also used as activity titles-->
     <string name="action_settings">Hастройки</string>
@@ -43,6 +45,7 @@
     <string name="send_mail">Изпрати мейл…</string>
     <string name="saved">Cпестяване…</string>
     <string name="deleted">Изтриване…</string>
+    <string name="new_title">Въведете ново заглавие</string>
 
     <!--Note Related Strings-->
     <string name="today">"Днес, "</string>
@@ -55,6 +58,7 @@
     <string name="ask_delete">Изтриване на тази бележка?</string>
     <string name="ask_delete_multiple">Изтриване на тези бележки?</string>
     <string name="long_title">Title е твърде дълъг: максимално 255 символа</string>
+    <string name="long_category_title">Title е твърде дълъг: максимално 25 символа</string>
     <string name="empty_title">Моля, въведете заглавие</string>
     <string name="existing_title">Заглавие вече се използва</string>
     <string name="invalid_title">Моля, изберете друго заглавие</string>

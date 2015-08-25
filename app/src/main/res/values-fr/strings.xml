@@ -15,6 +15,8 @@
     <string name="purple">Pourpre</string>
     <string name="image">Image</string>
     <string name="category">Catégories</string>
+    <string name="cloud_header">Couverture tête</string>
+    <string name="select_from_album">Sélectionnez-tête de l\'album</string>
 
     <!--Action Strings. Also used as activity titles-->
     <string name="action_settings">Paramètres</string>
@@ -43,6 +45,7 @@
     <string name="send_mail">Envoyer un mail…</string>
     <string name="saved">économie…</string>
     <string name="deleted">Suppression…</string>
+    <string name="new_title">Entrez nouveau titre</string>
 
     <!--Note Related Strings-->
     <string name="today">"Aujourd\'hui, "</string>
@@ -55,6 +58,7 @@
     <string name="ask_delete">Supprimer cette note?</string>
     <string name="ask_delete_multiple">Supprimer ces notes?</string>
     <string name="long_title">Titre est trop long: 255 caractères maximum</string>
+    <string name="long_category_title">Titre est trop long: 25 caractères maximum</string>
     <string name="empty_title">S\'il vous plaît entrer un titre</string>
     <string name="existing_title">Titre est déjà en cours d\'utilisation</string>
     <string name="invalid_title">S\'il vous plaît choisir un titre différent</string>

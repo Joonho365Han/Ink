@@ -15,6 +15,8 @@
     <string name="purple">أرجواني</string>
     <string name="image">صورة</string>
     <string name="category">الفئات</string>
+    <string name="cloud_header">رأس سحابة</string>
+    <string name="select_from_album">حدد رأس من ألبوم</string>
 
     <!--Action Strings. Also used as activity titles-->
     <string name="action_settings">إعدادات</string>
@@ -43,6 +45,7 @@
     <string name="send_mail">…إرسال البريد</string>
     <string name="saved">…إنقاذ</string>
     <string name="deleted">…حذف</string>
+    <string name="new_title">أدخل عنوان جديد</string>
 
     <!--Note Related Strings-->
     <string name="today">"اليوم ،"</string>
@@ -55,6 +58,7 @@
     <string name="ask_delete">حذف هذه الملاحظة؟</string>
     <string name="ask_delete_multiple">حذف هذه الملاحظات؟</string>
     <string name="long_title">العنوان طويل جدا: الحد الأقصى 255 حرفا</string>
+    <string name="long_category_title">العنوان طويل جدا: الحد الأقصى 25 حرفا</string>
     <string name="empty_title">يرجى إدخال عنوان</string>
     <string name="existing_title">عنوان قيد الاستخدام</string>
     <string name="invalid_title">يرجى اختيار عنوان مختلف</string>

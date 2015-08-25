@@ -15,6 +15,8 @@
     <string name="purple">Porpra</string>
     <string name="image">Imatge</string>
     <string name="category">Categories</string>
+    <string name="cloud_header">Capçalera Núvol</string>
+    <string name="select_from_album">Seleccioneu capçalera de l\'àlbum</string>
 
     <!--Action Strings. Also used as activity titles-->
     <string name="action_settings">Ajustos</string>
@@ -43,6 +45,7 @@
     <string name="send_mail">Enviar correu…</string>
     <string name="saved">Estalvi…</string>
     <string name="deleted">Esborrat…</string>
+    <string name="new_title">Introduïu el nou títol</string>
 
     <!--Note Related Strings-->
     <string name="today">"Avui, "</string>
@@ -55,6 +58,7 @@
     <string name="ask_delete">Eliminar aquesta nota?</string>
     <string name="ask_delete_multiple">Eliminar aquestes notes?</string>
     <string name="long_title">El títol és massa llarg: un màxim de 255 caràcters</string>
+    <string name="long_category_title">El títol és massa llarg: un màxim de 25 caràcters</string>
     <string name="empty_title">Si us plau, introdueixi un títol</string>
     <string name="existing_title">Títol ja està en ús</string>
     <string name="invalid_title">Si us plau, escolliu un títol diferent</string>

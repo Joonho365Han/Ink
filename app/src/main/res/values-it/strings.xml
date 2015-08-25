@@ -15,6 +15,8 @@
     <string name="purple">Porpora</string>
     <string name="image">Immagine</string>
     <string name="category">Categorie</string>
+    <string name="cloud_header">Nube intestazione</string>
+    <string name="select_from_album">Selezionare colpo di testa da album</string>
 
     <!--Action Strings. Also used as activity titles-->
     <string name="action_settings">Impostazioni</string>
@@ -43,6 +45,7 @@
     <string name="send_mail">Inviare una mail…</string>
     <string name="saved">Risparmio…</string>
     <string name="deleted">Eliminazione…</string>
+    <string name="new_title">Inserisci nuovo titolo</string>
 
     <!--Note Related Strings-->
     <string name="today">"Oggi, "</string>
@@ -55,6 +58,7 @@
     <string name="ask_delete">Eliminare questo appunto?</string>
     <string name="ask_delete_multiple">Eliminare queste note?</string>
     <string name="long_title">Il titolo è troppo lungo: massimo 255 caratteri</string>
+    <string name="long_category_title">Il titolo è troppo lungo: massimo 25 caratteri</string>
     <string name="empty_title">Inserisci un titolo</string>
     <string name="existing_title">Il titolo è già in uso</string>
     <string name="invalid_title">Scegliere un titolo diverso</string>

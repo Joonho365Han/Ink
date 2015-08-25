@@ -1,7 +1,12 @@
 package eden.notebook.ink;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.util.TypedValue;
@@ -9,15 +14,22 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class DrawerAdapter extends RecyclerView.Adapter<DrawerAdapter.ItemHolder> {
 
     Activity context;
     private LayoutInflater inflater;
     private NoteDatabaseAdapter dataAdapter;
+    private SharedPreferences prefs;
 
     private int ITEM_HEIGHT_PX;
     private static final int[] CATEGORY_ICON_RES_ID = new int[]{
@@ -32,30 +44,80 @@ public class DrawerAdapter extends RecyclerView.Adapter<DrawerAdapter.ItemHolder
             R.drawable.ic_indigo_category,
             R.drawable.ic_purple_category,
             R.drawable.ic_image_category};
-    static final int[] ACTIVITY_TITLE_RES_ID = new int[]{
-            R.string.library,
-            R.string.favorites,
-            R.string.cloud,
-            R.string.pink,
-            R.string.orange,
-            R.string.yellow,
-            R.string.green,
-            R.string.blue,
-            R.string.indigo,
-            R.string.purple,
-            R.string.image};
+    private static final String[] COLOR_CATEGORY_TITLE = new String[]{"Cloud","Pink","Orange","Yellow","Green","Blue","Indigo","Purple","Image"};
+    static final String[] ACTIVITY_TITLE = new String[11];
 
     public DrawerAdapter (Activity activity) {
         context = activity;
         inflater = LayoutInflater.from(activity);
         dataAdapter = new NoteDatabaseAdapter(context);
+        prefs = context.getSharedPreferences("EdenNotebookSettings", Context.MODE_PRIVATE);
 
         ITEM_HEIGHT_PX = (int) (context.getResources().getDisplayMetrics().density * 48);
+        Resources res = context.getResources();
+        ACTIVITY_TITLE[0] = res.getString(R.string.library);
+        ACTIVITY_TITLE[1] = res.getString(R.string.favorites);
+        ACTIVITY_TITLE[2] = prefs.getString("Cloud",res.getString(R.string.cloud));
+        ACTIVITY_TITLE[3] = prefs.getString("Pink",res.getString(R.string.pink));
+        ACTIVITY_TITLE[4] = prefs.getString("Orange",res.getString(R.string.orange));
+        ACTIVITY_TITLE[5] = prefs.getString("Yellow",res.getString(R.string.yellow));
+        ACTIVITY_TITLE[6] = prefs.getString("Green",res.getString(R.string.green));
+        ACTIVITY_TITLE[7] = prefs.getString("Blue",res.getString(R.string.blue));
+        ACTIVITY_TITLE[8] = prefs.getString("Indigo",res.getString(R.string.indigo));
+        ACTIVITY_TITLE[9] = prefs.getString("Purple",res.getString(R.string.purple));
+        ACTIVITY_TITLE[10] = prefs.getString("Image",res.getString(R.string.image));
+    }
+
+    public void setCategoryTitle(final String oldTitle, final String newTitle, final int colorIndex){
+
+        //User decided to decrypt app.
+        LinearLayout layout = (LinearLayout) inflater.inflate(R.layout.dialog_new_category_title, null);
+        final EditText edittext = (EditText) layout.findViewById(R.id.editext);
+
+        edittext.setText(newTitle);
+
+        new AlertDialog.Builder(context)
+                .setTitle(R.string.new_title)
+                .setView(layout)
+                .setPositiveButton(R.string.confirm, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        List<String> existing = new ArrayList<>();
+                        Collections.addAll(existing, ACTIVITY_TITLE);
+
+                        String newTitle = edittext.getText().toString().trim();
+
+                        if (newTitle.length() > 25){
+                            Toast.makeText(context, R.string.long_category_title, Toast.LENGTH_SHORT).show();
+                            setCategoryTitle(oldTitle,newTitle,colorIndex);
+                        } else if (newTitle.length() == 0) {
+                            Toast.makeText(context, R.string.empty_title, Toast.LENGTH_SHORT).show();
+                            setCategoryTitle(oldTitle,newTitle,colorIndex);
+                        } else if (existing.contains(newTitle) && !newTitle.equals(oldTitle)) {
+                            //Test if file with same title already exists.
+                            Toast.makeText(context, R.string.existing_title, Toast.LENGTH_SHORT).show();
+                            setCategoryTitle(oldTitle,newTitle,colorIndex);
+                        } else {
+                            ACTIVITY_TITLE[colorIndex+2] = newTitle;
+                            notifyItemChanged(colorIndex + 4);
+
+                            if (!newTitle.equals(oldTitle)){
+                                SharedPreferences.Editor editor = prefs.edit();
+                                editor.putString(COLOR_CATEGORY_TITLE[colorIndex], newTitle);
+                                editor.apply();
+                            }
+                        }
+                    }
+                }).setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+            //User did not enter password.
+            @Override
+            public void onClick(DialogInterface dialog, int which) {/*Don't do anything if user decided to cancel.*/}
+        }).create().show();
     }
 
     @Override
-    public ItemHolder onCreateViewHolder(ViewGroup viewGroup, int i)
-        {return new ItemHolder(inflater.inflate(R.layout.drawer_item_holder, viewGroup, false));}
+    public ItemHolder onCreateViewHolder(ViewGroup viewGroup, int i) {return new ItemHolder(inflater.inflate(R.layout.drawer_item_holder, viewGroup, false));}
 
     @Override
     public void onBindViewHolder(ItemHolder noteHolder, int index) {
@@ -117,7 +179,7 @@ public class DrawerAdapter extends RecyclerView.Adapter<DrawerAdapter.ItemHolder
 
         // Binding category items.
         noteHolder.mIcon.setBackgroundResource(CATEGORY_ICON_RES_ID[index]);
-        noteHolder.mTitle.setText(ACTIVITY_TITLE_RES_ID[index]);
+        noteHolder.mTitle.setText(ACTIVITY_TITLE[index]);
         noteHolder.mTitle.setTextColor(BookAdapter.COLOR_ARRAY[9]);
         noteHolder.mTitle.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16);
     }
@@ -142,23 +204,45 @@ public class DrawerAdapter extends RecyclerView.Adapter<DrawerAdapter.ItemHolder
                 @Override
                 public boolean onTouch(View view, MotionEvent motionEvent) {
 
+                    int action = motionEvent.getAction();
+
                     int index = getAdapterPosition() - 1;
                     if (index == 2)
-                        return true; // Don't do anything with the category title.
+                        return true; // Consume the touch event. Don't do anything with the category title.
 
-                    if (motionEvent.getAction() == MotionEvent.ACTION_DOWN)
+                    if (action == MotionEvent.ACTION_DOWN)
                         view.setBackgroundColor(Color.parseColor("#EEEEEE"));
-                    else if (motionEvent.getAction() == MotionEvent.ACTION_UP) {
-                        Intent intent = new Intent(context, Library.class);
-                        if (index == 1)
-                            intent.putExtra("Favorites", -1);
-                        else if (index != 0)
-                            intent.putExtra("Category", index - 3);
-                        context.startActivity(intent);
+                    else if (action == MotionEvent.ACTION_CANCEL || action == MotionEvent.ACTION_UP)
                         view.setBackground(null);
-                    } else if (motionEvent.getAction() == MotionEvent.ACTION_CANCEL)
-                        view.setBackground(null);
-                    return true;
+                    return false;
+                }
+            });
+            mBackground.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    int index = getAdapterPosition() - 1;
+
+                    Intent intent = new Intent(context, Library.class);
+                    if (index == 1)
+                        intent.putExtra("Favorites", -1);
+                    else if (index != 0)
+                        intent.putExtra("Category", index - 3);
+
+                    context.startActivity(intent);
+                }
+            });
+            mBackground.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View view) {
+
+                    int colorIndex = getAdapterPosition() - 4;
+                    if (colorIndex < 0) // Don't change the titles of library and favorites.
+                        return false; // But don't consume the event.
+
+
+                    setCategoryTitle(mTitle.getText().toString(), mTitle.getText().toString(), colorIndex);
+                    return true; // Always consume the event when title changed.
                 }
             });
         }

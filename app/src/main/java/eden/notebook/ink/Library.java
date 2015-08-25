@@ -73,8 +73,8 @@ public class Library extends ActionBarActivity {
     private boolean toAddNote;
     private boolean toSettings;
 
-    static boolean locked = true; //Must be static. These are initialized here because these are related to class instance, not status.
-    static boolean backingUp = false; // Must be static. These are initialized here because these are related to class instance, not status.
+    static boolean locked; //Must be static.
+    static boolean backingUp; // Must be static.
 
     // Layout views.
     private DrawerLayout mDrawerLayout;
@@ -108,6 +108,9 @@ public class Library extends ActionBarActivity {
 
         toAddNote = false;
         toSettings = false;
+
+        locked = true;
+        backingUp = false;
 
         //Note list initiation.
         RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.view_recycler_book);
@@ -184,10 +187,8 @@ public class Library extends ActionBarActivity {
         //If password protected, query for password.
         if (prefs.getBoolean("Encryption",false) && locked) { unlock(); }
         else {
-            if (locked) {
-                suggestions.clearHistory();
-                backupData(); //This means app will back up data only when it is opened once initially despite activity being recreated.
-            }
+            suggestions.clearHistory();
+            backupData();
             locked = false;
         }
     }
@@ -249,7 +250,7 @@ public class Library extends ActionBarActivity {
             onFavorites = intent.hasExtra("Favorites");
 
             colorSearch = intent.getIntExtra("Category", intent.getIntExtra("Favorites", -2)); // Colorsearch will also serve as the index of title.
-            getSupportActionBar().setTitle(DrawerAdapter.ACTIVITY_TITLE_RES_ID[colorSearch + 2]);
+            getSupportActionBar().setTitle(DrawerAdapter.ACTIVITY_TITLE[colorSearch + 2]);
 
             if (onSearch)
                 super.onBackPressed(); // Collapses search view. The CollapseListener will initialize the adapter for us.

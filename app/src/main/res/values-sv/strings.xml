@@ -15,6 +15,8 @@
     <string name="purple">Lila</string>
     <string name="image">Bild</string>
     <string name="category">Kategorier</string>
+    <string name="cloud_header">Moln sidhuvud</string>
+    <string name="select_from_album">Välj nick från album</string>
 
     <!--Action Strings. Also used as activity titles-->
     <string name="action_settings">Inställningar</string>
@@ -43,6 +45,7 @@
     <string name="send_mail">Skicka mail…</string>
     <string name="saved">Spara…</string>
     <string name="deleted">Radera…</string>
+    <string name="new_title">Ange ny titel</string>
 
     <!--Note Related Strings-->
     <string name="today">"I dag, "</string>
@@ -55,6 +58,7 @@
     <string name="ask_delete">Radera denna note?</string>
     <string name="ask_delete_multiple">Radera dessa anteckningar?</string>
     <string name="long_title">Titel är för lång: max 255 tecken</string>
+    <string name="long_category_title">Titel är för lång: max 25 tecken</string>
     <string name="empty_title">Skriv in en rubrik</string>
     <string name="existing_title">Titeln är redan i bruk</string>
     <string name="invalid_title">Välj en annan titel</string>

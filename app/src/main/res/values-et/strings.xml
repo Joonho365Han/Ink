@@ -15,6 +15,8 @@
     <string name="purple">Purpurne</string>
     <string name="image">Pilt</string>
     <string name="category">Kategooriad</string>
+    <string name="cloud_header">Pilv päise kaudu</string>
+    <string name="select_from_album">Vali pealkirja album</string>
 
     <!--Action Strings. Also used as activity titles-->
     <string name="action_settings">Seaded</string>
@@ -43,6 +45,7 @@
     <string name="send_mail">Saada e-post…</string>
     <string name="saved">Säästmine…</string>
     <string name="deleted">Kustutamine…</string>
+    <string name="new_title">Sisesta uus pealkiri</string>
 
     <!--Note Related Strings-->
     <string name="today">"Täna, "</string>
@@ -55,6 +58,7 @@
     <string name="ask_delete">Kustuta käesoleva märkuse?</string>
     <string name="ask_delete_multiple">Kustuta need märkmed?</string>
     <string name="long_title">Pealkiri on liiga pikk: maksimaalselt 255 tähemärki</string>
+    <string name="long_category_title">Pealkiri on liiga pikk: maksimaalselt 25 tähemärki</string>
     <string name="empty_title">Palun sisestage pealkiri</string>
     <string name="existing_title">Pealkiri on juba kasutusel</string>
     <string name="invalid_title">Palun vali mõni teine pealkiri</string>

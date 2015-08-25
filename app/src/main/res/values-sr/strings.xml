@@ -15,6 +15,8 @@
     <string name="purple">пурпле</string>
     <string name="image">слика</string>
     <string name="category">Категорије</string>
+    <string name="cloud_header">Цлоуд заглавља</string>
+    <string name="select_from_album">Избор Главом после албума</string>
 
     <!--Action Strings. Also used as activity titles-->
     <string name="action_settings">Подешавања</string>
@@ -43,6 +45,7 @@
     <string name="send_mail">Пошаљи емаил</string>
     <string name="saved">спашавање</string>
     <string name="deleted">Брисање</string>
+    <string name="new_title">Унесите ново име</string>
 
     <!--Note Related Strings-->
     <string name="today">"данас, "</string>
@@ -55,6 +58,7 @@
     <string name="ask_delete">Обриши ову поруку?</string>
     <string name="ask_delete_multiple">Обриши ове белешке?</string>
     <string name="long_title">Наслов је предугачак: максимално 255 знакова</string>
+    <string name="long_category_title">Наслов је предугачак: максимално 25 знакова</string>
     <string name="empty_title">Молимо Вас да унесете наслов</string>
     <string name="existing_title">Наслов је већ у употреби</string>
     <string name="invalid_title">Молимо изаберите другу титулу</string>

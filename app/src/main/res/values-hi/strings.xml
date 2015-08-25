@@ -15,6 +15,8 @@
     <string name="purple">बैंगनी</string>
     <string name="image">छवि</string>
     <string name="category">श्रेणियाँ</string>
+    <string name="cloud_header">श्रेणियाँ</string>
+    <string name="select_from_album">श्रेणियाँ</string>
 
     <!--Action Strings. Also used as activity titles-->
     <string name="action_settings">सेटिंग</string>
@@ -43,6 +45,7 @@
     <string name="send_mail">मेल भेजने…</string>
     <string name="saved">बचत…</string>
     <string name="deleted">हटाई जा रही है…</string>
+    <string name="new_title">नया शीर्षक दर्ज</string>
 
     <!--Note Related Strings-->
     <string name="today">"आज, "</string>
@@ -55,6 +58,7 @@
     <string name="ask_delete">इस नोट को हटाना चाहते हैं?</string>
     <string name="ask_delete_multiple">इन नोटों को हटाना चाहते हैं?</string>
     <string name="long_title">शीर्षक बहुत लंबा है: अधिकतम 255 अक्षर</string>
+    <string name="long_category_title">शीर्षक बहुत लंबा है: अधिकतम 25 अक्षर</string>
     <string name="empty_title">एक शीर्षक दर्ज करें</string>
     <string name="existing_title">शीर्षक पहले से प्रयोग में है</string>
     <string name="invalid_title">एक अलग शीर्षक का चयन करें</string>
