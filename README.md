@@ -1,4 +1,5 @@
 # Ink - Android Application (Notebook App)
+## https://play.google.com/store/apps/details?id=eden.notebook.ink
 Everyone has their own preference of colors. 
 
 A color has no shape, has no scent; we mostly observe it subconsciously. But colors are the first element of anything we observe. In fact, they shape our experience with objects. I hope Ink allows you to freely express yourself and organize your thoughts with colored notes.
